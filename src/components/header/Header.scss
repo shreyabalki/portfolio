@@ -1,12 +1,11 @@
 @import "../../_globalColor";
 
-/*React-headroom*/
+/* React-headroom */
 .headroom-wrapper {
   max-height: 100px;
 }
 
 /* header */
-
 .dark-menu {
   background-color: $darkBackground !important;
   color: $textColorDark;
@@ -69,15 +68,14 @@
 }
 
 /* menu */
-
 .header .menu {
   clear: both;
   max-height: 0;
   transition: max-height 0.2s ease-out;
+  overflow: hidden;
 }
 
 /* menu icon */
-
 .header .menu-icon {
   cursor: pointer;
   display: inline-block;
@@ -131,7 +129,6 @@
 }
 
 /* menu btn */
-
 .header .menu-btn {
   display: none;
 }
@@ -157,26 +154,65 @@
   top: 0;
 }
 
-/* 48em = 768px */
-
-@media (min-width: 48em) {
-  .header li {
-    float: left;
-  }
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .header .menu {
-    max-height: none;
-  }
+/* Mobile-specific tweaks */
+@media (max-width: 768px) {
+  /* Position hamburger icon to the top-right */
   .header .menu-icon {
-    display: none;
+    position: absolute;
+    top: 15px;   /* Adjust distance from top */
+    right: 20px; /* Adjust distance from the right */
+    padding: 28px 20px;
   }
-}
-@media (max-width: 960px) and (min-width: 768px) {
-  .header {
-    font-size: 12px;
+
+  /* Ensure hamburger icon's navicon is visible */
+  .header .menu-icon .navicon {
+    background: $iconBackground;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background 0.2s ease-out;
+    width: 18px;
+  }
+
+  /* Mobile menu toggle */
+  .header .menu-btn:checked ~ .menu {
+    max-height: 250px;  /* Adjust this for smoother mobile transitions */
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent !important;
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(45deg);
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(-45deg);
+  }
+
+  /* Add this rule to fix duplication issue */
+  .header .menu li {
+    width: 100%;  /* Ensure menu items occupy full width for mobile */
+    text-align: center; /* Center the text for clarity */
+  }
+
+  /* Mobile-specific tweaks for 'Contact Me' */
+  .header .menu li a[href="#contact"] {
+    padding: 12px 15px;
+    font-size: 14px;
+    text-align: center; /* Center the text for clarity */
+    display: block;
+  }
+
+  /* Ensure 'Contact Me' link stays aligned with other menu items */
+  .header .menu li {
+    width: 100%;  /* Ensure all menu items occupy full width for mobile */
+    text-align: center;
+  }
+
+  /* Adjust the hover effect for 'Contact Me' link */
+  .header .menu li a[href="#contact"]:hover {
+    background-color: $headerHoverBG;
   }
 }

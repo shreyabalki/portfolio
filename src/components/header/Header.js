@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext, useEffect } from "react";
 import Headroom from "react-headroom";
 import "./Header.scss";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
@@ -8,21 +8,35 @@ import {
   workExperiences,
   skillsSection,
   openSource,
-  blogSection,
-  talkSection,
   achievementSection,
   resumeSection
 } from "../../portfolio";
 
 function Header() {
-  const {isDark} = useContext(StyleContext);
+  const { isDark } = useContext(StyleContext);
   const viewExperience = workExperiences.display;
   const viewOpenSource = openSource.display;
   const viewSkills = skillsSection.display;
   const viewAchievement = achievementSection.display;
-  const viewBlog = blogSection.display;
-  const viewTalks = talkSection.display;
   const viewResume = resumeSection.display;
+
+  // Handle scroll to automatically close menu on mobile
+  useEffect(() => {
+    const handleScroll = () => {
+      const menuCheckbox = document.getElementById("menu-btn");
+      // Close the menu when the user scrolls (only on mobile)
+      if (window.innerWidth <= 768 && menuCheckbox.checked) {
+        menuCheckbox.checked = false; // Uncheck the menu to close it
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the scroll listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <Headroom>
@@ -32,14 +46,14 @@ function Header() {
           <span className="logo-name">{greeting.username}</span>
           <span className="grey-color">/&gt;</span>
         </a>
+
+        {/* Mobile menu toggle */}
         <input className="menu-btn" type="checkbox" id="menu-btn" />
-        <label
-          className="menu-icon"
-          htmlFor="menu-btn"
-          style={{color: "white"}}
-        >
+        <label className="menu-icon" htmlFor="menu-btn">
           <span className={isDark ? "navicon navicon-dark" : "navicon"}></span>
         </label>
+
+        {/* Navigation menu */}
         <ul className={isDark ? "dark-menu menu" : "menu"}>
           {viewSkills && (
             <li>
@@ -61,27 +75,18 @@ function Header() {
               <a href="#achievements">Achievements</a>
             </li>
           )}
-          {viewBlog && (
-            <li>
-              <a href="#blogs">Blogs</a>
-            </li>
-          )}
-          {viewTalks && (
-            <li>
-              <a href="#talks">Talks</a>
-            </li>
-          )}
           {viewResume && (
             <li>
-              <a href="#resume">Resume</a>
+              <a href="/resume.html" target="_blank" rel="noopener noreferrer">
+                Resume
+              </a>
             </li>
           )}
           <li>
             <a href="#contact">Contact Me</a>
           </li>
           <li>
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a>
+            <a href="#!">
               <ToggleSwitch />
             </a>
           </li>
@@ -90,4 +95,5 @@ function Header() {
     </Headroom>
   );
 }
+
 export default Header;

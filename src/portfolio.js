@@ -20,105 +20,51 @@ const illustration = {
 };
 
 const greeting = {
-  username: "Saad Pasta",
-  title: "Hi all, I'm Saad",
+  username: "Srimonchaari Padmanabhan Babu",
+  title: "Hi all, I'm Srimonchaari ",
   subTitle: emoji(
-    "A passionate Full Stack Software Developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."
-  ),
-  resumeLink:
-    "https://drive.google.com/file/d/1ofFdKF_mqscH8WvXkSObnVvC9kK7Ldlu/view?usp=sharing", // Set to empty to hide the button
+  "AI Engineer, Full Stack Developer & Drone Systems Innovator  | Specializing in scalable backend architectures, low-code automation, and agentic AI frameworks using Go, FastAPI, Langchain, and React."
+),
+ resumeLink: "/Srimonchaari_Padmanabhan_Babu_Resume.pdf", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
 // Social Media Links
 
 const socialMediaLinks = {
-  github: "https://github.com/saadpasta",
-  linkedin: "https://www.linkedin.com/in/saadpasta/",
-  gmail: "saadpasta70@gmail.com",
-  gitlab: "https://gitlab.com/saadpasta",
-  facebook: "https://www.facebook.com/saad.pasta7",
-  medium: "https://medium.com/@saadpasta",
-  stackoverflow: "https://stackoverflow.com/users/10422806/saad-pasta",
-  // Instagram, Twitter and Kaggle are also supported in the links!
-  // To customize icons and social links, tweak src/components/SocialMedia
+  linkedin: "https://linkedin.com/in/Srimon",
+  gmail: "srimonchaari@gmail.com",
   display: true // Set true to display this section, defaults to false
 };
 
 // Skills Section
 
 const skillsSection = {
-  title: "What I do",
-  subTitle: "CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
+  title: "What I Do",
+  subTitle: "FULL-STACK DEVELOPER | GO PROGRAMMER | DRONE & EMBEDDED AI ENGINEER",
   skills: [
-    emoji(
-      "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"
-    ),
-    emoji("⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks"),
-    emoji(
-      "⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean"
-    )
+    emoji("⚡ Design and develop scalable full-stack applications using React, Node.js, and FastAPI"),
+    emoji("⚡ Engineer robust backend services in Go for performance-critical systems"),
+    emoji("⚡ Build and deploy embedded drone solutions with AI, RF, and infrared integrations"),
+    emoji("⚡ Automate enterprise workflows using Power Platform and KNIME ETL pipelines"),
+    emoji("⚡ Architect agentic AI systems using Langchain, LangGraph, and secure cloud infrastructure")
   ],
-
-  /* Make Sure to include correct Font Awesome Classname to view your icon
-https://fontawesome.com/icons?d=gallery */
-
   softwareSkills: [
-    {
-      skillName: "html-5",
-      fontAwesomeClassname: "fab fa-html5"
-    },
-    {
-      skillName: "css3",
-      fontAwesomeClassname: "fab fa-css3-alt"
-    },
-    {
-      skillName: "sass",
-      fontAwesomeClassname: "fab fa-sass"
-    },
-    {
-      skillName: "JavaScript",
-      fontAwesomeClassname: "fab fa-js"
-    },
-    {
-      skillName: "reactjs",
-      fontAwesomeClassname: "fab fa-react"
-    },
-    {
-      skillName: "nodejs",
-      fontAwesomeClassname: "fab fa-node"
-    },
-    {
-      skillName: "swift",
-      fontAwesomeClassname: "fab fa-swift"
-    },
-    {
-      skillName: "npm",
-      fontAwesomeClassname: "fab fa-npm"
-    },
-    {
-      skillName: "sql-database",
-      fontAwesomeClassname: "fas fa-database"
-    },
-    {
-      skillName: "aws",
-      fontAwesomeClassname: "fab fa-aws"
-    },
-    {
-      skillName: "firebase",
-      fontAwesomeClassname: "fas fa-fire"
-    },
-    {
-      skillName: "python",
-      fontAwesomeClassname: "fab fa-python"
-    },
-    {
-      skillName: "docker",
-      fontAwesomeClassname: "fab fa-docker"
-    }
+    { skillName: "HTML5", fontAwesomeClassname: "fab fa-html5" },
+    { skillName: "CSS3", fontAwesomeClassname: "fab fa-css3-alt" },
+    { skillName: "JavaScript", fontAwesomeClassname: "fab fa-js" },
+    { skillName: "React", fontAwesomeClassname: "fab fa-react" },
+    { skillName: "Node.js", fontAwesomeClassname: "fab fa-node" },
+    { skillName: "Go", fontAwesomeClassname: "fas fa-code" },
+    { skillName: "Python", fontAwesomeClassname: "fab fa-python" },
+    { skillName: "Rust", fontAwesomeClassname: "fas fa-microchip" },
+    { skillName: "SQL", fontAwesomeClassname: "fas fa-database" },
+    { skillName: "Azure", fontAwesomeClassname: "fab fa-microsoft" },
+    { skillName: "Docker", fontAwesomeClassname: "fab fa-docker" }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: true
 };
+
 
 // Education Section
 
@@ -126,23 +72,28 @@ const educationInfo = {
   display: true, // Set false to hide this section, defaults to true
   schools: [
     {
-      schoolName: "Harvard University",
-      logo: require("./assets/images/harvardLogo.png"),
-      subHeader: "Master of Science in Computer Science",
-      duration: "September 2017 - April 2019",
-      desc: "Participated in the research of XXX and published 3 papers.",
-      descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+      schoolName: "Brandenburgische Technische Universität",
+      logo: require("./assets/images/BTU.png"),
+      subHeader: "MSc in Artificial Intelligence",
+      duration: "Oct 2024 - Ongoing",
+      desc: "Conducted applied research on agentic AI systems and autonomous backend frameworks using Langchain and LangGraph. Academic work focused on bridging generative models with real-time operational systems for MEMS development.",
+   descBullets: [
+        "Pursuing advanced coursework in agentic AI systems, generative architectures, and autonomous decision-making frameworks",
+        "Engaged in research focused on real-time AI deployment in MEMS development, leveraging Langchain and LangGraph in secure backend environments",
+        "Hands-on experience with cloud-integrated AI platforms, NLP pipelines, and scalable backend systems aligned with industry use cases"
       ]
     },
     {
-      schoolName: "Stanford University",
-      logo: require("./assets/images/stanfordLogo.png"),
-      subHeader: "Bachelor of Science in Computer Science",
-      duration: "September 2013 - April 2017",
-      desc: "Ranked top 10% in the program. Took courses about Software Engineering, Web Security, Operating Systems, ...",
-      descBullets: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit"]
+      schoolName: "Sathyabama Institute of Science and Technology",
+      logo: require("./assets/images/SIST.png"),
+      subHeader: "BE in Computer Engineering",
+      duration: "Jun 2020 – May 2024",
+      desc: "Graduated with distinction and completed multiple AI-embedded system projects, including autonomous drones and full-stack automation platforms. Developed end-to-end systems blending image processing, cloud ETL, and embedded control logic.",
+     descBullets: [
+        "Designed a full-stack OCR-based mark sheet extraction tool that processes scanned academic documents, extracts structured data, and securely stores it using ETL pipelines and custom APIs",
+        "Engineered an autonomous window-cleaning drone featuring path-mapped navigation, high-pressure water jets, wipers, and 5kg water payload — capable of 15-minute continuous flight",
+        "Specialized in embedded systems, drone control logic, AI-powered automation, and scalable frontend/backend development"
+      ]
     }
   ]
 };
@@ -150,213 +101,240 @@ const educationInfo = {
 // Your top 3 proficient stacks/tech experience
 
 const techStack = {
-  viewSkillBars: true, //Set it to true to show Proficiency Section
+  viewSkillBars: true, // Show proficiency section
   experience: [
     {
-      Stack: "Frontend/Design", //Insert stack or technology you have experience in
-      progressPercentage: "90%" //Insert relative proficiency in percentage
+      Stack: "AI & Intelligent Automation",
+      progressPercentage: "90%" // Langchain, LangGraph, agentic frameworks
     },
     {
-      Stack: "Backend",
-      progressPercentage: "70%"
+      Stack: "Full Stack Development",
+      progressPercentage: "85%" // React, FastAPI, Node.js, SQL
     },
     {
-      Stack: "Programming",
-      progressPercentage: "60%"
+      Stack: "Drone Engineering & Embedded Systems",
+      progressPercentage: "85%" // Drone control, sensor integration, automation logic
+    },
+    {
+      Stack: "Programming Languages (Go, Rust, Python)",
+      progressPercentage: "80%" // Systems programming, backend, data processing
+    },
+    {
+      Stack: "Low-Code Platforms & ETL (Power Platform, KNIME)",
+      progressPercentage: "75%" // Workflow automation, data pipelines
+    },
+    {
+      Stack: "Cloud & DevOps (Azure, Docker)",
+      progressPercentage: "70%" // Deployment, scalability, container orchestration
     }
   ],
-  displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
+  displayCodersrank: false
 };
+
 
 // Work experience section
 
 const workExperiences = {
-  display: true, //Set it to true to show workExperiences Section
+  display: true,
+  
   experience: [
     {
-      role: "Software Engineer",
-      company: "Facebook",
-      companylogo: require("./assets/images/facebookLogo.png"),
-      date: "June 2018 – Present",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      role: "Generative AI Intern – MEMS Development",
+      company: "Bosch",
+      companylogo: require("./assets/images/bosch.png"),
+      date: "Apr 2025 – Oct 2025",
+      desc:
+        "Engineered a full-stack AI pipeline using LangGraph and FastAPI to accelerate MEMS development through agentic architectures and modular UI systems.",
       descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        "Developed backend workflows with Langchain and React to streamline MEMS automation",
+        "Created arc42-compliant architectural documentation for secure, scalable systems",
+        "Designed an interactive web UI to enable real-time AI agent execution"
       ]
     },
     {
-      role: "Front-End Developer",
-      company: "Quora",
-      companylogo: require("./assets/images/quoraLogo.png"),
-      date: "May 2017 – May 2018",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      role: "System Engineer – AI-Powered Drones & RF Systems",
+      company: "Big Bang Boom Solutions",
+      companylogo: require("./assets/images/bbbslogo.png"),
+      date: "Nov 2023 – Sep 2024",
+      desc:
+        "Led integration of dual-mode autonomous drones and AI-enabled signal jamming systems for defense-grade surveillance, aligned with MIL-STD-801G.",
+      descBullets: [
+        "Integrated RF sensors with onboard AI to reduce false positives by 20%",
+        "Built IR-powered drones for fire response with 30% faster reaction time",
+        "Contributed to Kamikaze Drone field testing, recognized by Indian Defense"
+      ]
     },
     {
-      role: "Software Engineer Intern",
-      company: "Airbnb",
-      companylogo: require("./assets/images/airbnbLogo.png"),
-      date: "Jan 2015 – Sep 2015",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      role: "Embedded Systems Intern – Automation Prototyping",
+      company: "Big Bang Boom Solutions",
+      companylogo: require("./assets/images/bbbslogo.png"),
+      date: "Jun 2023 – Oct 2023",
+      desc:
+        "Engineered microcontroller-based automation circuits for drone POC validation, minimizing manual intervention in embedded prototypes.",
+      descBullets: [
+        "Prototyped embedded control boards with integrated sensors",
+        "Streamlined logic using microprocessor-based automation",
+        "Achieved 100% test compliance through rigorous validation cycles"
+      ]
+    },
+    {
+      role: "Application Developer Intern – Ionic & Hybrid App Development",
+      company: "Paragon Dynamics Info Systems",
+      companylogo: require("./assets/images/paragon.jpg"),
+      date: "Aug 2022 – Sep 2022",
+      desc:
+        "Built enterprise-grade hybrid mobile/web applications using Ionic + Angular, focused on responsive UIs, real-time updates, and cross-platform support.",
+      descBullets: [
+        "Developed reusable UI components using Ionic & Angular",
+        "Connected RESTful APIs for live data rendering and interaction",
+        "Optimized app responsiveness across Android and iOS platforms",
+        "Ensured cross-browser/device compatibility and test coverage"
+      ]
+    },
+    {
+      role: "Drone R&D Intern – UAV & IoT Systems",
+      company: "Jet Aerospace – UAV Research Division",
+      companylogo: require("./assets/images/drone.png"),
+      date: "Dec 2022 – Jan 2023",
+      desc:
+        "Researched UAV design with emphasis on IoT-based telemetry and drone piloting. Participated in technical workshops for drone aeromodelling.",
+      descBullets: [
+        "Gained hands-on experience in flight control using embedded sensors",
+        "Supported UAV automation for cleaning, inspection, and navigation"
+      ]
     }
   ]
 };
 
-/* Your Open Source Section to View Your Github Pinned Projects
-To know how to get github key look at readme.md */
-
 const openSource = {
-  showGithubProfile: "true", // Set true or false to show Contact profile using Github, defaults to true
-  display: true // Set false to hide this section, defaults to true
+  showGithubProfile: false,
+  display: false
 };
+
 
 // Some big projects you have worked on
 
 const bigProjects = {
   title: "Big Projects",
-  subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
+  subtitle: "INTELLIGENT SYSTEMS, DRONES, AND AUTOMATION SOLUTIONS ENGINEERED FOR IMPACT",
   projects: [
     {
-      image: require("./assets/images/saayaHealthLogo.webp"),
-      projectName: "Saayahealth",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      footerLink: [
-        {
-          name: "Visit Website",
-          url: "http://saayahealth.com/"
-        }
-        //  you can add extra buttons here.
-      ]
+      image: require("./assets/images/memssensor.jpg"),
+      projectName: "Agentic Framework for MEMS Automation",
+      projectDesc:
+        "Architected an AI agentic backend using Langchain + FastAPI to automate MEMS development workflows. Designed a component-based UI in React for controlling pipeline execution in real time, documented using arc42 standards.",
+      footerLink: []
+    },
+
+    {
+      image: require("./assets/images/firedrone.jfif"),
+      projectName: "Autonomous Fire-Response Drone System",
+      projectDesc:
+        "Engineered an IR-enabled drone with onboard AI to autonomously detect and respond to fire outbreaks. Integrated RF modules and MIL-STD-810G compliant control systems to improve mission efficiency by 30%.",
+      footerLink: []
     },
     {
-      image: require("./assets/images/nextuLogo.webp"),
-      projectName: "Nextu",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      footerLink: [
-        {
-          name: "Visit Website",
-          url: "http://nextu.se/"
-        }
-      ]
+      image: require("./assets/images/ocr.png"),
+      projectName: "OCR-Based Marksheet ETL Pipeline",
+      projectDesc:
+        "Developed a pipeline where scanned academic mark sheets were parsed using Tesseract OCR and transformed via ETL processes into a structured SQL schema. Automated database ingestion with Flask API layer for scalable integration.",
+      footerLink: []
+    },
+    {
+      image: require("./assets/images/window.png"),
+      projectName: "Window-Cleaning Drone with Path Mapping",
+      projectDesc:
+        "Created a UAV equipped with high-pressure jets, servo-driven wipers, and LIDAR-based path recognition to automate vertical surface cleaning. Achieved 15 min flight time and a 5kg payload capacity.",
+      footerLink: []
+    },
+    {
+      image: require("./assets/images/ionic-512.webp"),
+      projectName: "Hybrid Mobile App using Ionic + Angular",
+      projectDesc:
+        "Built responsive hybrid mobile apps with real-time data sync and dynamic dashboards using Ionic and Angular. Focused on cross-platform performance, device compatibility, and smooth RESTful API integration.",
+      footerLink: []
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: true
 };
+
 
 // Achievement Section
 // Include certificates, talks etc
 
 const achievementSection = {
-  title: emoji("Achievements And Certifications 🏆 "),
+  title: emoji("Achievements & Certifications 🏆"),
   subtitle:
-    "Achievements, Certifications, Award Letters and Some Cool Stuff that I have done !",
+    "A blend of applied research, real-world deployments, and continuous learning through globally recognized certifications and technical contributions.",
 
   achievementsCards: [
+
     {
-      title: "Google Code-In Finalist",
+      title: "Microsoft Certified: Designing and Implementing an Azure AI Solution",
       subtitle:
-        "First Pakistani to be selected as Google Code-in Finalist from 4000 students from 77 different countries.",
-      image: require("./assets/images/codeInLogo.webp"),
-      imageAlt: "Google Code-In Logo",
+        "Demonstrated advanced skills in designing, implementing, and monitoring AI solutions on Microsoft Azure. Covered topics like computer vision, natural language processing, and responsible AI practices across enterprise-grade architectures.",
+      image: require("./assets/images/Azure-Logo.png"),
+      imageAlt: "Microsoft Azure AI Certification",
       footerLink: [
         {
-          name: "Certification",
-          url: "https://drive.google.com/file/d/0B7kazrtMwm5dYkVvNjdNWjNybWJrbndFSHpNY2NFV1p4YmU0/view?usp=sharing"
-        },
-        {
-          name: "Award Letter",
-          url: "https://drive.google.com/file/d/0B7kazrtMwm5dekxBTW5hQkg2WXUyR3QzQmR0VERiLXlGRVdF/view?usp=sharing"
-        },
-        {
-          name: "Google Code-in Blog",
-          url: "https://opensource.googleblog.com/2019/01/google-code-in-2018-winners.html"
+          name: "Certification Details",
+          url: "https://learn.microsoft.com/en-us/certifications/exams/ai-102/"
         }
       ]
     },
     {
-      title: "Google Assistant Action",
-      subtitle:
-        "Developed a Google Assistant Action JavaScript Guru that is available on 2 Billion devices world wide.",
-      image: require("./assets/images/googleAssistantLogo.webp"),
-      imageAlt: "Google Assistant Action Logo",
-      footerLink: [
-        {
-          name: "View Google Assistant Action",
-          url: "https://assistant.google.com/services/a/uid/000000100ee688ee?hl=en"
-        }
-      ]
-    },
-
-    {
-      title: "PWA Web App Developer",
-      subtitle: "Completed Certifcation from SMIT for PWA Web App Development",
-      image: require("./assets/images/pwaLogo.webp"),
-      imageAlt: "PWA Logo",
-      footerLink: [
-        {name: "Certification", url: ""},
-        {
-          name: "Final Project",
-          url: "https://pakistan-olx-1.firebaseapp.com/"
-        }
-      ]
-    }
-  ],
-  display: true // Set false to hide this section, defaults to true
-};
-
-// Blogs Section
-
-const blogSection = {
-  title: "Blogs",
+  title: "Advanced Python – FITA Academy ",
   subtitle:
-    "With Love for Developing cool stuff, I love to write and teach others what I have learnt.",
-  displayMediumBlogs: "true", // Set true to display fetched medium blogs instead of hardcoded ones
-  blogs: [
+    "Completed an intensive 1-month instructor-led training in Advanced Python programming, covering real-world applications such as OOP design, file handling, exception management, multithreading, and custom modules. This program served as a strong foundation for scalable backend automation and data pipeline development.",
+  image: require("./assets/images/fita-python-cert.png"), // Save the uploaded cert as this
+  imageAlt: "FITA Academy Python Certificate",
+  footerLink: []
+},
+
     {
-      url: "https://blog.usejournal.com/create-a-google-assistant-action-and-win-a-google-t-shirt-and-cloud-credits-4a8d86d76eae",
-      title: "Win a Google Assistant Tshirt and $200 in Google Cloud Credits",
-      description:
-        "Do you want to win $200 and Google Assistant Tshirt by creating a Google Assistant Action in less then 30 min?"
+      title: "Best Paper Award – ICCCAI 2024",
+      subtitle:
+        "Awarded Best Research Paper at the International Conference on Cognitive Computing and Artificial Intelligence (ICCCAI), in collaboration with Taylor’s University, Malaysia. Presented research on autonomous UAV systems for vertical surface cleaning.",
+      image: require("./assets/images/bestpaper.png"),
+      imageAlt: "ICCCAI Best Paper Award",
+      footerLink: []
     },
     {
-      url: "https://medium.com/@saadpasta/why-react-is-the-best-5a97563f423e",
-      title: "Why REACT is The Best?",
-      description:
-        "React is a JavaScript library for building User Interface. It is maintained by Facebook and a community of individual developers and companies."
-    }
-  ],
-  display: true // Set false to hide this section, defaults to true
-};
-
-// Talks Sections
-
-const talkSection = {
-  title: "TALKS",
-  subtitle: emoji(
-    "I LOVE TO SHARE MY LIMITED KNOWLEDGE AND GET A SPEAKER BADGE 😅"
-  ),
-
-  talks: [
+      title: "Technovation 2024 – Best Project Award",
+      subtitle:
+        "Recognized for developing a self-navigating drone for window cleaning in high-rise environments, blending embedded AI, LIDAR mapping, and fluid propulsion systems. Awarded Best Project at Technovation 2024.",
+      image: require("./assets/images/technovation.jfif"),
+      imageAlt: "Technovation Best Project",
+      footerLink: []
+    },
     {
-      title: "Build Actions For Google Assistant",
-      subtitle: "Codelab at GDG DevFest Karachi 2019",
-      slides_url: "https://bit.ly/saadpasta-slides",
-      event_url: "https://www.facebook.com/events/2339906106275053/"
+      title: "Kamikaze Drone Testing Milestone – Indian Defense Recognition",
+      subtitle:
+        "Contributed to the successful field testing of AI-powered kamikaze drones, earning formal recognition from Indian Defense for technological innovation and deployment-readiness in strategic operations.",
+      image: require("./assets/images/bbbslogo.png"),
+      imageAlt: "Kamikaze Drone Testing",
+      footerLink: []
+    },
+  {
+  title: "National Workshop on UAV Design & Aeromodelling",
+  subtitle:
+    "Successfully completed a national-level UAV workshop hosted by Jet Aerospace & ASSC, focusing on hands-on drone fabrication, flight theory, and embedded sensor integration. Strengthened practical aeromodelling and prototyping skills.",
+  image: require("./assets/images/uav-workshop.png"), // make sure you use the transparent one
+  imageAlt: "National UAV Workshop",
+  imageClass: "transparent-image",
+  footerLink: []
+},
+
+    {
+      title: "Goethe-Zertifikat A1 – German Language Certification",
+      subtitle:
+        "Certified by Goethe-Institut in basic proficiency of German (A1), enabling better academic collaboration and communication in German-speaking environments — a foundation for future European research endeavors.",
+      image: require("./assets/images/Goethe-Institut.jpg"),
+      imageAlt: "Goethe German Certificate",
+      footerLink: []
     }
   ],
-  display: true // Set false to hide this section, defaults to true
-};
-
-// Podcast Section
-
-const podcastSection = {
-  title: emoji("Podcast 🎙️"),
-  subtitle: "I LOVE TO TALK ABOUT MYSELF AND TECHNOLOGY",
-
-  // Please Provide with Your Podcast embeded Link
-  podcast: [
-    "https://anchor.fm/codevcast/embed/episodes/DevStory---Saad-Pasta-from-Karachi--Pakistan-e9givv/a-a15itvo"
-  ],
-  display: true // Set false to hide this section, defaults to true
+  display: true
 };
 
 // Resume Section
@@ -370,17 +348,17 @@ const resumeSection = {
 
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
-  subtitle:
-    "Discuss a project or just want to say hi? My Inbox is open for all.",
-  number: "+92-0000000000",
-  email_address: "saadpasta70@gmail.com"
+  subtitle: "Want to collaborate or just say hi? I'm always open for a chat.",
+  number: "+49-1739725574",
+  email_address: "srimonchaari@gmail.com"
 };
+
 
 // Twitter Section
 
 const twitterDetails = {
-  userName: "twitter", //Replace "twitter" with your twitter username without @
-  display: true // Set true to display this section, defaults to false
+  userName: "twitter", // or your username
+  display: false        // ✅ turn this off
 };
 
 const isHireable = false; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
@@ -394,14 +372,11 @@ export {
   educationInfo,
   techStack,
   workExperiences,
-  openSource,
   bigProjects,
   achievementSection,
-  blogSection,
-  talkSection,
-  podcastSection,
-  contactInfo,
   twitterDetails,
+  contactInfo,
   isHireable,
+  openSource,
   resumeSection
 };

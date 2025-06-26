@@ -4,6 +4,8 @@
   text-align: center;
   width: 100%;
   overflow-x: hidden;
+  background-color: $appBG;
+  color: $textColor;
 }
 
 .App-logo {
@@ -27,4 +29,125 @@
 
 .subTitle {
   color: $subTitle;
+}
+
+.balance-text {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  word-break: break-word;
+}
+
+/* DARK MODE */
+.dark-mode .App {
+  background-color: #121212;
+  color: $textColorDark;
+}
+
+.dark-mode .App-header {
+  background-color: #1f1f1f;
+  color: $textColorDark;
+}
+
+/* Responsive styles - Mobile-first approach */
+@media only screen and (max-width: 768px) {
+  html,
+  body {
+    font-size: 90%;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  .App {
+    padding: 0 1rem;
+  }
+
+  .main {
+    padding: 1rem !important;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .dark-mode .menu {
+    background-color: #1f1f1f;
+  }
+
+  .menu li {
+    margin: 0.5rem 0;
+  }
+
+  .menu-btn:checked ~ .menu {
+    display: flex;
+  }
+
+  .contact-div-main,
+  .skills-container,
+  .education-container {
+    flex-direction: column !important;
+    gap: 1.5rem;
+  }
+
+  .form-field,
+  .contact-form,
+  .project-card,
+  .achievement-card {
+    width: 100% !important;
+    padding: 0.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    width: 100% !important;
+    font-size: 1rem;
+  }
+
+  img,
+  iframe,
+  video {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .section-title {
+    font-size: 1.75rem !important;
+  }
+
+  .heading {
+    font-size: 1.5rem !important;
+  }
 }

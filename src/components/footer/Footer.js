@@ -1,27 +1,29 @@
-import React, {useContext} from "react";
+import React from "react";
 import "./Footer.scss";
-import {Fade} from "react-reveal";
-import emoji from "react-easy-emoji";
-import StyleContext from "../../contexts/StyleContext";
+import { Fade } from "react-reveal";
+import { FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
-  const {isDark} = useContext(StyleContext);
   return (
     <Fade bottom duration={1000} distance="5px">
       <div className="footer-div">
-        <p className={isDark ? "dark-mode footer-text" : "footer-text"}>
-          {emoji("Made with ❤️ by DeveloperFolio Team")}
-        </p>
-        <p className={isDark ? "dark-mode footer-text" : "footer-text"}>
-          Theme by{" "}
-          <a
-            href="https://github.com/saadpasta/developerFolio"
-            target="_blank"
-            rel="noreferrer"
-          >
-            developerFolio
-          </a>
-        </p>
+        <div className="footer-text">
+          <p>© {new Date().getFullYear()} Srimonchaari Padmanabhan Babu</p>
+          <p>AI Engineer | Drone Technologist | Embedded Systems Enthusiast</p>
+          <p className="footer-icons">
+            <a href="mailto:srimonchaari@gmail.com" aria-label="Email">
+              <FaEnvelope size={20} />
+            </a>
+            <a
+              href="https://linkedin.com/in/srimon"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin size={20} />
+            </a>
+          </p>
+        </div>
       </div>
     </Fade>
   );
