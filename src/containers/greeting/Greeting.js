@@ -7,7 +7,7 @@ import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
 import { greeting } from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
-import srimonImage from "../../assets/images/srimon.jpg"; // ✅ Your real image
+import ShreyaImage from '../../assets/images/shreya.jpg'; // ✅ Your real image
 
 export default function Greeting() {
   const { isDark } = useContext(StyleContext);
@@ -21,7 +21,7 @@ export default function Greeting() {
           {/* Left Column */}
           <div className="greeting-text-div">
             <h1 className="greeting-text">
-              Hi all,&nbsp;I'm <span className="greeting-name">Srimonchaari</span>
+              Hi all,&nbsp;I'm <span className="greeting-name">Shreya</span>
               <span className="wave-emoji">{emoji("👋")}</span>
             </h1>
 
@@ -50,7 +50,7 @@ export default function Greeting() {
               {greeting.resumeLink && (
             <Button
   text="Download My Resume"
-  href="/Srimonchaari_Padmanabhan_Babu_Resume.pdf"
+  href="/SHREYA CHAGANDI BALAKRISHNAN Resume_.pdf"
   download={true}
 />
 
@@ -62,8 +62,8 @@ export default function Greeting() {
           {/* Right Column with Real Image */}
           <div className="greeting-image-div">
             <img
-  src={srimonImage}
-  alt="Srimonchaari"
+  src={ShreyaImage}
+  alt="Shreya"
   className="profile-picture"
   draggable={false}
   onContextMenu={(e) => e.preventDefault()}

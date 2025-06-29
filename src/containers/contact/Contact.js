@@ -35,7 +35,7 @@ export default function Contact() {
 
             <form
               className="contact-form"
-              action="https://formspree.io/f/movwprwl"
+              action="https://formspree.io/f/mldnajbd"
               method="POST"
               encType="multipart/form-data"
               onSubmit={(e) => {
