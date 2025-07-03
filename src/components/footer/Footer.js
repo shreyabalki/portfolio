@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.scss";
-import { Fade } from "react-reveal";
-import { FaLinkedin, FaEnvelope } from "react-icons/fa";
+import {Fade} from "react-reveal";
+import {FaLinkedin, FaEnvelope} from "react-icons/fa";
 
 export default function Footer() {
   return (

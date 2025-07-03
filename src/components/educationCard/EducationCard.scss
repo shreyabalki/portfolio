@@ -37,7 +37,6 @@
   box-shadow: 0 0.5rem 1rem $lightBoxShadowDarker;
 }
 
-
 .education-head {
   display: flex;
   flex-direction: row;
@@ -52,7 +51,6 @@
   overflow: hidden;
   white-space: nowrap;
 }
-
 
 .education-roundedimg {
   object-fit: cover;
@@ -113,9 +111,9 @@
     font-size: 16px;
   }
   .education-text-school {
-  font-size: 20px;
-  line-height: 1.4; 
-}
+    font-size: 20px;
+    line-height: 1.4;
+  }
   .education-text-duration {
     font-size: 16px;
   }

@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import "./App.scss";
 import Main from "./containers/Main";
 
@@ -10,7 +10,7 @@ const ResumeViewer = () => (
     title="Srimonchaari Resume"
     width="100%"
     height="100vh"
-    style={{ border: "none" }}
+    style={{border: "none"}}
   />
 );
 
@@ -24,6 +24,5 @@ function App() {
     </Router>
   );
 }
-
 
 export default App;

@@ -203,8 +203,6 @@
   z-index: 10000 !important;
 }
 
-
-
 /* === Country List Dropdown: Dark Mode === */
 .dark-mode .react-tel-input .country-list {
   background-color: #1f1f1f !important;
@@ -242,7 +240,7 @@
 
 /* Search icon (fix alignment) */
 .dark-mode .react-tel-input .country-list .search-box::before {
-  content: '🔍';
+  content: "🔍";
   position: absolute;
   top: 50%;
   left: 20px;
@@ -434,12 +432,10 @@ input[type="radio"] {
   }
 }
 
-
 /* === Contact Form Background === */
 .dark-mode .contact-form {
   background-color: #1f1f1f;
 }
-
 
 /* === Form Inputs === */
 .dark-mode .form-field input,
@@ -511,7 +507,7 @@ input[type="radio"] {
 .dark-mode .react-tel-input .country-list .search {
   position: sticky;
   top: 0;
-  background-color: #1f1f1f !important;  // match dark container
+  background-color: #1f1f1f !important; // match dark container
   padding: 10px 0 6px 10px;
   z-index: 2;
 }
@@ -539,7 +535,6 @@ input[type="radio"] {
   border-left: none !important;
   border-radius: 0 12px 12px 0 !important;
 }
-
 
 /* WebKit Scrollbar */
 .dark-mode .react-tel-input .country-list::-webkit-scrollbar {
@@ -604,13 +599,13 @@ input[type="radio"] {
   }
 
   .contact-image-div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%; // ✅ Makes it match form height
-  flex: 1;
-  min-width: 280px;
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; // ✅ Makes it match form height
+    flex: 1;
+    min-width: 280px;
+  }
 
   .contact-form-wrapper {
     margin: 2rem auto 0 auto;

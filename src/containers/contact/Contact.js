@@ -1,17 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, {useContext, useState} from "react";
 import "./Contact.scss";
-import { illustration, contactInfo } from "../../portfolio";
-import { Fade } from "react-reveal";
+import {illustration, contactInfo} from "../../portfolio";
+import {Fade} from "react-reveal";
 import email from "../../assets/lottie/email";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import StyleContext from "../../contexts/StyleContext";
-import PhoneInput from 'react-phone-input-2';
-import 'react-phone-input-2/lib/style.css';
-
-
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 export default function Contact() {
-  const { isDark } = useContext(StyleContext);
+  const {isDark} = useContext(StyleContext);
   const [showThankYou, setShowThankYou] = useState(false);
   const [name, setName] = useState("");
   const [emailField, setEmailField] = useState("");
@@ -25,11 +23,16 @@ export default function Contact() {
     <Fade bottom duration={1000} distance="20px">
       <div className="main contact-margin-top" id="contact">
         <div className="contact-div-main">
-
           {/* LEFT - Form Section */}
           <div className="contact-form-wrapper">
             <h1 className="heading contact-title">{contactInfo.title}</h1>
-            <p className={isDark ? "dark-mode contact-subtitle" : "subTitle contact-subtitle"}>
+            <p
+              className={
+                isDark
+                  ? "dark-mode contact-subtitle"
+                  : "subTitle contact-subtitle"
+              }
+            >
               {contactInfo.subtitle}
             </p>
 
@@ -38,14 +41,14 @@ export default function Contact() {
               action="https://formspree.io/f/mldnajbd"
               method="POST"
               encType="multipart/form-data"
-              onSubmit={(e) => {
+              onSubmit={e => {
                 e.preventDefault();
                 const form = e.target;
                 const data = new FormData(form);
                 fetch(form.action, {
                   method: form.method,
                   body: data,
-                  headers: { Accept: "application/json" },
+                  headers: {Accept: "application/json"}
                 }).then(() => {
                   form.reset();
                   setShowThankYou(true);
@@ -58,74 +61,79 @@ export default function Contact() {
               }}
             >
               {/* Honeypot */}
-              <input type="text" name="_gotcha" style={{ display: "none" }} />
+              <input type="text" name="_gotcha" style={{display: "none"}} />
 
-   {/* Name */}
-<div className="form-field">
-  <label htmlFor="name">Your Name</label>
-  <div className="input-wrapper">
-    <input
-      type="text"
-      id="name"
-      name="name"
-      value={name}
-      onChange={(e) => setName(e.target.value)}
-      required
-      placeholder="Enter your full name"
-    />
-    <span className="icon"><i className="fas fa-user"></i></span>
-  </div>
-</div>
+              {/* Name */}
+              <div className="form-field">
+                <label htmlFor="name">Your Name</label>
+                <div className="input-wrapper">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={name}
+                    onChange={e => setName(e.target.value)}
+                    required
+                    placeholder="Enter your full name"
+                  />
+                  <span className="icon">
+                    <i className="fas fa-user"></i>
+                  </span>
+                </div>
+              </div>
 
-{/* Email */}
-<div className="form-field">
-  <label htmlFor="email">Your Email</label>
-  <div className="input-wrapper">
-    <input
-      type="email"
-      id="email"
-      name="email"
-      value={emailField}
-      onChange={(e) => setEmailField(e.target.value)}
-      required
-      placeholder="example@email.com"
-    />
-    <span className="icon"><i className="fas fa-envelope"></i></span>
-  </div>
-</div>
+              {/* Email */}
+              <div className="form-field">
+                <label htmlFor="email">Your Email</label>
+                <div className="input-wrapper">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={emailField}
+                    onChange={e => setEmailField(e.target.value)}
+                    required
+                    placeholder="example@email.com"
+                  />
+                  <span className="icon">
+                    <i className="fas fa-envelope"></i>
+                  </span>
+                </div>
+              </div>
 
-{/* Phone Input with Country Code */}
-<div className="form-field">
-  <label htmlFor="phone">Phone Number (Optional)</label>
-  <div className="phone-input-wrapper">
-    <PhoneInput
-      country="us"
-      enableSearch
-      placeholder="+1 234 567 8900"
-      inputProps={{
-        name: "phone",
-        id: "phone",
-        autoComplete: "tel",
-      }}
-      inputClass="phone-input-custom"
-      containerClass="phone-container"
-      buttonClass="phone-dropdown-button"
-      dropdownClass="phone-dropdown-list"
-      separateDialCode={false} 
-    />
-  </div>
-</div>
-
-
-
+              {/* Phone Input with Country Code */}
+              <div className="form-field">
+                <label htmlFor="phone">Phone Number (Optional)</label>
+                <div className="phone-input-wrapper">
+                  <PhoneInput
+                    country="us"
+                    enableSearch
+                    placeholder="+1 234 567 8900"
+                    inputProps={{
+                      name: "phone",
+                      id: "phone",
+                      autoComplete: "tel"
+                    }}
+                    inputClass="phone-input-custom"
+                    containerClass="phone-container"
+                    buttonClass="phone-dropdown-button"
+                    dropdownClass="phone-dropdown-list"
+                    separateDialCode={false}
+                  />
+                </div>
+              </div>
 
               {/* Subject */}
               <div className="form-field">
                 <label htmlFor="subject">Subject</label>
                 <div className="input-wrapper">
                   <select name="subject" id="subject" required defaultValue="">
-                    <option value="" disabled>Select Subject</option>
-                    <option value="recruiter-contact">I'm a recruiter interested in discussing opportunities</option>
+                    <option value="" disabled>
+                      Select Subject
+                    </option>
+                    <option value="recruiter-contact">
+                      I'm a recruiter interested in discussing opportunities
+                    </option>
                     <option value="collaboration">Collaboration</option>
                     <option value="project">Project Inquiry</option>
                     <option value="mentorship">Mentorship</option>
@@ -143,7 +151,7 @@ export default function Contact() {
                   rows="6"
                   maxLength={maxChars}
                   value={message}
-                  onChange={(e) => setMessage(e.target.value)}
+                  onChange={e => setMessage(e.target.value)}
                   required
                   placeholder=" "
                 />
@@ -159,10 +167,21 @@ export default function Contact() {
                 <label>Preferred Contact Method</label>
                 <div className="radio-group">
                   <label>
-                    <input type="radio" name="preferred_contact" value="email" defaultChecked /> Email
+                    <input
+                      type="radio"
+                      name="preferred_contact"
+                      value="email"
+                      defaultChecked
+                    />{" "}
+                    Email
                   </label>
                   <label>
-                    <input type="radio" name="preferred_contact" value="phone" /> Phone
+                    <input
+                      type="radio"
+                      name="preferred_contact"
+                      value="phone"
+                    />{" "}
+                    Phone
                   </label>
                 </div>
               </div>
@@ -181,7 +200,7 @@ export default function Contact() {
                     type="file"
                     id="attachment"
                     name="attachment"
-                    onChange={(e) =>
+                    onChange={e =>
                       setFileName(e.target.files[0]?.name || "No file chosen")
                     }
                   />

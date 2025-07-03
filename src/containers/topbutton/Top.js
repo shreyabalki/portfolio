@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, {useEffect} from "react";
 import "./Top.scss";
 
 export default function Top() {
@@ -7,7 +7,10 @@ export default function Top() {
     if (!topBtn) return;
 
     // Add class 'show' to button when scroll position is greater than 20px
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
       topBtn.classList.add("show");
     } else {
       topBtn.classList.remove("show");
@@ -15,7 +18,7 @@ export default function Top() {
   };
 
   const TopEvent = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({top: 0, behavior: "smooth"});
   };
 
   useEffect(() => {

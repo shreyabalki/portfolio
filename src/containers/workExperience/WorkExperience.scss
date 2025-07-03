@@ -23,7 +23,10 @@
 
 .experience-cards-div {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); // better card size
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(320px, 1fr)
+  ); // better card size
   gap: 2rem;
   width: 100%;
   box-sizing: border-box;

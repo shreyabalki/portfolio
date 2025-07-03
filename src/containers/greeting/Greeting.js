@@ -1,16 +1,16 @@
-import React, { useContext } from "react";
-import { Fade } from "react-reveal";
+import React, {useContext} from "react";
+import {Fade} from "react-reveal";
 import emoji from "react-easy-emoji";
 import "./Greeting.scss";
 // import landingPerson from "../../assets/lottie/landingPerson";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
-import { greeting } from "../../portfolio";
+import {greeting} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
-import ShreyaImage from '../../assets/images/shreya.jpg'; // ✅ Your real image
+import ShreyaImage from "../../assets/images/shreya.jpg"; // ✅ Your real image
 
 export default function Greeting() {
-  const { isDark } = useContext(StyleContext);
+  const {isDark} = useContext(StyleContext);
 
   if (!greeting.displayGreeting) return null;
 
@@ -25,7 +25,9 @@ export default function Greeting() {
               <span className="wave-emoji">{emoji("👋")}</span>
             </h1>
 
-            <p className={`greeting-text-p ${isDark ? "dark-mode" : "subTitle"}`}>
+            <p
+              className={`greeting-text-p ${isDark ? "dark-mode" : "subTitle"}`}
+            >
               {greeting.subTitle}
             </p>
 
@@ -35,26 +37,23 @@ export default function Greeting() {
 
             <div className="button-greeting-div">
               <Button
-  text="Contact Me"
-  onClick={() => {
-    setTimeout(() => {
-      const el = document.getElementById("contact");
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 100); // slight delay lets layout settle
-  }}
-/>
-
+                text="Contact Me"
+                onClick={() => {
+                  setTimeout(() => {
+                    const el = document.getElementById("contact");
+                    if (el) {
+                      el.scrollIntoView({behavior: "smooth"});
+                    }
+                  }, 100); // slight delay lets layout settle
+                }}
+              />
 
               {greeting.resumeLink && (
-            <Button
-  text="Download My Resume"
-  href="/SHREYA CHAGANDI BALAKRISHNAN Resume_.pdf"
-  download={true}
-/>
-
-
+                <Button
+                  text="Download My Resume"
+                  href="/SHREYA CHAGANDI BALAKRISHNAN Resume_.pdf"
+                  download={true}
+                />
               )}
             </div>
           </div>
@@ -62,12 +61,12 @@ export default function Greeting() {
           {/* Right Column with Real Image */}
           <div className="greeting-image-div">
             <img
-  src={ShreyaImage}
-  alt="Shreya"
-  className="profile-picture"
-  draggable={false}
-  onContextMenu={(e) => e.preventDefault()}
-/>
+              src={ShreyaImage}
+              alt="Shreya"
+              className="profile-picture"
+              draggable={false}
+              onContextMenu={e => e.preventDefault()}
+            />
           </div>
         </div>
       </div>

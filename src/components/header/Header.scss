@@ -159,7 +159,7 @@
   /* Position hamburger icon to the top-right */
   .header .menu-icon {
     position: absolute;
-    top: 15px;   /* Adjust distance from top */
+    top: 15px; /* Adjust distance from top */
     right: 20px; /* Adjust distance from the right */
     padding: 28px 20px;
   }
@@ -176,7 +176,7 @@
 
   /* Mobile menu toggle */
   .header .menu-btn:checked ~ .menu {
-    max-height: 250px;  /* Adjust this for smoother mobile transitions */
+    max-height: 250px; /* Adjust this for smoother mobile transitions */
   }
 
   .header .menu-btn:checked ~ .menu-icon .navicon {
@@ -193,7 +193,7 @@
 
   /* Add this rule to fix duplication issue */
   .header .menu li {
-    width: 100%;  /* Ensure menu items occupy full width for mobile */
+    width: 100%; /* Ensure menu items occupy full width for mobile */
     text-align: center; /* Center the text for clarity */
   }
 
@@ -207,7 +207,7 @@
 
   /* Ensure 'Contact Me' link stays aligned with other menu items */
   .header .menu li {
-    width: 100%;  /* Ensure all menu items occupy full width for mobile */
+    width: 100%; /* Ensure all menu items occupy full width for mobile */
     text-align: center;
   }
 

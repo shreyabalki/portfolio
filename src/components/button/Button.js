@@ -1,7 +1,14 @@
 import React from "react";
 import "./Button.scss";
 
-export default function Button({ text, className = "", href = "#", newTab = false, download = false, onClick }) {
+export default function Button({
+  text,
+  className = "",
+  href = "#",
+  newTab = false,
+  download = false,
+  onClick
+}) {
   const combinedClass = `main-button ${className}`.trim();
 
   return (
@@ -10,8 +17,8 @@ export default function Button({ text, className = "", href = "#", newTab = fals
         className={combinedClass}
         href={href}
         onClick={onClick}
-        {...(newTab ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-        {...(download ? { download: true } : {})}
+        {...(newTab ? {target: "_blank", rel: "noopener noreferrer"} : {})}
+        {...(download ? {download: true} : {})}
       >
         {text}
       </a>

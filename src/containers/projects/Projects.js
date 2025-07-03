@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React, {useContext} from "react";
 import "./Project.scss";
 import Button from "../../components/button/Button";
-import { bigProjects } from "../../portfolio";
+import {bigProjects} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function Projects() {
-  const { isDark } = useContext(StyleContext);
+  const {isDark} = useContext(StyleContext);
 
   if (!bigProjects.display) {
     return null;
@@ -18,7 +18,10 @@ export default function Projects() {
 
       <div className="repo-cards-div-main">
         {bigProjects.projects.map((project, index) => (
-          <div key={index} className={`repo-card-div ${isDark ? "dark-card" : ""}`}>
+          <div
+            key={index}
+            className={`repo-card-div ${isDark ? "dark-card" : ""}`}
+          >
             <img
               src={project.image}
               alt={project.projectName}

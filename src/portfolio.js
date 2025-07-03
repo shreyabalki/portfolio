@@ -23,9 +23,9 @@ const greeting = {
   username: "Shreya Chagandi Balakrishnan",
   title: "Hi all, I'm Shreya ",
   subTitle: emoji(
-  "Computer Science graduate with hands-on experience in UI/UX design, backend systems, and embedded tech. Skilled in Power Platform, KNIME, SQL, and DevOps, I craft intuitive digital solutions by blending creativity with technical precision. Always learning, always building for the future."
-),
- resumeLink: "/SHREYA CHAGANDI BALAKRISHNAN Resume_.pdf", // Set to empty to hide the button
+    "Computer Science graduate with hands-on experience in UI/UX design, backend systems, and embedded tech. Skilled in Power Platform, KNIME, SQL, and DevOps, I craft intuitive digital solutions by blending creativity with technical precision. Always learning, always building for the future."
+  ),
+  resumeLink: "/SHREYA CHAGANDI BALAKRISHNAN Resume_.pdf", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -41,33 +41,45 @@ const socialMediaLinks = {
 
 const skillsSection = {
   title: "What I Do",
-  subTitle: "UI/UX DESIGNER | AUTOMATION ENGINEER | LOW-CODE DEVELOPER | AI ENTHUSIAST",
+  subTitle:
+    "UI/UX DESIGNER | AUTOMATION ENGINEER | LOW-CODE DEVELOPER | AI ENTHUSIAST",
   skills: [
-    emoji("⚡ Design intuitive UI/UX prototypes and wireframes using Figma with a focus on usability"),
-    emoji("⚡ Automate business processes using Power Apps, Power Automate, and KNIME ETL pipelines"),
-    emoji("⚡ Develop backend APIs and automation logic with Python, Java, and FastAPI"),
-    emoji("⚡ Build responsive front-end interfaces using React.js, Tailwind CSS, and Redux"),
-    emoji("⚡ Apply AI/ML tools like PyTorch, Hugging Face Transformers, and spaCy for intelligent features"),
-    emoji("⚡ Deploy and manage solutions using Docker, Azure, Databricks, and DevOps practices")
+    emoji(
+      "⚡ Design intuitive UI/UX prototypes and wireframes using Figma with a focus on usability"
+    ),
+    emoji(
+      "⚡ Automate business processes using Power Apps, Power Automate, and KNIME ETL pipelines"
+    ),
+    emoji(
+      "⚡ Develop backend APIs and automation logic with Python, Java, and FastAPI"
+    ),
+    emoji(
+      "⚡ Build responsive front-end interfaces using React.js, Tailwind CSS, and Redux"
+    ),
+    emoji(
+      "⚡ Apply AI/ML tools like PyTorch, Hugging Face Transformers, and spaCy for intelligent features"
+    ),
+    emoji(
+      "⚡ Deploy and manage solutions using Docker, Azure, Databricks, and DevOps practices"
+    )
   ],
   softwareSkills: [
-    { skillName: "HTML5", fontAwesomeClassname: "fab fa-html5" },
-    { skillName: "CSS3", fontAwesomeClassname: "fab fa-css3-alt" },
-    { skillName: "JavaScript", fontAwesomeClassname: "fab fa-js" },
-    { skillName: "React", fontAwesomeClassname: "fab fa-react" },
-    { skillName: "Node.js", fontAwesomeClassname: "fab fa-node" },
-    { skillName: "Java", fontAwesomeClassname: "fab fa-java" },
-    { skillName: "Figma", fontAwesomeClassname: "fas fa-pencil-ruler" },
-    { skillName: "Python", fontAwesomeClassname: "fab fa-python" },
-    { skillName: "Power Platform", fontAwesomeClassname: "fas fa-bolt" },
-    { skillName: "SQL", fontAwesomeClassname: "fas fa-database" },
-    { skillName: "Azure", fontAwesomeClassname: "fab fa-microsoft" },
-    { skillName: "Docker", fontAwesomeClassname: "fab fa-docker" },
-    { skillName: "KNIME", fontAwesomeClassname: "fas fa-project-diagram" },
+    {skillName: "HTML5", fontAwesomeClassname: "fab fa-html5"},
+    {skillName: "CSS3", fontAwesomeClassname: "fab fa-css3-alt"},
+    {skillName: "JavaScript", fontAwesomeClassname: "fab fa-js"},
+    {skillName: "React", fontAwesomeClassname: "fab fa-react"},
+    {skillName: "Node.js", fontAwesomeClassname: "fab fa-node"},
+    {skillName: "Java", fontAwesomeClassname: "fab fa-java"},
+    {skillName: "Figma", fontAwesomeClassname: "fas fa-pencil-ruler"},
+    {skillName: "Python", fontAwesomeClassname: "fab fa-python"},
+    {skillName: "Power Platform", fontAwesomeClassname: "fas fa-bolt"},
+    {skillName: "SQL", fontAwesomeClassname: "fas fa-database"},
+    {skillName: "Azure", fontAwesomeClassname: "fab fa-microsoft"},
+    {skillName: "Docker", fontAwesomeClassname: "fab fa-docker"},
+    {skillName: "KNIME", fontAwesomeClassname: "fas fa-project-diagram"}
   ],
   display: true
 };
-
 
 // Education Section
 
@@ -80,7 +92,7 @@ const educationInfo = {
       subHeader: "MSc in Artificial Intelligence",
       duration: "April 2025 - Ongoing",
       desc: "Conducted applied research on agentic AI systems and autonomous backend frameworks using Langchain and LangGraph. Academic work focused on bridging generative models with real-time operational systems for MEMS development.",
-   descBullets: [
+      descBullets: [
         "Pursuing advanced coursework in agentic AI systems, generative architectures, and autonomous decision-making frameworks",
         "Engaged in research focused on real-time AI deployment in MEMS development, leveraging Langchain and LangGraph in secure backend environments",
         "Hands-on experience with cloud-integrated AI platforms, NLP pipelines, and scalable backend systems aligned with industry use cases"
@@ -115,11 +127,11 @@ const techStack = {
       progressPercentage: "90%"
     },
     {
-     Stack: "Backend Architecture & APIs",
+      Stack: "Backend Architecture & APIs",
       progressPercentage: "80%"
     },
     {
-       Stack: "AI/ML & Data Workflows",
+      Stack: "AI/ML & Data Workflows",
       progressPercentage: "75%"
     },
     {
@@ -134,29 +146,25 @@ const techStack = {
   displayCodersrank: false
 };
 
-
 // Work experience section
 
 const workExperiences = {
   display: true,
-  
+
   experience: [
-    
     {
       role: "Embedded Systems Intern – Automation Prototyping",
       company: "Big Bang Boom Solutions",
       companylogo: require("./assets/images/bbbslogo.png"),
       date: "April 2024 – June 2024",
-      desc:
-        "Engineered microcontroller-based automation circuits for drone POC validation, minimizing manual intervention in embedded prototypes.",
+      desc: "Engineered microcontroller-based automation circuits for drone POC validation, minimizing manual intervention in embedded prototypes.",
       descBullets: [
         "Prototyped embedded control boards with integrated sensors",
         "Streamlined logic using microprocessor-based automation",
         "Achieved 100% test compliance through rigorous validation cycles"
       ]
-    },
+    }
   ]
-
 };
 
 const openSource = {
@@ -164,37 +172,37 @@ const openSource = {
   display: false
 };
 
-
 // Some big projects you have worked on
 
 const bigProjects = {
   title: "Big Projects",
-  subtitle:  "KEY ACADEMIC & TECHNICAL PROJECTS",
+  subtitle: "KEY ACADEMIC & TECHNICAL PROJECTS",
   projects: [
     {
-     image: require("./assets/images/blockchain.png"),
+      image: require("./assets/images/blockchain.png"),
       projectName: "Document Validation & Face Recognition Using Blockchain",
-      projectDesc: "Built a blockchain-based document authentication system integrated with SVM-driven facial recognition to ensure integrity and prevent unauthorized access.",
-      footerLink: [] 
+      projectDesc:
+        "Built a blockchain-based document authentication system integrated with SVM-driven facial recognition to ensure integrity and prevent unauthorized access.",
+      footerLink: []
     },
 
     {
       image: require("./assets/images/steganography.png"),
       projectName: "Image Steganography",
-      projectDesc: "Developed a tool to securely embed and retrieve encrypted messages within image files using custom encoding/decoding techniques.",
+      projectDesc:
+        "Developed a tool to securely embed and retrieve encrypted messages within image files using custom encoding/decoding techniques.",
       footerLink: []
     },
     {
       image: require("./assets/images/ott.png"),
       projectName: "OTT Platform Prototype – UI/UX Design",
-      projectDesc: "Designed a high-fidelity streaming application prototype in Figma, emphasizing user engagement, multimedia flow, and navigation structure.",
+      projectDesc:
+        "Designed a high-fidelity streaming application prototype in Figma, emphasizing user engagement, multimedia flow, and navigation structure.",
       footerLink: []
-    },
-
+    }
   ],
   display: true
 };
-
 
 // Achievement Section
 // Include certificates, talks etc
@@ -204,26 +212,23 @@ const achievementSection = {
   subtitle:
     "Recognized for academic excellence, technical innovation, and continuous upskilling through hands-on training and certifications.",
 
-
   achievementsCards: [
-
     {
-       title: "Advanced UI/UX Design & Development – FITA Academy",
+      title: "Advanced UI/UX Design & Development – FITA Academy",
       subtitle:
         "Completed hands-on training in professional UI/UX principles, wireframing, user flow design, and responsive web interfaces.",
       image: require("./assets/images/fita-uiux.png"),
       imageAlt: "FITA UI/UX Certificate",
-      footerLink:
-       []
+      footerLink: []
     },
     {
-  title: "Website UI/UX Designing using ChatGPT",
+      title: "Website UI/UX Designing using ChatGPT",
       subtitle:
         "Built intelligent UI mockups and prototypes by integrating ChatGPT-assisted design workflows.",
       image: require("./assets/images/chatgpt-uiux.png"),
       imageAlt: "ChatGPT UI/UX Certificate",
       footerLink: []
-},
+    },
 
     {
       title: "Microsoft Power BI – Data Analysis and Report Design",
@@ -249,15 +254,14 @@ const achievementSection = {
       imageAlt: "Front-End Development Certificate",
       footerLink: []
     },
-  {
- title: "Cyber Security – TG Cyberlabs",
+    {
+      title: "Cyber Security – TG Cyberlabs",
       subtitle:
         "Completed a practical cybersecurity training program covering threat detection, basic network security, and safe software practices.",
       image: require("./assets/images/tg-cyberlabs.png"),
       imageAlt: "Cyber Security Certificate",
       footerLink: []
-},
-
+    }
   ],
   display: true
 };
@@ -278,12 +282,11 @@ const contactInfo = {
   email_address: "shreyabala0308@gmail.com"
 };
 
-
 // Twitter Section
 
 const twitterDetails = {
   userName: "twitter", // or your username
-  display: false        // ✅ turn this off
+  display: false // ✅ turn this off
 };
 
 const isHireable = false; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
