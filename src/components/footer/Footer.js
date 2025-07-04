@@ -8,14 +8,14 @@ export default function Footer() {
     <Fade bottom duration={1000} distance="5px">
       <div className="footer-div">
         <div className="footer-text">
-          <p>© {new Date().getFullYear()} Srimonchaari Padmanabhan Babu</p>
-          <p>AI Engineer | Drone Technologist | Embedded Systems Enthusiast</p>
+          <p>© {new Date().getFullYear()} Shreya Chagandi Balakrishnan</p>
+          <p>UI Designer | UX Analytics | AI x BI | Predictive Dashboards</p>
           <p className="footer-icons">
-            <a href="mailto:srimonchaari@gmail.com" aria-label="Email">
+            <a href="mailto:shreyabala0308@gmail.com" aria-label="Email">
               <FaEnvelope size={20} />
             </a>
             <a
-              href="https://linkedin.com/in/srimon"
+              href="https://www.linkedin.com/in/shreya-bala/"
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"

@@ -32,7 +32,7 @@ const greeting = {
 // Social Media Links
 
 const socialMediaLinks = {
-  linkedin: "linkedin.com/in/shreya-bala",
+  linkedin: "https://linkedin.com/in/shreya-bala",
   gmail: "shreyabala0308@gmail.com",
   display: true // Set true to display this section, defaults to false
 };
@@ -59,9 +59,7 @@ const skillsSection = {
     emoji(
       "⚡ Apply AI/ML tools like PyTorch, Hugging Face Transformers, and spaCy for intelligent features"
     ),
-    emoji(
-      "⚡ Deploy and manage solutions using Docker, Azure, Databricks, and DevOps practices"
-    )
+    
   ],
   softwareSkills: [
     {skillName: "HTML5", fontAwesomeClassname: "fab fa-html5"},
@@ -74,9 +72,8 @@ const skillsSection = {
     {skillName: "Python", fontAwesomeClassname: "fab fa-python"},
     {skillName: "Power Platform", fontAwesomeClassname: "fas fa-bolt"},
     {skillName: "SQL", fontAwesomeClassname: "fas fa-database"},
-    {skillName: "Azure", fontAwesomeClassname: "fab fa-microsoft"},
-    {skillName: "Docker", fontAwesomeClassname: "fab fa-docker"},
     {skillName: "KNIME", fontAwesomeClassname: "fas fa-project-diagram"}
+    
   ],
   display: true
 };
@@ -138,10 +135,7 @@ const techStack = {
       Stack: "Low-Code Platforms & ETL (Power Platform, KNIME)",
       progressPercentage: "75%" // Workflow automation, data pipelines
     },
-    {
-      Stack: "Cloud & DevOps (Azure, Docker)",
-      progressPercentage: "70%" // Deployment, scalability, container orchestration
-    }
+
   ],
   displayCodersrank: false
 };
@@ -280,14 +274,7 @@ const contactInfo = {
   subtitle: "Want to collaborate or just say hi? I'm always open for a chat.",
   number: "(+49)176 22913521",
   email_address: "shreyabala0308@gmail.com"
-};
-
-// Twitter Section
-
-const twitterDetails = {
-  userName: "twitter", // or your username
-  display: false // ✅ turn this off
-};
+}; 
 
 const isHireable = false; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
 
@@ -302,7 +289,6 @@ export {
   workExperiences,
   bigProjects,
   achievementSection,
-  twitterDetails,
   contactInfo,
   isHireable,
   openSource,
