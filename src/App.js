@@ -6,8 +6,8 @@ import Main from "./containers/Main";
 // Resume Viewer Component
 const ResumeViewer = () => (
   <iframe
-    src="/Srimonchaari_Padmanabhan_Babu_Resume.pdf"
-    title="Srimonchaari Resume"
+    src="/SHREYA CHAGANDI BALAKRISHNAN Resume_.pdf"
+    title="Shreya Resume"
     width="100%"
     height="100vh"
     style={{border: "none"}}

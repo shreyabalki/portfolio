@@ -21,20 +21,21 @@ const illustration = {
 
 const greeting = {
   username: "Shreya Chagandi Balakrishnan",
-  title: "Hi all, I'm Shreya ",
+  title: "Hi all, I'm Shreya 👋",
   subTitle: emoji(
-    "Computer Science graduate with hands-on experience in UI/UX design, backend systems, and embedded tech. Skilled in Power Platform, KNIME, SQL, and DevOps, I craft intuitive digital solutions by blending creativity with technical precision. Always learning, always building for the future."
+    "A passionate AI graduate and Full Stack Developer 🚀 skilled in designing user experiences, backend architecture, and automation with Microsoft Power Platform, FastAPI, React.js, and more."
   ),
-  resumeLink: "/SHREYA CHAGANDI BALAKRISHNAN Resume_.pdf", // Set to empty to hide the button
-  displayGreeting: true // Set false to hide this section, defaults to true
+  resumeLink: "https://drive.google.com/your-updated-resume-link", // Update accordingly
+  displayGreeting: true
 };
 
 // Social Media Links
 
 const socialMediaLinks = {
-  linkedin: "https://linkedin.com/in/shreya-bala",
-  gmail: "shreyabala0308@gmail.com",
-  display: true // Set true to display this section, defaults to false
+  github: "https://github.com/shreyabalki",
+  linkedin: "https://www.linkedin.com/in/shreya-bala/",
+  gmail: "shreyacb.eu@gmail.com",
+  display: true
 };
 
 // Skills Section
@@ -58,8 +59,7 @@ const skillsSection = {
     ),
     emoji(
       "⚡ Apply AI/ML tools like PyTorch, Hugging Face Transformers, and spaCy for intelligent features"
-    ),
-    
+    )
   ],
   softwareSkills: [
     {skillName: "HTML5", fontAwesomeClassname: "fab fa-html5"},
@@ -73,7 +73,6 @@ const skillsSection = {
     {skillName: "Power Platform", fontAwesomeClassname: "fas fa-bolt"},
     {skillName: "SQL", fontAwesomeClassname: "fas fa-database"},
     {skillName: "KNIME", fontAwesomeClassname: "fas fa-project-diagram"}
-    
   ],
   display: true
 };
@@ -134,8 +133,7 @@ const techStack = {
     {
       Stack: "Low-Code Platforms & ETL (Power Platform, KNIME)",
       progressPercentage: "75%" // Workflow automation, data pipelines
-    },
-
+    }
   ],
   displayCodersrank: false
 };
@@ -273,8 +271,8 @@ const contactInfo = {
   title: emoji("Contact Me ☎️"),
   subtitle: "Want to collaborate or just say hi? I'm always open for a chat.",
   number: "(+49)176 22913521",
-  email_address: "shreyabala0308@gmail.com"
-}; 
+  email_address: "shreyacb.eu@gmail.com"
+};
 
 const isHireable = false; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
 

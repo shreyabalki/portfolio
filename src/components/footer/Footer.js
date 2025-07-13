@@ -11,7 +11,7 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} Shreya Chagandi Balakrishnan</p>
           <p>UI Designer | UX Analytics | AI x BI | Predictive Dashboards</p>
           <p className="footer-icons">
-            <a href="mailto:shreyabala0308@gmail.com" aria-label="Email">
+            <a href="mailto:shreyacb.eu@gmail.com" aria-label="Email">
               <FaEnvelope size={20} />
             </a>
             <a

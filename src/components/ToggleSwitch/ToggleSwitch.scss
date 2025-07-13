@@ -80,4 +80,9 @@ input:focus + .slider {
   .slider::before {
     transform: scale(1.05);
   }
+  @media (max-width: 425px) {
+    .switch {
+      transform: scale(0.9);
+    }
+  }
 }

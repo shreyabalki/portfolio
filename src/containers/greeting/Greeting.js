@@ -2,12 +2,11 @@ import React, {useContext} from "react";
 import {Fade} from "react-reveal";
 import emoji from "react-easy-emoji";
 import "./Greeting.scss";
-// import landingPerson from "../../assets/lottie/landingPerson";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
 import {greeting} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
-import ShreyaImage from "../../assets/images/shreya.jpg"; // ✅ Your real image
+import ShreyaImage from "../../assets/images/shreya.jpg";
 
 export default function Greeting() {
   const {isDark} = useContext(StyleContext);
@@ -18,11 +17,13 @@ export default function Greeting() {
     <Fade bottom duration={1000} distance="40px">
       <div className="greet-main" id="greeting">
         <div className="greeting-main">
-          {/* Left Column */}
+          {/* Text Section */}
           <div className="greeting-text-div">
             <h1 className="greeting-text">
               Hi all,&nbsp;I'm <span className="greeting-name">Shreya</span>
-              <span className="wave-emoji">{emoji("👋")}</span>
+              <span className="wave-emoji" role="img" aria-label="waving hand">
+                {emoji("👋")}
+              </span>
             </h1>
 
             <p
@@ -39,30 +40,27 @@ export default function Greeting() {
               <Button
                 text="Contact Me"
                 onClick={() => {
-                  setTimeout(() => {
-                    const el = document.getElementById("contact");
-                    if (el) {
-                      el.scrollIntoView({behavior: "smooth"});
-                    }
-                  }, 100); // slight delay lets layout settle
+                  const el = document.getElementById("contact");
+                  if (el) {
+                    el.scrollIntoView({behavior: "smooth", block: "start"});
+                  }
                 }}
               />
 
-              {greeting.resumeLink && (
-                <Button
-                  text="Download My Resume"
-                  href="/SHREYA CHAGANDI BALAKRISHNAN Resume_.pdf"
-                  download={true}
-                />
-              )}
+              <Button
+                text="Download My Resume"
+                href="https://drive.google.com/uc?export=download&id=1exKOMeRlv3lHM9T6qzSJysBKcjePmyki"
+                newTab={true}
+                download={true}
+              />
             </div>
           </div>
 
-          {/* Right Column with Real Image */}
+          {/* Image Section */}
           <div className="greeting-image-div">
             <img
               src={ShreyaImage}
-              alt="Shreya"
+              alt="Shreya's profile"
               className="profile-picture"
               draggable={false}
               onContextMenu={e => e.preventDefault()}

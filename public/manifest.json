@@ -4,7 +4,8 @@
   "icons": [
     {
       "src": "/shreya.jpg",
-      "sizes": "64x64"
+      "sizes": "64x64",
+      "type": "image/jpeg"
     },
     {
       "src": "/shreya.jpg",

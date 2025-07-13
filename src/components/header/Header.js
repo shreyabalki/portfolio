@@ -1,8 +1,8 @@
-import React, {useContext, useEffect} from "react";
-import Headroom from "react-headroom";
+import React, {useContext, useEffect, useState} from "react";
+import Headroom from "react-headroom"; // React Headroom
 import "./Header.scss";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
-import StyleContext from "../../contexts/StyleContext";
+import StyleContext from "../../contexts/StyleContext"; // Context for dark mode
 import {
   greeting,
   workExperiences,
@@ -20,13 +20,17 @@ function Header() {
   const viewAchievement = achievementSection.display;
   const viewResume = resumeSection.display;
 
-  // Handle scroll to automatically close menu on mobile
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to control mobile menu visibility
+
+  // Handle scroll to automatically close menu on both desktop and mobile
   useEffect(() => {
     const handleScroll = () => {
       const menuCheckbox = document.getElementById("menu-btn");
-      // Close the menu when the user scrolls (only on mobile)
-      if (window.innerWidth <= 768 && menuCheckbox.checked) {
+
+      // Close the menu when the user scrolls (on both mobile and desktop)
+      if (menuCheckbox.checked) {
         menuCheckbox.checked = false; // Uncheck the menu to close it
+        setIsMenuOpen(false); // Update the state to close the menu
       }
     };
 
@@ -38,6 +42,11 @@ function Header() {
     };
   }, []);
 
+  // Handle mobile menu toggle
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen); // Toggle menu visibility
+  };
+
   return (
     <Headroom>
       <header className={isDark ? "dark-menu header" : "header"}>
@@ -48,7 +57,13 @@ function Header() {
         </a>
 
         {/* Mobile menu toggle */}
-        <input className="menu-btn" type="checkbox" id="menu-btn" />
+        <input
+          className="menu-btn"
+          type="checkbox"
+          id="menu-btn"
+          checked={isMenuOpen} // Use state to control the checkbox
+          onChange={toggleMenu}
+        />
         <label className="menu-icon" htmlFor="menu-btn">
           <span className={isDark ? "navicon navicon-dark" : "navicon"}></span>
         </label>
@@ -82,6 +97,7 @@ function Header() {
               </a>
             </li>
           )}
+
           <li>
             <a href="#contact">Contact Me</a>
           </li>
