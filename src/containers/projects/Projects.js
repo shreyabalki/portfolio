@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import "./Project.scss";
 import {bigProjects} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
+import Button from "../../components/button/Button";
 
 export default function Projects() {
   const {isDark} = useContext(StyleContext);
