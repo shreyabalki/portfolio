@@ -1,6 +1,5 @@
 import React, {useContext} from "react";
 import "./Project.scss";
-import Button from "../../components/button/Button";
 import {bigProjects} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 
@@ -32,11 +31,14 @@ export default function Projects() {
                 <span key={tag}>{tag}</span>
               ))}
             </div>
+<<<<<<< HEAD
+=======
             <div className="project-links">
               {project.footerLink?.map((link, i) => (
                 <Button key={i} text={link.name} href={link.url} />
               ))}
             </div>
+>>>>>>> origin/main
           </article>
         ))}
       </div>

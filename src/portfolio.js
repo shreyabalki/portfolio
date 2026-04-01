@@ -18,8 +18,11 @@ const greeting = {
   role: "UI/UX Designer + AI Engineer",
   subTitle:
     "I design intuitive product experiences and engineer AI workflows that deliver measurable outcomes across real-world systems.",
+<<<<<<< HEAD
+=======
   resumeLink:
     "https://drive.google.com/uc?export=download&id=1exKOMeRlv3lHM9T6qzSJysBKcjePmyki",
+>>>>>>> origin/main
   displayGreeting: true
 };
 
@@ -98,7 +101,11 @@ const openSource = {
 
 const bigProjects = {
   title: "Selected Work",
+<<<<<<< HEAD
+  subtitle: "Selected AI, UX, and product engineering work",
+=======
   subtitle: "Case studies in AI, UX, and product engineering",
+>>>>>>> origin/main
   projects: [
     {
       slug: "secure-document-verification",
@@ -106,12 +113,16 @@ const bigProjects = {
       projectName: "Secure Document Verification",
       projectDesc:
         "Designed and built a blockchain-backed verification flow with SVM-based face matching for identity confidence.",
+<<<<<<< HEAD
+      tags: ["AI", "Security", "Web"]
+=======
       tags: ["AI", "Security", "Web"],
       caseStudy:
         "End-to-end system for tamper-resistant certificate checks. I designed the user flow, implemented verification logic, and validated model-assisted identity matching.",
       footerLink: [
         {name: "View Case Study", url: "/projects/secure-document-verification"}
       ]
+>>>>>>> origin/main
     },
     {
       slug: "ai-powered-ott-ux",
@@ -119,6 +130,11 @@ const bigProjects = {
       projectName: "AI-Powered OTT UX Prototype",
       projectDesc:
         "Created a high-fidelity streaming experience focused on content discovery, watch continuity, and intuitive navigation.",
+<<<<<<< HEAD
+      tags: ["UX", "Product", "Design"]
+    },
+    {
+=======
       tags: ["UX", "Product", "Design"],
       caseStudy:
         "A recruiter-focused case study showing the UX process: problem framing, wireframes, high-fidelity design, usability checks, and final interaction system.",
@@ -128,16 +144,21 @@ const bigProjects = {
     },
     {
       slug: "steganography-tool",
+>>>>>>> origin/main
       image: require("./assets/images/steganography.png"),
       projectName: "Image Steganography Tool",
       projectDesc:
         "Built a secure message embedding tool for images with reliable encoding/decoding and a simple user interface.",
+<<<<<<< HEAD
+      tags: ["AI", "Tooling", "Security"]
+=======
       tags: ["AI", "Tooling", "Security"],
       caseStudy:
         "Designed for usability and trust: clear states, error-safe inputs, and deterministic output for encoded/decoded messages.",
       footerLink: [
         {name: "View Case Study", url: "/projects/steganography-tool"}
       ]
+>>>>>>> origin/main
     }
   ],
   display: true
@@ -153,7 +174,11 @@ const achievementSection = {
 const resumeSection = {
   title: "Resume",
   subtitle: "",
+<<<<<<< HEAD
+  display: false
+=======
   display: true
+>>>>>>> origin/main
 };
 
 const contactInfo = {

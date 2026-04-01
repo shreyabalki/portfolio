@@ -45,6 +45,8 @@ function Header() {
           </li>
           <li className="toggle-item" aria-label="Toggle theme">
             <ToggleSwitch />
+<<<<<<< HEAD
+=======
           </li>
           <li>
             <a
@@ -55,6 +57,7 @@ function Header() {
             >
               Resume
             </a>
+>>>>>>> origin/main
           </li>
         </ul>
       </header>

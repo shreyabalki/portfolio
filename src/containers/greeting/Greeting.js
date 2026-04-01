@@ -21,12 +21,15 @@ export default function Greeting() {
             <p className="greeting-text-p">{greeting.subTitle}</p>
             <div className="button-greeting-div">
               <Button text="View Work" href="#projects" />
+<<<<<<< HEAD
+=======
               <Button
                 text="Resume"
                 href={greeting.resumeLink}
                 newTab={true}
                 className="secondary"
               />
+>>>>>>> origin/main
             </div>
           </div>
 

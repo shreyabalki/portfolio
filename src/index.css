@@ -5,6 +5,22 @@ body,
 #root {
   margin: 0;
   min-height: 100%;
+<<<<<<< HEAD
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+=======
 }
 
 html {
@@ -21,6 +37,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+>>>>>>> origin/main
 h1,
 h2,
 h3,
