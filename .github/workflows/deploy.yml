@@ -38,6 +38,7 @@ jobs:
       - name: Build project 🏗️
         run: npm run build
 
+<<<<<<< HEAD
   deploy:
     name: Netlify Deploy
     needs: build
@@ -62,6 +63,11 @@ jobs:
       - name: Deploy to Netlify 🚀
         uses: nwtgck/actions-netlify@v3.0
         with:
+=======
+      - name: Deploy to Netlify 🚀
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+>>>>>>> origin/main
           publish-dir: ./build
           production-branch: ${{ github.ref_name }}
           github-token: ${{ secrets.GITHUB_TOKEN }}

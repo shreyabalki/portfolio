@@ -19,10 +19,14 @@
   border-radius: var(--radius-md);
   padding: 12px;
   background: var(--surface);
+<<<<<<< HEAD
   transition:
     border-color 0.2s ease,
     transform 0.2s ease,
     box-shadow 0.2s ease;
+=======
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+>>>>>>> origin/main
 }
 
 .repo-card-div:hover {
@@ -72,6 +76,13 @@
   background: var(--surface-2);
 }
 
+<<<<<<< HEAD
+=======
+.project-links {
+  margin-top: 12px;
+}
+
+>>>>>>> origin/main
 @media (max-width: 1024px) {
   .repo-card-div,
   .repo-card-div.featured {
