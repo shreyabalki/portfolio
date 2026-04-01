@@ -1,223 +1,112 @@
 @import "../../_globalColor";
 
-/* Corrected Main Container */
-.main {
-  width: 90%;
-  padding: 20px 10px;
-  margin: 4rem auto 0 auto;
-}
-
-/* Ensure scroll-margin on contact section works globally */
-#contact {
-  scroll-margin-top: 100px; /* helps scroll correctly when Contact Me is clicked */
-}
-
+.main,
 .greet-main {
-  width: 90%;
-  padding: 20px 10px;
-  margin: 2rem auto 0 auto;
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 24px 0;
+}
+
+#contact {
+  scroll-margin-top: 90px;
 }
 
 .greeting-main {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.5rem;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
 }
 
-.greeting-main > * {
-  flex: 1;
-  min-width: 300px;
-  margin-bottom: 30px;
+.greeting-text {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: $titleColor !important;
+  text-transform: uppercase;
 }
 
-.subTitle {
-  color: $subTitle !important;
+.greeting-text-p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.7;
+  color: $subTitle;
+  max-width: 62ch;
+  margin-top: 1.25rem;
 }
 
 .empty-div {
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 
 .button-greeting-div {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 40px;
-}
-
-.download-link-button {
-  text-decoration: none;
-}
-
-.greeting-text {
-  font-size: 64px;
-  line-height: 1.2;
-  color: $textColor !important;
-  font-weight: bold;
-}
-
-.greeting-text-p {
-  font-size: 26px;
-  line-height: 1.6;
-  color: $subTitle;
-  margin-top: 1rem;
+  gap: 0.8rem;
+  margin-top: 1.8rem;
 }
 
 .greeting-image-div {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-/* ✅ Profile Picture Styling */
 .profile-picture {
-  max-width: 100%;
-  width: 75%;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: min(360px, 100%);
+  border-radius: 0;
+  border: 1px solid $lightBorder1;
+  filter: grayscale(28%);
+  box-shadow: none;
 }
 
 .profile-picture:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: none;
+  box-shadow: none;
+}
+
+.dark-mode .greeting-text,
+.dark-mode .greeting-name {
+  color: $textColorDark !important;
 }
 
 .dark-mode .profile-picture {
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
-}
-.dark-mode .greeting-text {
-  color: #ffffff !important;
-}
-.dark-mode .greeting-name {
-  color: #ffffff !important;
+  border-color: $darkBorder1;
+  filter: grayscale(18%);
 }
 
-/* 👋 Wave emoji animation */
 .wave-emoji {
-  animation-duration: 1.8s;
-  animation-iteration-count: infinite;
-  animation-name: wave;
+  animation: wave 1.8s infinite;
   display: inline-block;
   transform-origin: 70% 70%;
 }
 
-.greeting-name {
-  display: inline-block;
-  font-weight: bold;
-  white-space: nowrap;
-}
-
 @keyframes wave {
-  0% {
-    transform: rotate(0deg);
-  }
-  10% {
-    transform: rotate(-10deg);
-  }
-  20% {
-    transform: rotate(12deg);
-  }
-  30% {
-    transform: rotate(-10deg);
-  }
-  40% {
-    transform: rotate(9deg);
-  }
-  50% {
-    transform: rotate(0deg);
-  }
+  0%,
   100% {
     transform: rotate(0deg);
   }
-}
-
-/* =====================
-   Responsive Styles
-======================== */
-
-@media (max-width: 1380px) {
-  .greeting-text {
-    font-size: 48px;
+  20% {
+    transform: rotate(10deg);
   }
-
-  .greeting-text-p {
-    font-size: 22px;
+  40% {
+    transform: rotate(-8deg);
   }
 }
 
 @media (max-width: 992px) {
   .greeting-main {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .greeting-text {
-    font-size: 40px;
-  }
-
-  .greeting-text-p {
-    font-size: 20px;
-  }
-
-  .button-greeting-div {
-    justify-content: center;
-  }
-
-  .profile-picture {
-    width: 60%;
-  }
-}
-
-@media (max-width: 768px) {
-  .greeting-text {
-    font-size: 32px;
-  }
-
-  .greeting-text-p {
-    font-size: 18px;
+    grid-template-columns: 1fr;
+    text-align: left;
   }
 
   .greeting-image-div {
-    height: auto;
-    text-align: center;
-  }
-
-  .profile-picture {
-    max-width: 250px;
+    justify-content: flex-start;
   }
 }
 
-@media (max-width: 480px) {
-  .greeting-text {
-    font-size: 26px;
-  }
-
-  .greeting-text-p {
-    font-size: 16px;
-  }
-
+@media (max-width: 640px) {
   .profile-picture {
-    width: 90%;
-  }
-}
-
-@media (max-width: 320px) {
-  .main {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .greeting-text {
-    font-size: 22px;
-  }
-
-  .greeting-text-p {
-    font-size: 14px;
+    width: min(280px, 100%);
   }
 }
