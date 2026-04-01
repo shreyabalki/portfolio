@@ -25,25 +25,39 @@ function Header() {
           checked={isMenuOpen}
           onChange={() => setIsMenuOpen(prev => !prev)}
         />
-        <label className="menu-icon" htmlFor="menu-btn" aria-label="Toggle navigation">
+        <label
+          className="menu-icon"
+          htmlFor="menu-btn"
+          aria-label="Toggle navigation"
+        >
           <span className="navicon"></span>
         </label>
 
         <ul className="menu" role="list">
           <li>
-            <a href="#projects" onClick={closeMenu}>Work</a>
+            <a href="#projects" onClick={closeMenu}>
+              Work
+            </a>
           </li>
           <li>
-            <a href="#about" onClick={closeMenu}>About</a>
+            <a href="#about" onClick={closeMenu}>
+              About
+            </a>
           </li>
           <li>
-            <a href="#experience" onClick={closeMenu}>Experience</a>
+            <a href="#experience" onClick={closeMenu}>
+              Experience
+            </a>
           </li>
           <li>
-            <a href="#skills" onClick={closeMenu}>Skills</a>
+            <a href="#skills" onClick={closeMenu}>
+              Skills
+            </a>
           </li>
           <li>
-            <a href="#contact" onClick={closeMenu}>Contact</a>
+            <a href="#contact" onClick={closeMenu}>
+              Contact
+            </a>
           </li>
           <li className="toggle-item" aria-label="Toggle theme">
             <ToggleSwitch />

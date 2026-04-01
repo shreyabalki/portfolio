@@ -71,7 +71,13 @@ const skillsSection = {
     },
     {
       category: "AI / ML",
-      items: ["PyTorch", "Transformers", "LangChain", "LangGraph", "NLP Workflows"]
+      items: [
+        "PyTorch",
+        "Transformers",
+        "LangChain",
+        "LangGraph",
+        "NLP Workflows"
+      ]
     }
   ],
   // Icon grid below the category blocks (optional — set display: false to hide)
