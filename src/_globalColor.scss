@@ -1,86 +1,85 @@
-/* 🌈 Global Color Variables */
-/* Customize these as needed */
+/* Swiss-inspired minimalist palette */
 
 /* === Light Mode === */
-$appBG: #ffffff;
-$appHeaderBG: #282c34;
-$appLink: #09d3ac;
-$lightBackground: #f4f4f4;
-$titleColor: #000000;
-$textColor: #000000;
-$textColorDark: #ffffff;
-$subTitle: #868e96;
-$cardSubtitle: #666666;
-$talkCardSubTitle: #7f8287;
-$blogCardTitleColor: #262626;
+$appBG: #f8f9fb;
+$appHeaderBG: #ffffff;
+$appLink: #123a78;
+$lightBackground: #f2f4f7;
+$titleColor: #0f172a;
+$textColor: #111827;
+$textColorDark: #f9fafb;
+$subTitle: #4b5563;
+$cardSubtitle: #6b7280;
+$talkCardSubTitle: #6b7280;
+$blogCardTitleColor: #111827;
 
-$lightBackground1: #fff;
+$lightBackground1: #ffffff;
 $lightBackground2: #ffffff;
-$lightBackground3: #f5f2f4;
-$blogCardContainerColor: #586069;
+$lightBackground3: #eef2f7;
+$blogCardContainerColor: #4b5563;
 
-$lightBoxShadow: rgba(0, 0, 0, 0.1);
-$lightBoxShadowDark: rgba(0, 0, 0, 0.2);
-$lightBoxShadowDarker: rgba(0, 0, 0, 0.3);
+$lightBoxShadow: rgba(17, 24, 39, 0.06);
+$lightBoxShadowDark: rgba(17, 24, 39, 0.12);
+$lightBoxShadowDarker: rgba(17, 24, 39, 0.2);
 
-$lightBorder1: rgba(211, 211, 211, 0.397);
-$progressBarBackground: #f3efef;
+$lightBorder1: rgba(15, 23, 42, 0.12);
+$progressBarBackground: #dbe1ea;
 
 /* === Dark Mode === */
-$darkBackground: #171c28;
-$darkCardBackground: #1e1e1e;
-$darkTextColor: #e4e4e4;
-$darkBorder1: #333;
-$darkBoxShadow: rgba(0, 0, 0, 0.6);
-$darkBoxShadow2: #ffffff;
-$titleColorDark: #ffffff;
+$darkBackground: #0b1220;
+$darkCardBackground: #111a2b;
+$darkTextColor: #e5e7eb;
+$darkBorder1: #2a364a;
+$darkBoxShadow: rgba(0, 0, 0, 0.5);
+$darkBoxShadow2: #f9fafb;
+$titleColorDark: #f9fafb;
 
-$achievementCertificateCardHoverDark: rgba(255, 255, 255, 0.2);
-$blogCardHoverSmallColor: rgba(255, 255, 255, 0.8);
-$headerHoverBG: #f4f4f4;
-$contactDetailHoverTS: #b5b5b5;
+$achievementCertificateCardHoverDark: rgba(255, 255, 255, 0.08);
+$blogCardHoverSmallColor: rgba(255, 255, 255, 0.85);
+$headerHoverBG: #e5e7eb;
+$contactDetailHoverTS: #cbd5e1;
 
 /* === Misc === */
-$progressBarSpanBG: #aaa5ff;
-$iconBackground: #333;
-$skillsColor: #645beb;
-$educationCardBorder: #a9a7f9;
+$progressBarSpanBG: #123a78;
+$iconBackground: #111827;
+$skillsColor: #123a78;
+$educationCardBorder: #94a3b8;
 
 /* === Button Colors === */
-$buttonColor: #55198b;
-$buttonHover: #8c43ce;
-$topButtonHover: #000;
+$buttonColor: #123a78;
+$buttonHover: #0d2d5f;
+$topButtonHover: #0f172a;
 
 /* === Toggle Switch === */
-$toggleCheck: #2196f3;
-$toggleSwitchSliderBG: #ccc;
+$toggleCheck: #123a78;
+$toggleSwitchSliderBG: #cbd5e1;
 
 /* === GitHub Card === */
-$githubRepoCardLanguageColorBG: #0000ff;
-$githubRepoCardColor: rgb(88, 96, 105);
-$githubRepoCardRepoCardStatsColor: rgb(106, 115, 125);
-$githubRepoCardRepoNameColor: rgb(36, 41, 46);
-$githubProfileCardLocationTS: #ffebcd;
-$githubProfileCardBorder: #6c63ff;
+$githubRepoCardLanguageColorBG: #123a78;
+$githubRepoCardColor: #4b5563;
+$githubRepoCardRepoCardStatsColor: #6b7280;
+$githubRepoCardRepoNameColor: #111827;
+$githubProfileCardLocationTS: #e2e8f0;
+$githubProfileCardBorder: #123a78;
 
 /* === Linear Gradients === */
 $experienceCardBlurredDivLG: linear-gradient(
-  rgba(0, 0, 0, 0.4),
-  rgba(0, 0, 0, 0.2)
+  rgba(9, 14, 25, 0.65),
+  rgba(9, 14, 25, 0.35)
 );
 $experienceCardBannerLG: linear-gradient(
-  rgba(0, 0, 0, 0.7),
-  rgba(0, 0, 0, 0.5)
+  rgba(9, 14, 25, 0.75),
+  rgba(9, 14, 25, 0.55)
 );
 
 /* === Social Media Colors === */
 $faceBook: #3b5998;
-$linkedin: #0e76a8;
-$github: #333;
+$linkedin: #0a66c2;
+$github: #111827;
 $gitlab: #fca326;
 $google: #ea4335;
-$twitter: #1da1f2;
-$medium: #000;
+$twitter: #1d9bf0;
+$medium: #111;
 $stackoverflow: #f48024;
 $instagram: #c13584;
 $kaggle: #20beff;
