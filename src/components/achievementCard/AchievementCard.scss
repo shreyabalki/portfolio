@@ -1,154 +1,84 @@
 @import "../../_globalColor";
 
-/* ---------------- Card Wrapper ---------------- */
 .certificate-card {
   background-color: $lightBackground2;
   color: $textColor;
-  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
-  padding: 1.75rem;
-  border-radius: 16px;
   border: 1px solid $lightBorder1;
-  transition: all 0.3s ease-in-out;
+  border-radius: 0;
+  padding: 1.2rem;
+  transition: border-color 0.2s ease;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
+  box-shadow: none;
 }
 
-/* ---------------- Image Styling ---------------- */
-.card-image {
-  max-width: 100%;
-  height: auto;
-  width: 220px;
-  object-fit: contain;
-  margin-bottom: 1.25rem;
+.certificate-card:hover {
+  border-color: $buttonColor;
+  box-shadow: none;
 }
 
 .certificate-image-div {
+  width: 100%;
+  height: 190px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  height: 220px;
   overflow: hidden;
+  margin-bottom: 0.8rem;
 }
 
-/* ---------------- Title ---------------- */
+.card-image {
+  max-width: 100%;
+  max-height: 170px;
+  object-fit: contain;
+}
+
 .card-title {
-  font-size: 1.375rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  line-height: 1.6;
+  line-height: 1.5;
   color: $titleColor;
-  margin: 1rem 0 0.5rem;
-  background-color: transparent !important;
+  margin: 0.4rem 0;
 }
 
-/* ---------------- Subtitle ---------------- */
 .card-subtitle {
-  font-size: 1rem;
-  line-height: 1.8;
-  text-align: justify;
-  word-break: break-word;
-  word-spacing: 0.02rem;
-  -ms-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;
-  color: $textColor;
-  background-color: transparent !important;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: $subTitle;
 }
 
-/* ---------------- Footer Tags ---------------- */
 .certificate-card-footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 1rem;
+  margin-top: 0.8rem;
 }
 
 .certificate-tag {
   background: $buttonColor;
-  color: $lightBackground3;
-  font-size: 0.75rem;
-  padding: 0.25rem 0.75rem;
-  border-radius: 4px;
-  display: inline-flex;
-  align-items: center;
-  height: 2em;
-  margin: 0 0.5rem 0.5rem 0;
-  cursor: pointer;
-  transition: background 0.2s ease-in;
+  color: $textColorDark;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  padding: 0.2rem 0.55rem;
 }
 
-.certificate-tag:hover {
-  background: $buttonHover;
-}
-
-/* ---------------- Hover Effects ---------------- */
-.certificate-card:hover {
-  box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
-}
-
-/* ---------------- Card Grid ---------------- */
 .achievement-cards-div {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
-  padding: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
 }
 
-/* ---------------- Dark Mode ---------------- */
 .dark-mode .certificate-card {
-  background-color: #1e1e1e;
+  background-color: $darkCardBackground;
+  border-color: $darkBorder1;
   color: $textColorDark;
-  border: 1px solid #333;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
-}
-
-.dark-mode .certificate-card:hover {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.6);
 }
 
 .dark-mode .card-title {
-  background-color: transparent !important;
   color: $textColorDark;
 }
 
 .dark-mode .card-subtitle {
-  background-color: transparent !important;
-  color: $textColorDark;
-}
-
-.dark-mode .certificate-tag {
-  background: darken($buttonColor, 10%);
-  color: $textColorDark;
-}
-
-/* ---------------- Responsive ---------------- */
-@media (max-width: 768px) {
-  .card-title {
-    font-size: 1.25rem;
-  }
-
-  .card-subtitle {
-    font-size: 0.95rem;
-    padding: 0 0.5rem;
-  }
-
-  .achievement-cards-div {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .certificate-card {
-    padding: 1.25rem;
-  }
-
-  .certificate-image-div {
-    height: 180px;
-  }
-
-  .card-image {
-    width: 180px;
-  }
+  color: #cbd5e1;
 }

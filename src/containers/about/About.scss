@@ -1,0 +1,46 @@
+.about-section {
+  border-top: 1px solid var(--border-color);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.about-title {
+  grid-column: span 4;
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  text-transform: uppercase;
+  align-self: start;
+}
+
+.about-summary {
+  grid-column: span 8;
+  color: var(--text-secondary);
+  font-size: 1.08rem;
+  max-width: 58ch;
+}
+
+.about-points {
+  grid-column: span 8;
+  margin: 0 0 0 auto;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.about-points li {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  color: var(--text-secondary);
+  background: var(--surface);
+}
+
+@media (max-width: 900px) {
+  .about-title,
+  .about-summary,
+  .about-points {
+    grid-column: span 12;
+    margin: 0;
+  }
+}
