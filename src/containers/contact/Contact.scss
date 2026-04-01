@@ -25,7 +25,7 @@
 }
 
 .contact-direct {
-  margin-top: 14px;
+  margin-top: 16px;
   display: grid;
   gap: 8px;
 }
@@ -33,10 +33,13 @@
 .contact-direct a {
   color: var(--text-secondary);
   text-decoration: none;
+  width: fit-content;
+  border-bottom: 1px solid transparent;
 }
 
 .contact-direct a:hover {
   color: var(--accent);
+  border-color: var(--accent);
 }
 
 .contact-form {
@@ -44,7 +47,7 @@
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   background: var(--surface);
-  padding: 14px;
+  padding: 16px;
   display: grid;
   gap: 8px;
 }
@@ -63,6 +66,10 @@
   padding: 12px 14px;
   background: var(--surface-2);
   color: var(--text-primary);
+}
+
+.contact-form textarea {
+  resize: vertical;
 }
 
 .contact-form button {

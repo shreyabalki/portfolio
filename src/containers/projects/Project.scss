@@ -1,6 +1,6 @@
 .project-subtitle {
   color: var(--text-secondary);
-  margin: 8px 0 22px;
+  margin: 10px 0 24px;
   max-width: 62ch;
   text-transform: none;
   font-size: 1rem;
@@ -24,7 +24,7 @@
 
 .repo-card-div:hover {
   border-color: var(--accent);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-soft);
 }
 
@@ -43,11 +43,12 @@
 .project-name {
   margin: 12px 0 8px;
   font-size: 1.2rem;
+  letter-spacing: -0.01em;
 }
 
 .project-description {
   color: var(--text-secondary);
-  min-height: 52px;
+  min-height: 56px;
 }
 
 .project-tags {
@@ -60,11 +61,12 @@
 .project-tags span {
   border: 1px solid var(--border-color);
   border-radius: var(--radius-pill);
-  padding: 3px 10px;
+  padding: 4px 10px;
   color: var(--text-muted);
   font-size: 0.7rem;
   letter-spacing: 0.07em;
   text-transform: uppercase;
+  background: var(--surface-2);
 }
 
 .project-links {

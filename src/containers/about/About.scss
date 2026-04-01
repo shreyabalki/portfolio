@@ -2,7 +2,7 @@
   border-top: 1px solid var(--border-color);
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 18px;
+  gap: 20px;
 }
 
 .about-title {
@@ -24,16 +24,16 @@
   margin: 0 0 0 auto;
   padding: 0;
   list-style: none;
-  border-left: 2px solid var(--border-color);
+  display: grid;
+  gap: 10px;
 }
 
 .about-points li {
-  padding: 12px 0 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
   color: var(--text-secondary);
-}
-
-.about-points li + li {
-  border-top: 1px dashed var(--border-color);
+  background: var(--surface);
 }
 
 @media (max-width: 900px) {

@@ -1,8 +1,8 @@
 .portfolio-footer {
   width: min(var(--container), calc(100% - (var(--gutter) * 2)));
-  margin: 10px auto 32px;
+  margin: 10px auto 34px;
   border-top: 1px solid var(--border-color);
-  padding-top: 18px;
+  padding-top: 20px;
 }
 
 .footer-inner {
@@ -20,6 +20,7 @@
 .footer-role {
   color: var(--text-muted);
   font-size: 0.9rem;
+  margin-top: 3px;
 }
 
 .footer-mini-nav {

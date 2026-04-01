@@ -1,6 +1,6 @@
 .header {
   width: min(var(--container), calc(100% - (var(--gutter) * 2)));
-  margin: 16px auto 0;
+  margin: 12px auto 0;
   padding: 14px 0;
   border-bottom: 1px solid var(--border-color);
   background: transparent;
@@ -11,8 +11,8 @@
   text-decoration: none;
   color: var(--text-primary);
   text-transform: uppercase;
-  letter-spacing: 0.07em;
-  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
   font-weight: 700;
   margin-top: 9px;
 }
@@ -32,9 +32,9 @@
   padding: 10px 10px;
   text-decoration: none;
   color: var(--text-secondary);
-  font-size: 0.74rem;
+  font-size: 0.76rem;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.08em;
 }
 
 .header li a:hover {
@@ -96,6 +96,6 @@
     max-height: none;
     display: flex;
     align-items: center;
-    gap: 2px;
+    gap: 4px;
   }
 }
