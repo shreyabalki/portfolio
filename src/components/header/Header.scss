@@ -1,48 +1,30 @@
 @import "../../_globalColor";
 
-/* React-headroom */
-.headroom-wrapper {
-  max-height: 100px;
-}
-
-/* Header Styles */
-.dark-menu {
-  background-color: $darkBackground !important;
-  color: $textColorDark;
-}
-
-.dark-menu li a {
-  color: $textColorDark !important;
-}
-
-.dark-menu li a:hover {
-  background-color: $buttonColor !important;
-}
-
 header {
-  background-color: #fff;
-  max-width: 100%;
-  padding: 15px 20px;
-  margin: 0px auto;
-  transition: transform 0.3s ease-in-out, background-color 0.3s ease; /* Smooth transition for hide/reveal */
-  top: 0; /* Stick the header at the top of the viewport */
-  left: 0;
+  background: #fff;
+  border-bottom: 1px solid $lightBorder1;
   width: 100%;
-  z-index: 1000;
-  opacity: 1; /* Ensure no transparency on scroll */
+  padding: 14px 24px;
+  box-sizing: border-box;
 }
 
-.header.scrolled {
-  transform: translateY(-100%); /* Hide the header when scrolling down */
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.8
-  ); /* Change background color slightly when scrolling */
+.dark-menu {
+  background: $darkBackground !important;
+  border-bottom: 1px solid $darkBorder1;
 }
 
-/* List and Items */
+.header .logo {
+  display: block;
+  float: left;
+  text-decoration: none;
+  color: $titleColor;
+  font-weight: 700;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 10px;
+}
+
 .header ul {
   margin: 0;
   padding: 0;
@@ -50,212 +32,71 @@ header {
   overflow: hidden;
 }
 
-.grey-color {
-  color: $subTitle;
-}
-
 .header li a {
   display: block;
-  padding: 15px 20px;
+  padding: 10px 12px;
   color: $textColor;
   text-decoration: none;
-  transition: all 0.3s ease; /* Adding transition for smooth hover effect */
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
 }
 
-/* Hover Effects */
 .header li a:hover {
-  border: 2px solid $buttonColor; /* Border color on hover */
-  color: $buttonColor; /* Text color on hover */
+  color: $accentColor;
 }
 
-/* General logo styling */
-.header .logo {
-  display: block;
-  flex: none;
-  float: left;
-  font-size: 1.5em;
-  text-decoration: none;
-  margin-top: 10px;
-  line-height: normal;
-}
-
-/* Logo name styling */
-.header .logo-name {
-  font-family: "Agustina Regular";
-  font-weight: bold;
-  font-variant-ligatures: no-common-ligatures;
-  -webkit-font-variant-ligatures: no-common-ligatures;
-  padding: 0 10px;
-  color: blue; /* Default color for light mode */
-}
-
-/* Ensure logo changes color dynamically based on dark mode state */
-.header.dark-menu .logo-name {
-  color: white !important; /* Logo text is white in dark mode */
-}
-
-.header.dark-menu .header li a {
-  border-color: white; /* White border on dark mode hover */
-  color: white; /* White text color for dark mode */
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .header .logo {
-    font-size: 1.2em; /* Reduce logo size on mobile */
-  }
-
-  .header .logo-name {
-    font-size: 1.1em; /* Adjust logo name size for mobile */
-    padding: 0 5px; /* Adjust padding for smaller screens */
-  }
-
-  /* Ensure logo text is white in dark mode on mobile */
-  .header.dark-menu .logo-name {
-    color: white !important; /* Ensure logo text is white in dark mode */
-  }
-
-  /* Mobile Menu */
-  .header .menu {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out; /* Smooth transition for the mobile menu */
-  }
-
-  /* Mobile menu icon adjustments */
-  .header .menu-icon {
-    cursor: pointer;
-    display: inline-block;
-    padding: 28px 20px;
-    position: absolute;
-    top: 10px; /* Align it to the top */
-    right: 20px; /* Align it to the right */
-    -webkit-user-select: none; /* Safari compatibility */
-    user-select: none;
-  }
-
-  /* Increased mobile menu height and improved smooth transitions */
-  .header .menu-btn:checked ~ .menu {
-    max-height: 600px; /* Expand the menu when checked */
-    overflow-y: auto;
-  }
-
-  .header .menu-btn:checked ~ .menu-icon .navicon {
-    background: transparent !important;
-  }
-
-  .header .menu-btn:checked ~ .menu-icon .navicon:before {
-    transform: rotate(45deg);
-  }
-
-  .header .menu-btn:checked ~ .menu-icon .navicon:after {
-    transform: rotate(-45deg);
-  }
-
-  /* Ensure menu items occupy full width for mobile */
-  .header .menu li {
-    width: 100%;
-    text-align: center; /* Center the text for clarity */
-  }
-
-  /* Mobile-specific tweaks for 'Contact Me' */
-  .header .menu li a[href="#contact"] {
-    padding: 12px 15px;
-    font-size: 14px;
-
-    display: block;
-  }
-
-  .header .menu li a[href="#contact"]:hover {
-    background-color: $headerHoverBG; /* Hover effect for contact item */
-  }
-}
-
-/* Menu */
 .header .menu {
   clear: both;
   max-height: 0;
-  transition: max-height 0.2s ease-out;
-  overflow: hidden;
+  transition: max-height 0.25s ease-out;
 }
 
-/* Menu Icon */
 .header .menu-icon {
   cursor: pointer;
   float: right;
-  padding: 28px 20px;
-  position: absolute; /* Set to absolute position */
-  top: 10px; /* Align it to the top */
-  right: 20px; /* Align it to the right */
-  -webkit-user-select: none; /* Safari compatibility */
-  user-select: none;
+  padding: 22px 8px;
 }
 
-.header .menu-icon .navicon {
-  background: $iconBackground;
-  display: block;
-  height: 2px;
-  position: relative;
-  transition: background 0.2s ease-out;
-  width: 18px;
-}
-
-.header .menu-icon .navicon-dark {
-  background: $textColorDark;
-}
-
+.header .menu-icon .navicon,
 .header .menu-icon .navicon:before,
 .header .menu-icon .navicon:after {
-  background: $iconBackground;
-  content: "";
+  background: #111;
   display: block;
-  height: 100%;
-  position: absolute;
-  transition: all 0.2s ease-out;
-  width: 100%;
-}
-
-.header .menu-icon .navicon-dark:before,
-.header .menu-icon .navicon-dark:after {
-  background: $textColorDark !important;
+  height: 2px;
+  width: 20px;
   content: "";
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all 0.2s ease-out;
-  width: 100%;
+  position: relative;
 }
 
 .header .menu-icon .navicon:before {
-  top: 5px;
+  top: 6px;
+  position: absolute;
 }
 
 .header .menu-icon .navicon:after {
-  top: -5px;
+  top: -6px;
+  position: absolute;
 }
 
-/* Menu Button */
 .header .menu-btn {
   display: none;
 }
 
 .header .menu-btn:checked ~ .menu {
-  max-height: 486px;
+  max-height: 320px;
 }
 
-.header .menu-btn:checked ~ .menu-icon .navicon {
-  background: transparent !important;
-}
-
-.header .menu-btn:checked ~ .menu-icon .navicon:before {
-  transform: rotate(-45deg);
-}
-
-.header .menu-btn:checked ~ .menu-icon .navicon:after {
-  transform: rotate(45deg);
-}
-
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-  top: 0;
+@media (min-width: 901px) {
+  .header li {
+    float: left;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
 }

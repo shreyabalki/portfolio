@@ -1,56 +1,19 @@
 @import "../../_globalColor";
 
 .experience-container {
-  width: 100%;
-  max-width: 1300px;
-  margin: 2rem auto;
-  padding: 2rem 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
+  width: min(1120px, 92%);
+  margin: 0 auto;
+  padding: 36px 0;
 }
 
 .experience-heading {
-  font-size: 56px;
-  font-weight: 600;
-  text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 2.5rem;
-  line-height: 1.2;
-  color: $textColor;
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-transform: uppercase;
+  margin: 0 0 20px;
+  text-align: left;
 }
 
 .experience-cards-div {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(320px, 1fr)
-  ); // better card size
-  gap: 2rem;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 1380px) {
-  .experience-heading {
-    font-size: 40px;
-  }
-}
-
-@media (max-width: 768px) {
-  .experience-heading {
-    font-size: 30px;
-    text-align: center;
-  }
-
-  .experience-container {
-    padding: 1.5rem 1rem;
-  }
-
-  .experience-cards-div {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
+  gap: 14px;
 }
