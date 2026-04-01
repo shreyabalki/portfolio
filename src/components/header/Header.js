@@ -13,69 +13,56 @@ function Header() {
 
   return (
     <Headroom>
-      <header className={`header ${isDark ? "is-dark" : "is-light"}`}>
+      <header
+        className={`header ${isDark ? "is-dark" : "is-light"} ${isMenuOpen ? "menu-open" : ""}`}
+      >
         <a href="/" className="logo" onClick={closeMenu}>
           {greeting.username}
         </a>
 
-        <input
-          className="menu-btn"
-          type="checkbox"
-          id="menu-btn"
-          checked={isMenuOpen}
-          onChange={() => setIsMenuOpen(prev => !prev)}
-        />
-        <label
-          className="menu-icon"
-          htmlFor="menu-btn"
-          aria-label="Toggle navigation"
-        >
-          <span className="navicon"></span>
-        </label>
-
-        <ul className="menu">
-          <li>
-            <a href="#projects" onClick={closeMenu}>
-              Work
-            </a>
-          </li>
-          <li>
-            <a href="#about" onClick={closeMenu}>
-              About
-            </a>
-          </li>
-          <li>
-            <a href="#experience" onClick={closeMenu}>
-              Experience
-            </a>
-          </li>
-          <li>
-            <a href="#skills" onClick={closeMenu}>
-              Skills
-            </a>
-          </li>
-          <li>
-            <a href="#contact" onClick={closeMenu}>
-              Contact
-            </a>
-          </li>
-          <li className="toggle-item" aria-label="Toggle theme">
-            <ToggleSwitch />
-          </li>
-          {greeting.resumeLink && (
+        <nav className="nav" aria-label="Main navigation">
+          <ul className="menu">
             <li>
-              <a
-                href={greeting.resumeLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="resume-pill"
-                onClick={closeMenu}
-              >
-                Resume
+              <a href="#projects" onClick={closeMenu}>
+                Work
               </a>
             </li>
-          )}
-        </ul>
+            <li>
+              <a href="#about" onClick={closeMenu}>
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#experience" onClick={closeMenu}>
+                Experience
+              </a>
+            </li>
+            <li>
+              <a href="#skills" onClick={closeMenu}>
+                Skills
+              </a>
+            </li>
+            <li>
+              <a href="#contact" onClick={closeMenu}>
+                Contact
+              </a>
+            </li>
+            <li className="toggle-item">
+              <ToggleSwitch />
+            </li>
+          </ul>
+        </nav>
+
+        <button
+          className="hamburger"
+          aria-label="Toggle navigation"
+          aria-expanded={isMenuOpen}
+          onClick={() => setIsMenuOpen(prev => !prev)}
+        >
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </button>
       </header>
     </Headroom>
   );

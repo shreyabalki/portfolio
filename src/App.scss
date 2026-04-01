@@ -1,6 +1,7 @@
 /* ─────────────────────────────────────────────────────────────
-   Design System — Apple-inspired CSS Custom Properties
-   Clean, minimal, high-contrast. Black/white base with red accent.
+   Design System — CSS Custom Properties
+   Theme classes are applied to <body> via Main.js useEffect,
+   so all variables cascade correctly to every element.
    ───────────────────────────────────────────────────────────── */
 
 :root {
@@ -31,43 +32,44 @@
   /* Transitions */
   --transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-fast: 0.15s ease;
-  --transition-spring: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* ─── Dark theme — true Apple black ──────────────── */
-.theme-dark {
+/* ─── Dark theme ──────────────────────────────────── */
+body.theme-dark {
   --bg: #000000;
   --bg-elevated: #0a0a0a;
   --surface: #141414;
   --surface-2: #1c1c1e;
+  /* Raised from #a1a1a6 → passes WCAG AA contrast on black */
   --text-primary: #f5f5f7;
-  --text-secondary: #a1a1a6;
-  --text-muted: #6e6e73;
-  --border-color: #2d2d2d;
+  --text-secondary: #c7c7cc;
+  --text-muted: #86868b;
+  --border-color: #3a3a3c;
   --accent: #ff453a;
   --accent-hover: #ff6b63;
   --button-primary: #f5f5f7;
   --button-secondary: transparent;
-  --glass: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.09);
+  /* Solid dark glass — visible but still frosted */
+  --glass: rgba(18, 18, 18, 0.88);
+  --glass-border: rgba(255, 255, 255, 0.1);
 }
 
-/* ─── Light theme — Apple white ──────────────────── */
-.theme-light {
+/* ─── Light theme ─────────────────────────────────── */
+body.theme-light {
   --bg: #ffffff;
   --bg-elevated: #f5f5f7;
   --surface: #f5f5f7;
   --surface-2: #e8e8ed;
   --text-primary: #1d1d1f;
-  --text-secondary: #6e6e73;
+  --text-secondary: #3d3d3f;
   --text-muted: #86868b;
   --border-color: #d2d2d7;
   --accent: #d70015;
   --accent-hover: #b8000f;
   --button-primary: #1d1d1f;
   --button-secondary: transparent;
-  --glass: rgba(255, 255, 255, 0.80);
-  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass: rgba(255, 255, 255, 0.88);
+  --glass-border: rgba(0, 0, 0, 0.1);
 }
 
 /* ─── Base ────────────────────────────────────────── */
@@ -77,6 +79,7 @@
   box-sizing: border-box;
 }
 
+/* Body carries the theme class — background and colour resolve here */
 body {
   background-color: var(--bg);
   color: var(--text-primary);
@@ -137,16 +140,4 @@ select {
 
 html {
   scroll-behavior: smooth;
-}
-
-/* ─── Scroll reveal animation ─────────────────────── */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
