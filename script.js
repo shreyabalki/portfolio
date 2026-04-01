@@ -6,6 +6,33 @@ if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
 
+// =====================================
+// Theme toggle (single body.dark class)
+// =====================================
+const bodyEl = document.body;
+const themeToggle = document.getElementById("themeToggle");
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "light") {
+  bodyEl.classList.remove("dark");
+}
+
+if (themeToggle) {
+  const syncToggleState = () => {
+    const isDark = bodyEl.classList.contains("dark");
+    themeToggle.setAttribute("aria-pressed", String(isDark));
+  };
+
+  syncToggleState();
+
+  themeToggle.addEventListener("click", () => {
+    bodyEl.classList.toggle("dark");
+    const theme = bodyEl.classList.contains("dark") ? "dark" : "light";
+    localStorage.setItem("theme", theme);
+    syncToggleState();
+  });
+}
+
 // ==================================================
 // Hero interaction: allow keyboard/touch color reveal
 // ==================================================
