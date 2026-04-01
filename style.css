@@ -2,17 +2,27 @@
    Root variables (editable theme)
 ================================== */
 :root {
+  --bg: #f7f7f6;
+  --surface: #ffffff;
+  --card: #ffffff;
+  --text: #121212;
+  --muted: #5e5e5e;
+  --line: #dfdfdf;
+  --accent: #c4ab8a;
+  --radius: 18px;
+  --container: min(1120px, 92vw);
+  --shadow: 0 8px 26px rgba(0, 0, 0, 0.12);
+  --transition: 260ms ease-in-out;
+}
+
+body.dark {
   --bg: #0f0f0f;
   --surface: #171717;
   --card: #1e1e1e;
   --text: #f5f5f5;
   --muted: #b7b7b7;
   --line: #2a2a2a;
-  --accent: #c4ab8a;
-  --radius: 18px;
-  --container: min(1120px, 92vw);
   --shadow: 0 8px 26px rgba(0, 0, 0, 0.22);
-  --transition: 260ms ease-in-out;
 }
 
 * {
@@ -71,6 +81,7 @@ h1 {
   font-size: clamp(2.3rem, 5.6vw, 5rem);
   max-width: 14ch;
   margin-bottom: 1rem;
+  color: var(--text);
 }
 
 h2 {
@@ -93,17 +104,22 @@ p {
   position: sticky;
   top: 0;
   z-index: 20;
-  backdrop-filter: blur(8px);
-  background: color-mix(in srgb, var(--bg) 85%, transparent);
-  border-bottom: 1px solid var(--line);
+  padding: 0.7rem 0;
+  border-bottom: 0;
+  background: transparent;
 }
 
 .nav-wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 74px;
+  min-height: 62px;
   gap: 1rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  backdrop-filter: blur(8px);
 }
 
 .brand {
@@ -119,7 +135,7 @@ p {
 }
 
 .main-nav a {
-  color: var(--muted);
+  color: var(--text);
   transition: color var(--transition);
 }
 
@@ -130,10 +146,38 @@ p {
   color: var(--accent);
 }
 
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+}
+
+.theme-toggle::before {
+  content: "☀️";
+  line-height: 1;
+}
+
+body.dark .theme-toggle::before {
+  content: "🌙";
+}
+
 /* Reusable card + button */
 .card {
-  background: linear-gradient(180deg, #1d1d1d 0%, #181818 100%);
-  border: 1px solid #262626;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--card) 98%, transparent) 0%, color-mix(in srgb, var(--card) 94%, var(--bg)) 100%);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
@@ -156,15 +200,16 @@ p {
 
 .btn-primary {
   background: var(--text);
-  color: #111;
+  color: var(--bg);
 }
 
 .btn-primary:hover {
   background: var(--accent);
+  color: #111;
 }
 
 .btn-secondary {
-  border-color: #4e4e4e;
+  border-color: var(--line);
   color: var(--text);
 }
 
@@ -194,6 +239,7 @@ p {
 
 .supporting-text {
   max-width: 54ch;
+  color: var(--muted);
 }
 
 .cta-row {
@@ -208,7 +254,7 @@ p {
   margin: 0;
   overflow: hidden;
   border-radius: calc(var(--radius) + 6px);
-  border: 1px solid #2b2b2b;
+  border: 1px solid var(--line);
   position: relative;
 }
 
@@ -270,10 +316,10 @@ p {
 }
 
 .tags span {
-  border: 1px solid #3a3a3a;
+  border: 1px solid var(--line);
   border-radius: 999px;
   padding: 0.38rem 0.72rem;
-  color: #dadada;
+  color: var(--muted);
   font-size: 0.84rem;
   transition: border-color var(--transition), color var(--transition);
 }
@@ -330,7 +376,7 @@ p {
 .circle-text {
   width: 160px;
   aspect-ratio: 1;
-  border: 1px solid #3a3a3a;
+  border: 1px solid var(--line);
   border-radius: 50%;
   position: relative;
   animation: rotate 20s linear infinite;
@@ -341,7 +387,7 @@ p {
   left: 50%;
   top: 50%;
   font-size: 0.7rem;
-  color: #cfcfcf;
+  color: var(--muted);
   transform-origin: 0 0;
 }
 
@@ -364,13 +410,13 @@ p {
 
 blockquote {
   margin: 0;
-  color: #dfdfdf;
+  color: var(--text);
 }
 
 cite {
   margin-top: 0.9rem;
   display: block;
-  color: #9f9f9f;
+  color: var(--muted);
   font-style: normal;
   font-size: 0.9rem;
 }
@@ -395,7 +441,7 @@ cite {
 
 .contact-form label {
   display: block;
-  color: #d6d6d6;
+  color: var(--text);
   margin: 0.4rem 0;
   font-size: 0.88rem;
 }
@@ -405,9 +451,9 @@ cite {
   width: 100%;
   padding: 0.78rem;
   border-radius: 12px;
-  border: 1px solid #363636;
-  background: #101010;
-  color: #f4f4f4;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 88%, var(--bg));
+  color: var(--text);
   margin-bottom: 0.8rem;
 }
 
@@ -467,5 +513,9 @@ cite {
 
   .project-rail {
     grid-auto-columns: minmax(82vw, 1fr);
+  }
+
+  .nav-wrap {
+    padding-inline: 0.6rem;
   }
 }
