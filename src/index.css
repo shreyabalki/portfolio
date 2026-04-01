@@ -1,20 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
-
-@font-face {
-  font-family: "Agustina Regular";
-  font-style: normal;
-  font-weight: normal;
-  src: local("Agustina Regular"),
-    url("./assets/fonts/Agustina.woff") format("woff");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Montserrat";
-  src: local("Montserrat"),
-    url("./assets/fonts/Montserrat-Regular.ttf") format("truetype");
-  font-display: swap;
-}
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 html,
 body {
@@ -24,14 +8,13 @@ body {
 }
 
 body {
-  font-family: "Inter", "Montserrat", sans-serif;
-  font-size: 18px;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
   line-height: 1.6;
-  letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f8f9fb;
-  color: #111827;
+  background-color: #ffffff;
+  color: #0b0b0b;
 }
 
 h1,
@@ -41,7 +24,7 @@ h4,
 h5,
 h6 {
   letter-spacing: -0.02em;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 p {
@@ -51,10 +34,4 @@ p {
 code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
-}
-
-@media (max-width: 1380px) {
-  body {
-    font-size: 16px;
-  }
 }

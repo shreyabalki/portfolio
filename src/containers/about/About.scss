@@ -1,0 +1,29 @@
+@import "../../_globalColor";
+
+.about-section {
+  border-top: 1px solid $lightBorder1;
+  padding-top: 64px;
+}
+
+.about-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0 0 14px;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.about-summary {
+  max-width: 72ch;
+  color: $subTitle;
+  margin-bottom: 20px;
+}
+
+.about-points {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.about-points li {
+  margin: 0 0 12px;
+  color: $textColor;
+}
