@@ -1,223 +1,75 @@
-@import "../../_globalColor";
-
-/* Corrected Main Container */
-.main {
-  width: 90%;
-  padding: 20px 10px;
-  margin: 4rem auto 0 auto;
-}
-
-/* Ensure scroll-margin on contact section works globally */
-#contact {
-  scroll-margin-top: 100px; /* helps scroll correctly when Contact Me is clicked */
-}
-
 .greet-main {
-  width: 90%;
-  padding: 20px 10px;
-  margin: 2rem auto 0 auto;
+  padding-top: 70px;
 }
 
 .greeting-main {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 20px;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
 }
 
-.greeting-main > * {
-  flex: 1;
-  min-width: 300px;
-  margin-bottom: 30px;
-}
-
-.subTitle {
-  color: $subTitle !important;
-}
-
-.empty-div {
-  margin-bottom: 40px;
-}
-
-.button-greeting-div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 40px;
-}
-
-.download-link-button {
-  text-decoration: none;
-}
-
-.greeting-text {
-  font-size: 64px;
-  line-height: 1.2;
-  color: $textColor !important;
-  font-weight: bold;
-}
-
-.greeting-text-p {
-  font-size: 26px;
-  line-height: 1.6;
-  color: $subTitle;
-  margin-top: 1rem;
+.greeting-text-div {
+  grid-column: span 7;
 }
 
 .greeting-image-div {
+  grid-column: span 5;
+}
+
+.greeting-eyebrow {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.78rem;
+  margin-bottom: 12px;
+}
+
+.greeting-text {
+  font-size: clamp(2.5rem, 7.4vw, 5.2rem);
+  line-height: 0.94;
+  letter-spacing: -0.04em;
+  max-width: 12ch;
+}
+
+.greeting-text span {
+  display: block;
+  color: var(--text-secondary);
+}
+
+.greeting-text-p {
+  margin-top: 18px;
+  max-width: 56ch;
+  color: var(--text-secondary);
+}
+
+.button-greeting-div {
+  margin-top: 24px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-/* ✅ Profile Picture Styling */
 .profile-picture {
-  max-width: 100%;
-  width: 75%;
-  height: auto;
-  border-radius: 12px;
+  width: 100%;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-soft);
+  aspect-ratio: 4/5;
   object-fit: cover;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.profile-picture:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.dark-mode .profile-picture {
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
-}
-.dark-mode .greeting-text {
-  color: #ffffff !important;
-}
-.dark-mode .greeting-name {
-  color: #ffffff !important;
-}
-
-/* 👋 Wave emoji animation */
-.wave-emoji {
-  animation-duration: 1.8s;
-  animation-iteration-count: infinite;
-  animation-name: wave;
-  display: inline-block;
-  transform-origin: 70% 70%;
-}
-
-.greeting-name {
-  display: inline-block;
-  font-weight: bold;
-  white-space: nowrap;
-}
-
-@keyframes wave {
-  0% {
-    transform: rotate(0deg);
-  }
-  10% {
-    transform: rotate(-10deg);
-  }
-  20% {
-    transform: rotate(12deg);
-  }
-  30% {
-    transform: rotate(-10deg);
-  }
-  40% {
-    transform: rotate(9deg);
-  }
-  50% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-/* =====================
-   Responsive Styles
-======================== */
-
-@media (max-width: 1380px) {
-  .greeting-text {
-    font-size: 48px;
-  }
-
-  .greeting-text-p {
-    font-size: 22px;
-  }
-}
-
-@media (max-width: 992px) {
-  .greeting-main {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .greeting-text {
-    font-size: 40px;
-  }
-
-  .greeting-text-p {
-    font-size: 20px;
-  }
-
-  .button-greeting-div {
-    justify-content: center;
-  }
-
-  .profile-picture {
-    width: 60%;
-  }
-}
-
-@media (max-width: 768px) {
-  .greeting-text {
-    font-size: 32px;
-  }
-
-  .greeting-text-p {
-    font-size: 18px;
-  }
-
+@media (max-width: 920px) {
+  .greeting-text-div,
   .greeting-image-div {
-    height: auto;
-    text-align: center;
-  }
-
-  .profile-picture {
-    max-width: 250px;
-  }
-}
-
-@media (max-width: 480px) {
-  .greeting-text {
-    font-size: 26px;
-  }
-
-  .greeting-text-p {
-    font-size: 16px;
-  }
-
-  .profile-picture {
-    width: 90%;
-  }
-}
-
-@media (max-width: 320px) {
-  .main {
-    width: 100%;
-    padding: 10px;
+    grid-column: span 12;
   }
 
   .greeting-text {
-    font-size: 22px;
+    max-width: 100%;
   }
 
-  .greeting-text-p {
-    font-size: 14px;
+  .greet-main {
+    padding-top: 34px;
   }
 }

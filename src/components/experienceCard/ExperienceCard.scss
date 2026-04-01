@@ -1,230 +1,70 @@
-@import "../../_globalColor";
-
-/* ======================
-   Card Base Styles
-========================= */
 .experience-card {
-  position: relative;
-  background-color: $lightBackground2;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: box-shadow 0.3s ease;
-  border: none;
-}
-
-.dark-mode .experience-card {
-  background-color: #1e1e1e;
-  border: none;
-}
-
-.experience-card:hover {
-  box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
-}
-
-/* ======================
-   Section Heading
-========================= */
-.experience-heading {
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-align: center;
-  color: $textColor;
-  margin-bottom: 2rem;
-}
-
-.dark-mode .experience-heading {
-  color: $textColorDark;
-}
-
-/* ======================
-   Banner Background
-========================= */
-.experience-banner {
-  height: 11rem;
-  background: $experienceCardBannerLG;
-  background-size: cover;
-  background-position: center;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
-}
-
-.experience-blurred_div {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 11rem;
-  width: 100%;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  background: $experienceCardBlurredDivLG;
-  filter: blur(5px);
-  z-index: 0;
+  border-left: 2px solid var(--accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  background: var(--surface);
+  border-top: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .experience-div-company {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 9rem;
-  width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
   align-items: center;
-  justify-content: center;
-  background: transparent;
-  z-index: 2;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-color);
 }
 
-/* ======================
-   Company Name
-========================= */
-.experience-text-company {
-  padding: 1.5rem;
-  margin: 0;
-  font-size: 25px;
-  font-weight: 700;
-  color: $lightBackground1;
-  text-align: center;
-  white-space: normal;
-  overflow: visible;
-  word-wrap: break-word;
-  line-height: 1.4;
-  z-index: 3;
-}
-
-/* ======================
-   Company Logo
-========================= */
 .experience-roundedimg {
-  position: absolute;
-  top: 7rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 7.5rem;
-  height: 7.5rem;
-  padding: 0.5rem;
-  border-radius: 50%;
-  background-color: #fff;
-  box-shadow: 0 0.5rem 1rem $lightBoxShadowDarker;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
   object-fit: contain;
-  z-index: 5;
+  background: #fff;
 }
 
-/* ======================
-   Role, Date, Desc
-========================= */
+.experience-text-company {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .experience-text-role {
-  text-align: center;
-  color: $textColor;
-  font-weight: 700;
-  font-size: 25px;
-  margin: 0;
-  padding-top: 1.5rem;
-  line-height: 1.4;
+  font-size: 1.08rem;
+  margin-top: 2px;
 }
 
 .experience-text-date {
-  text-align: center;
-  color: $textColor;
-  font-size: 20px;
-  font-weight: 600;
-  margin: 0;
-  padding-top: 1rem;
-}
-
-.experience-text-desc {
-  text-align: center;
-  color: $textColor;
-  font-size: 17px;
-  padding-top: 1rem;
-  line-height: 1.6;
+  color: var(--text-muted);
+  font-size: 0.86rem;
 }
 
 .experience-text-details {
-  padding: 1.5rem 2rem;
-  margin-top: 2rem;
-  color: $textColor;
-  font-size: 16.5px;
-  line-height: 1.7;
+  padding: 14px 16px;
+}
+
+.experience-text-desc {
+  color: var(--text-secondary);
 }
 
 .experience-text-details ul {
-  padding-left: 1.5rem;
-  margin-top: 0.75rem;
+  margin: 10px 0 0;
+  color: var(--text-secondary);
+  padding-left: 18px;
 }
 
-.experience-text-details li {
-  margin-bottom: 0.75rem;
+.experience-text-details li + li {
+  margin-top: 6px;
 }
 
-/* ======================
-   Dark Mode Fix (Text)
-========================= */
-.dark-mode-text {
-  color: $textColorDark !important;
-}
-
-/* ======================
-   Responsive
-========================= */
-@media (max-width: 1380px) {
-  .experience-text-role {
-    font-size: 22px;
-    padding-top: 1rem;
-  }
-
-  .experience-text-company {
-    font-size: 22px;
+@media (max-width: 700px) {
+  .experience-div-company {
+    grid-template-columns: auto 1fr;
   }
 
   .experience-text-date {
-    font-size: 18px;
-  }
-
-  .experience-roundedimg {
-    width: 6.5rem;
-    height: 6.5rem;
-  }
-
-  .experience-text-details {
-    padding: 1.25rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .experience-heading {
-    font-size: 1.75rem;
-  }
-
-  .experience-text-role {
-    font-size: 20px;
-  }
-
-  .experience-text-company {
-    font-size: 20px;
-  }
-
-  .experience-text-date {
-    font-size: 16px;
-  }
-
-  .experience-text-desc {
-    font-size: 15.5px;
-    padding: 0.75rem 1rem 0;
-  }
-
-  .experience-roundedimg {
-    width: 5rem;
-    height: 5rem;
-    top: 6.5rem;
-  }
-
-  .experience-text-details {
-    font-size: 15.5px;
-    padding: 1rem;
+    grid-column: 1 / -1;
   }
 }
