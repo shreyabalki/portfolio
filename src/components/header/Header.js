@@ -2,7 +2,7 @@ import React, {useContext, useState} from "react";
 import Headroom from "react-headroom";
 import "./Header.scss";
 import StyleContext from "../../contexts/StyleContext";
-import {greeting} from "../../portfolio";
+import {greeting, socialMediaLinks} from "../../portfolio";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 
 function Header() {
@@ -23,18 +23,8 @@ function Header() {
         <nav className="nav" aria-label="Main navigation">
           <ul className="menu">
             <li>
-              <a href="#projects" onClick={closeMenu}>
-                Work
-              </a>
-            </li>
-            <li>
               <a href="#about" onClick={closeMenu}>
                 About
-              </a>
-            </li>
-            <li>
-              <a href="#experience" onClick={closeMenu}>
-                Experience
               </a>
             </li>
             <li>
@@ -42,6 +32,23 @@ function Header() {
                 Skills
               </a>
             </li>
+            <li>
+              <a href="#experience" onClick={closeMenu}>
+                Experience
+              </a>
+            </li>
+            {socialMediaLinks.github && (
+              <li>
+                <a
+                  href={socialMediaLinks.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={closeMenu}
+                >
+                  GitHub
+                </a>
+              </li>
+            )}
             <li>
               <a href="#contact" onClick={closeMenu}>
                 Contact

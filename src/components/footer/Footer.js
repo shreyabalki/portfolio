@@ -13,9 +13,10 @@ export default function Footer() {
         </div>
 
         <nav className="footer-mini-nav" aria-label="Footer navigation">
-          <a href="#projects">Work</a>
           <a href="#about">About</a>
+          <a href="#skills">Skills</a>
           <a href="#experience">Experience</a>
+          <a href="#github">GitHub</a>
           <a href="#contact">Contact</a>
         </nav>
 
@@ -52,7 +53,8 @@ export default function Footer() {
       </div>
 
       <p className="footer-copy">
-        © {new Date().getFullYear()} {greeting.username}. All rights reserved.
+        &copy; {new Date().getFullYear()} {greeting.username}. All rights
+        reserved.
       </p>
     </footer>
   );

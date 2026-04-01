@@ -5,15 +5,15 @@
 
 .greeting-main {
   display: grid;
-  grid-template-columns: 1fr 380px;
+  grid-template-columns: 1fr 320px;
   gap: var(--space-6);
   align-items: center;
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 120px);
 }
 
 /* ── Text column ────────────────────────────────── */
 .greeting-text-div {
-  max-width: 640px;
+  max-width: 580px;
 }
 
 .greeting-eyebrow {
@@ -23,7 +23,7 @@
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 700;
   margin-bottom: var(--space-3);
 }
@@ -38,36 +38,69 @@
 }
 
 .greeting-text {
-  font-size: clamp(3rem, 8vw, 6rem);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
   font-weight: 700;
-  line-height: 0.97;
-  letter-spacing: -0.05em;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   color: var(--text-primary);
-  max-width: 13ch;
 }
 
-/* Second line — clearly readable but visually lighter */
-.greeting-text span {
-  display: block;
-  color: var(--text-muted);
-  font-weight: 600;
-  margin-top: 0.06em;
-}
-
-.greeting-text-p {
-  margin-top: var(--space-4);
-  max-width: 50ch;
+.greeting-subtitle {
+  margin-top: var(--space-3);
+  max-width: 52ch;
   color: var(--text-secondary);
   font-size: 1rem;
-  line-height: 1.72;
+  line-height: 1.7;
 }
 
+/* ── CTAs ───────────────────────────────────────── */
 .button-greeting-div {
-  margin-top: var(--space-5);
+  margin-top: var(--space-4);
   display: flex;
   gap: var(--space-2);
   flex-wrap: wrap;
   align-items: center;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--button-primary);
+  color: var(--bg);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--button-primary);
+  transition: opacity var(--transition);
+}
+
+.btn-primary:hover {
+  opacity: 0.8;
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 10px 20px;
+  background: transparent;
+  color: var(--text-primary);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-color);
+  transition:
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* ── Image column ───────────────────────────────── */
@@ -78,9 +111,8 @@
 }
 
 .profile-picture-wrap {
-  position: relative;
   width: 100%;
-  max-width: 380px;
+  max-width: 300px;
 }
 
 .profile-picture {
@@ -91,19 +123,19 @@
   object-fit: cover;
   object-position: top center;
   display: block;
-  filter: grayscale(15%);
+  filter: grayscale(10%);
   transition:
-    filter 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    filter 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.4s ease;
 }
 
 .profile-picture-wrap:hover .profile-picture {
   filter: grayscale(0%);
-  box-shadow: var(--shadow-strong);
+  box-shadow: var(--shadow-hover);
 }
 
 /* ── Responsive ─────────────────────────────────── */
-@media (max-width: 960px) {
+@media (max-width: 860px) {
   .greeting-main {
     grid-template-columns: 1fr;
     min-height: unset;
@@ -116,15 +148,10 @@
   }
 
   .profile-picture-wrap {
-    max-width: 260px;
+    max-width: 220px;
   }
 
   .greeting-text-div {
-    max-width: 100%;
-  }
-
-  .greeting-text {
-    font-size: clamp(2.8rem, 10vw, 4.5rem);
     max-width: 100%;
   }
 

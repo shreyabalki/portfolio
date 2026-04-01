@@ -1,7 +1,6 @@
 /* ─────────────────────────────────────────────────────────────
    Design System — CSS Custom Properties
-   Theme classes are applied to <body> via Main.js useEffect,
-   so all variables cascade correctly to every element.
+   Theme class applied to <body> via Main.js useEffect.
    ───────────────────────────────────────────────────────────── */
 
 :root {
@@ -15,61 +14,60 @@
   --space-3: 24px;
   --space-4: 32px;
   --space-5: 48px;
-  --space-6: 80px;
-  --space-7: 112px;
+  --space-6: 72px;
+  --space-7: 96px;
 
   /* Border radii */
-  --radius-sm: 12px;
-  --radius-md: 20px;
-  --radius-lg: 28px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
   --radius-pill: 999px;
 
   /* Shadows */
-  --shadow-soft: 0 2px 12px rgba(0, 0, 0, 0.06);
-  --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.12);
-  --shadow-strong: 0 20px 48px rgba(0, 0, 0, 0.20);
+  --shadow-soft: 0 1px 8px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.1);
 
   /* Transitions */
-  --transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-fast: 0.15s ease;
+  --transition: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.14s ease;
+}
+
+/* ─── Light theme (default) ───────────────────────── */
+body.theme-light {
+  --bg: #ffffff;
+  --bg-elevated: #f8f9fa;
+  --surface: #f8f9fa;
+  --surface-2: #f0f2f5;
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --text-muted: #6b7280;
+  --border-color: #e5e7eb;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-subtle: #eff6ff;
+  --button-primary: #111827;
+  --button-secondary: transparent;
+  --glass: rgba(255, 255, 255, 0.92);
+  --glass-border: rgba(0, 0, 0, 0.09);
 }
 
 /* ─── Dark theme ──────────────────────────────────── */
 body.theme-dark {
-  --bg: #000000;
-  --bg-elevated: #0a0a0a;
-  --surface: #141414;
-  --surface-2: #1c1c1e;
-  /* Raised from #a1a1a6 → passes WCAG AA contrast on black */
-  --text-primary: #f5f5f7;
-  --text-secondary: #c7c7cc;
-  --text-muted: #86868b;
-  --border-color: #3a3a3c;
-  --accent: #ff453a;
-  --accent-hover: #ff6b63;
-  --button-primary: #f5f5f7;
+  --bg: #0d1117;
+  --bg-elevated: #161b22;
+  --surface: #161b22;
+  --surface-2: #21262d;
+  --text-primary: #e6edf3;
+  --text-secondary: #b1bac4;
+  --text-muted: #7d8590;
+  --border-color: #30363d;
+  --accent: #60a5fa;
+  --accent-hover: #93c5fd;
+  --accent-subtle: #1e3a5f;
+  --button-primary: #e6edf3;
   --button-secondary: transparent;
-  /* Solid dark glass — visible but still frosted */
-  --glass: rgba(18, 18, 18, 0.88);
-  --glass-border: rgba(255, 255, 255, 0.1);
-}
-
-/* ─── Light theme ─────────────────────────────────── */
-body.theme-light {
-  --bg: #ffffff;
-  --bg-elevated: #f5f5f7;
-  --surface: #f5f5f7;
-  --surface-2: #e8e8ed;
-  --text-primary: #1d1d1f;
-  --text-secondary: #3d3d3f;
-  --text-muted: #86868b;
-  --border-color: #d2d2d7;
-  --accent: #d70015;
-  --accent-hover: #b8000f;
-  --button-primary: #1d1d1f;
-  --button-secondary: transparent;
-  --glass: rgba(255, 255, 255, 0.88);
-  --glass-border: rgba(0, 0, 0, 0.1);
+  --glass: rgba(13, 17, 23, 0.92);
+  --glass-border: rgba(255, 255, 255, 0.08);
 }
 
 /* ─── Base ────────────────────────────────────────── */
@@ -79,7 +77,6 @@ body.theme-light {
   box-sizing: border-box;
 }
 
-/* Body carries the theme class — background and colour resolve here */
 body {
   background-color: var(--bg);
   color: var(--text-primary);
@@ -102,10 +99,10 @@ section {
 
 /* ─── Typography helpers ──────────────────────────── */
 .section-title {
-  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 700;
-  letter-spacing: -0.048em;
-  line-height: 1.04;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
   margin-bottom: var(--space-2);
 }
 
@@ -113,14 +110,14 @@ section {
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 600;
   margin-bottom: var(--space-2);
 }
 
 .body-copy {
   color: var(--text-secondary);
-  line-height: 1.75;
+  line-height: 1.7;
 }
 
 /* ─── Interactive elements ────────────────────────── */

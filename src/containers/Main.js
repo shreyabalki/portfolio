@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from "react";
 import Header from "../components/header/Header";
 import Greeting from "./greeting/Greeting";
-import Contact from "./contact/Contact";
-import Skills from "./skills/Skills";
-import Projects from "./projects/Projects";
 import About from "./about/About";
+import Skills from "./skills/Skills";
 import WorkExperience from "./workExperience/WorkExperience";
-import Statement from "./statement/Statement";
+import Github from "./github/Github";
+import Education from "./education/Education";
+import Contact from "./contact/Contact";
 import Footer from "../components/footer/Footer";
 import ScrollToTopButton from "./topbutton/Top";
 import SplashScreen from "./splashScreen/SplashScreen";
@@ -21,7 +21,7 @@ const Main = () => {
   const [isShowingSplashAnimation, setIsShowingSplashAnimation] =
     useState(true);
 
-  // Apply theme class to <body> so CSS variables cascade correctly from root
+  // Apply theme class to <body> so CSS variables cascade correctly
   useEffect(() => {
     document.body.className = isDark ? "theme-dark" : "theme-light";
   }, [isDark]);
@@ -49,11 +49,11 @@ const Main = () => {
         <>
           <Header />
           <Greeting />
-          <Projects />
           <About />
-          <WorkExperience />
           <Skills />
-          <Statement />
+          <WorkExperience />
+          <Github />
+          <Education />
           <Contact />
           <Footer />
           <ScrollToTopButton />
