@@ -1,42 +1,47 @@
 :root {
-  --container: 1120px;
+  --container: 1160px;
+  --gutter: clamp(18px, 3vw, 28px);
   --space-1: 8px;
   --space-2: 12px;
   --space-3: 16px;
   --space-4: 24px;
-  --space-5: 32px;
-  --space-6: 48px;
-  --space-7: 72px;
-  --radius: 14px;
-  --border: 1px solid;
-  --shadow-soft: 0 8px 28px rgba(0, 0, 0, 0.08);
+  --space-5: 36px;
+  --space-6: 56px;
+  --space-7: 84px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-pill: 999px;
+  --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 16px 34px rgba(0, 0, 0, 0.14);
 }
 
 .theme-dark {
-  --bg: #0f1012;
-  --bg-elevated: #15171b;
-  --surface: #171a1f;
-  --text-primary: #f7f8fa;
-  --text-secondary: #c7cad1;
-  --text-muted: #9ca3af;
-  --border-color: #2a3038;
-  --accent: #ff3b3b;
-  --accent-hover: #ff5757;
-  --button-primary: #f7f8fa;
+  --bg: #0f1115;
+  --bg-elevated: #151922;
+  --surface: #191e29;
+  --surface-2: #202634;
+  --text-primary: #f5f7fb;
+  --text-secondary: #d3d8e3;
+  --text-muted: #a6adbb;
+  --border-color: #30394b;
+  --accent: #ff3f3f;
+  --accent-hover: #ff6363;
+  --button-primary: #f5f7fb;
   --button-secondary: transparent;
 }
 
 .theme-light {
-  --bg: #f7f7f5;
+  --bg: #f6f7f9;
   --bg-elevated: #ffffff;
   --surface: #ffffff;
-  --text-primary: #17181a;
-  --text-secondary: #444a55;
-  --text-muted: #6d7582;
-  --border-color: #dce0e7;
+  --surface-2: #f0f3f8;
+  --text-primary: #171b23;
+  --text-secondary: #3f4653;
+  --text-muted: #6b7381;
+  --border-color: #d7dee8;
   --accent: #d92a2a;
-  --accent-hover: #bb2020;
-  --button-primary: #17181a;
+  --accent-hover: #b92020;
+  --button-primary: #171b23;
   --button-secondary: transparent;
 }
 
@@ -49,7 +54,7 @@ body {
 .greet-main,
 .experience-container,
 .case-study-main {
-  width: min(var(--container), 92%);
+  width: min(var(--container), calc(100% - (var(--gutter) * 2)));
   margin-inline: auto;
 }
 
@@ -58,18 +63,22 @@ section {
 }
 
 .section-title {
-  font-size: clamp(1.75rem, 4vw, 2.8rem);
-  margin: 0 0 var(--space-2);
+  font-size: clamp(1.85rem, 4vw, 3rem);
+  margin-bottom: var(--space-2);
   letter-spacing: -0.03em;
-  line-height: 1.05;
+  line-height: 1.02;
 }
 
 .section-kicker {
-  margin: 0;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.78rem;
+}
+
+.body-copy {
+  color: var(--text-secondary);
+  line-height: 1.7;
 }
 
 a,
@@ -81,5 +90,5 @@ textarea {
 
 *:focus-visible {
   outline: 2px solid var(--accent);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }

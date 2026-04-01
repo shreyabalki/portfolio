@@ -8,12 +8,13 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.74rem;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   transition: 0.2s ease;
 }
 
 .main-button:hover {
   transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
 }
 
 .secondary .main-button {
@@ -25,4 +26,5 @@
 .secondary .main-button:hover {
   border-color: var(--accent);
   color: var(--accent);
+  box-shadow: none;
 }

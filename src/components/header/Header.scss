@@ -1,11 +1,9 @@
 .header {
-  width: min(1120px, 92%);
+  width: min(var(--container), calc(100% - (var(--gutter) * 2)));
   margin: 16px auto 0;
-  padding: 10px 14px;
-  border: 1px solid var(--border-color);
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--bg-elevated) 88%, transparent);
-  backdrop-filter: blur(8px);
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border-color);
+  background: transparent;
 }
 
 .header .logo {
@@ -13,10 +11,10 @@
   text-decoration: none;
   color: var(--text-primary);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-size: 0.76rem;
+  letter-spacing: 0.07em;
+  font-size: 0.74rem;
   font-weight: 700;
-  margin-top: 10px;
+  margin-top: 9px;
 }
 
 .header .menu {
@@ -26,17 +24,17 @@
   clear: both;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.2s ease;
+  transition: max-height 0.24s ease;
 }
 
 .header li a {
   display: block;
-  padding: 10px 12px;
+  padding: 10px 10px;
   text-decoration: none;
   color: var(--text-secondary);
   font-size: 0.74rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
 }
 
 .header li a:hover {
@@ -45,13 +43,13 @@
 
 .resume-pill {
   border: 1px solid var(--border-color);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
 }
 
 .menu-icon {
   float: right;
   cursor: pointer;
-  padding: 20px 8px;
+  padding: 18px 4px;
 }
 
 .navicon,
@@ -80,11 +78,11 @@
 }
 
 .menu-btn:checked ~ .menu {
-  max-height: 420px;
+  max-height: 430px;
 }
 
 .toggle-item {
-  padding: 10px 12px;
+  padding: 10px 10px;
 }
 
 @media (min-width: 980px) {
@@ -96,9 +94,8 @@
     clear: none;
     float: right;
     max-height: none;
-  }
-
-  .header li {
-    float: left;
+    display: flex;
+    align-items: center;
+    gap: 2px;
   }
 }

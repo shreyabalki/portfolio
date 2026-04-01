@@ -1,7 +1,10 @@
 .project-subtitle {
   color: var(--text-secondary);
-  margin: 8px 0 20px;
-  max-width: 56ch;
+  margin: 8px 0 22px;
+  max-width: 62ch;
+  text-transform: none;
+  font-size: 1rem;
+  letter-spacing: 0;
 }
 
 .repo-cards-div-main {
@@ -13,33 +16,38 @@
 .repo-card-div {
   grid-column: span 4;
   border: 1px solid var(--border-color);
-  border-radius: var(--radius);
+  border-radius: var(--radius-md);
   padding: 12px;
   background: var(--surface);
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .repo-card-div:hover {
   border-color: var(--accent);
   transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
+
+.repo-card-div.featured {
+  grid-column: span 8;
 }
 
 .project-image {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   border: 1px solid var(--border-color);
 }
 
 .project-name {
-  margin: 12px 0 6px;
-  font-size: 1.16rem;
+  margin: 12px 0 8px;
+  font-size: 1.2rem;
 }
 
 .project-description {
   color: var(--text-secondary);
-  min-height: 74px;
+  min-height: 52px;
 }
 
 .project-tags {
@@ -51,11 +59,11 @@
 
 .project-tags span {
   border: 1px solid var(--border-color);
-  border-radius: 999px;
-  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+  padding: 3px 10px;
   color: var(--text-muted);
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
+  font-size: 0.7rem;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
@@ -64,13 +72,15 @@
 }
 
 @media (max-width: 1024px) {
-  .repo-card-div {
+  .repo-card-div,
+  .repo-card-div.featured {
     grid-column: span 6;
   }
 }
 
 @media (max-width: 700px) {
-  .repo-card-div {
+  .repo-card-div,
+  .repo-card-div.featured {
     grid-column: span 12;
   }
 }

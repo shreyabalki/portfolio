@@ -1,10 +1,12 @@
 .experience-container {
-  padding-top: 10px;
+  padding-top: 8px;
 }
 
 .experience-heading {
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.experience-kicker {
   margin-bottom: 16px;
 }
 

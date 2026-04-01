@@ -7,15 +7,21 @@ export default function Skills() {
 
   return (
     <section className="main" id="skills">
-      <h2 className="section-title">{skillsSection.title}</h2>
-      <p className="section-kicker">{skillsSection.subTitle}</p>
-      <div className="skills-grid">
+      <h2 className="section-title">Capabilities</h2>
+      <p className="section-kicker">Design · Development · AI/ML</p>
+
+      <div className="capabilities-grid">
         {skillsSection.skills.map((skill, index) => {
-          const [title, ...rest] = skill.split(":");
+          const [title, list] = skill.split(":");
+          const items = list.split(",").map(item => item.trim());
           return (
-            <article className="skill-card" key={index}>
+            <article className="capability-block" key={index}>
               <h3>{title}</h3>
-              <p>{rest.join(":").trim()}</p>
+              <ul>
+                {items.map(item => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
             </article>
           );
         })}

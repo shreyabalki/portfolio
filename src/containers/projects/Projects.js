@@ -16,7 +16,9 @@ export default function Projects() {
         {bigProjects.projects?.map((project, index) => (
           <article
             key={index}
-            className={`repo-card-div ${isDark ? "dark-card" : ""}`}
+            className={`repo-card-div ${index === 0 ? "featured" : ""} ${
+              isDark ? "dark-card" : ""
+            }`}
           >
             <img
               src={project.image}

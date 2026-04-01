@@ -10,6 +10,13 @@ export default function Footer() {
           <p className="footer-name">Shreya Chagandi Balakrishnan</p>
           <p className="footer-role">UI/UX Designer + AI Engineer</p>
         </div>
+
+        <nav className="footer-mini-nav" aria-label="Footer">
+          <a href="#projects">Work</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
         <div className="footer-links" aria-label="Social links">
           <a href="mailto:shreyacb.eu@gmail.com" aria-label="Email">
             <FaEnvelope />

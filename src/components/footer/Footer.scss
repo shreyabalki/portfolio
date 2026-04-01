@@ -1,34 +1,52 @@
 .portfolio-footer {
-  width: min(1120px, 92%);
-  margin: 12px auto 28px;
+  width: min(var(--container), calc(100% - (var(--gutter) * 2)));
+  margin: 10px auto 32px;
   border-top: 1px solid var(--border-color);
-  padding-top: 22px;
+  padding-top: 18px;
 }
 
 .footer-inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 14px;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 16px;
   align-items: center;
 }
 
 .footer-name {
   font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .footer-role {
   color: var(--text-muted);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
+}
+
+.footer-mini-nav {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-mini-nav a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.footer-mini-nav a:hover {
+  color: var(--text-primary);
 }
 
 .footer-links {
   display: flex;
-  gap: 10px;
+  gap: 8px;
 }
 
 .footer-links a {
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   border: 1px solid var(--border-color);
   color: var(--text-secondary);
@@ -44,12 +62,12 @@
 .footer-copy {
   margin-top: 12px;
   color: var(--text-muted);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 860px) {
   .footer-inner {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     align-items: flex-start;
   }
 }

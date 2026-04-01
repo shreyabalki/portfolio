@@ -17,7 +17,7 @@ const greeting = {
   title: "Shreya Chagandi Balakrishnan",
   role: "UI/UX Designer + AI Engineer",
   subTitle:
-    "I design intuitive digital products and build AI-powered systems that solve real operational problems.",
+    "I design intuitive product experiences and engineer AI workflows that deliver measurable outcomes across real-world systems.",
   resumeLink:
     "https://drive.google.com/uc?export=download&id=1exKOMeRlv3lHM9T6qzSJysBKcjePmyki",
   displayGreeting: true
@@ -26,7 +26,7 @@ const greeting = {
 const aboutSection = {
   title: "About",
   summary:
-    "I combine product thinking, interface design, and machine intelligence to ship experiences that are elegant and measurable.",
+    "I work at the intersection of product design and machine intelligence, translating ambiguous problems into clear user journeys and production-ready systems.",
   focusPoints: [
     "Designing clear, research-informed user journeys and high-fidelity interfaces.",
     "Building AI features with practical deployment in mind, not just prototypes.",

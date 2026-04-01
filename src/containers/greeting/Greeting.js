@@ -13,8 +13,11 @@ export default function Greeting() {
       <section className="greet-main" id="greeting">
         <div className="greeting-main">
           <div className="greeting-text-div">
-            <h1 className="greeting-text">{greeting.title}</h1>
-            <p className="greeting-role">{greeting.role}</p>
+            <p className="greeting-eyebrow">{greeting.role}</p>
+            <h1 className="greeting-text">
+              Designing digital products with clarity.
+              <span> Engineering AI that solves real problems.</span>
+            </h1>
             <p className="greeting-text-p">{greeting.subTitle}</p>
             <div className="button-greeting-div">
               <Button text="View Work" href="#projects" />
