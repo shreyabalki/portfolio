@@ -33,7 +33,7 @@ function Header() {
           <span className="navicon"></span>
         </label>
 
-        <ul className="menu" role="list">
+        <ul className="menu">
           <li>
             <a href="#projects" onClick={closeMenu}>
               Work
