@@ -1,7 +1,3 @@
-@import "../_globalColor";
-
-.dark-mode {
-  background-color: $darkBackground;
-  color: white;
-  transition: "0.1s";
-}
+/* Main layout wrapper — intentionally minimal.
+   All theme variables are applied via body.theme-dark / body.theme-light
+   defined in App.scss. */

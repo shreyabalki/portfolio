@@ -14,7 +14,6 @@ import SplashScreen from "./splashScreen/SplashScreen";
 import {splashScreen} from "../portfolio";
 import {StyleProvider} from "../contexts/StyleContext";
 import {useLocalStorage} from "../hooks/useLocalStorage";
-import "./Main.scss";
 
 const Main = () => {
   const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
@@ -22,12 +21,16 @@ const Main = () => {
   const [isShowingSplashAnimation, setIsShowingSplashAnimation] =
     useState(true);
 
+  // Apply theme class to <body> so CSS variables cascade correctly from root
+  useEffect(() => {
+    document.body.className = isDark ? "theme-dark" : "theme-light";
+  }, [isDark]);
+
   useEffect(() => {
     if (splashScreen.enabled) {
       const splashTimer = setTimeout(() => {
         setIsShowingSplashAnimation(false);
       }, splashScreen.duration);
-
       return () => clearTimeout(splashTimer);
     } else {
       setIsShowingSplashAnimation(false);
@@ -39,26 +42,24 @@ const Main = () => {
   };
 
   return (
-    <div className={isDark ? "theme-dark" : "theme-light"}>
-      <StyleProvider value={{isDark, changeTheme}}>
-        {isShowingSplashAnimation ? (
-          <SplashScreen />
-        ) : (
-          <>
-            <Header />
-            <Greeting />
-            <Projects />
-            <About />
-            <WorkExperience />
-            <Skills />
-            <Statement />
-            <Contact />
-            <Footer />
-            <ScrollToTopButton />
-          </>
-        )}
-      </StyleProvider>
-    </div>
+    <StyleProvider value={{isDark, changeTheme}}>
+      {isShowingSplashAnimation ? (
+        <SplashScreen />
+      ) : (
+        <>
+          <Header />
+          <Greeting />
+          <Projects />
+          <About />
+          <WorkExperience />
+          <Skills />
+          <Statement />
+          <Contact />
+          <Footer />
+          <ScrollToTopButton />
+        </>
+      )}
+    </StyleProvider>
   );
 };
 

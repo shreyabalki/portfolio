@@ -1,31 +1,52 @@
 /* ─── Projects Section ─────────────────────────────── */
 
-/* ── Featured card (first project, full-width) ─── */
-.project-featured {
+/* ── Vertical list ──────────────────────────────── */
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
   margin-top: var(--space-5);
+}
+
+/* ── Row card ───────────────────────────────────── */
+.project-row {
+  display: grid;
+  grid-template-columns: 360px 1fr;
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   background: var(--surface);
   overflow: hidden;
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
   transition:
     border-color var(--transition),
     box-shadow var(--transition);
 }
 
-.project-featured:hover {
+.project-row:hover {
   border-color: var(--accent);
   box-shadow: var(--shadow-hover);
 }
 
-.project-featured-image {
-  overflow: hidden;
-  background: var(--surface-2);
-  min-height: 320px;
+/* Alternate: image right, content left */
+.project-row--reverse {
+  grid-template-columns: 1fr 360px;
 }
 
-.project-featured-image img {
+.project-row--reverse .project-row-image {
+  order: 2;
+}
+
+.project-row--reverse .project-row-content {
+  order: 1;
+}
+
+/* ── Image cell ─────────────────────────────────── */
+.project-row-image {
+  overflow: hidden;
+  background: var(--surface-2);
+  min-height: 260px;
+}
+
+.project-row-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -33,83 +54,20 @@
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-featured:hover .project-featured-image img {
+.project-row:hover .project-row-image img {
   transform: scale(1.04);
 }
 
-.project-featured-body {
-  padding: var(--space-5) var(--space-5);
+/* ── Content cell ───────────────────────────────── */
+.project-row-content {
+  padding: var(--space-5);
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: var(--space-3);
 }
 
-.project-featured-name {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-}
-
-/* ── Grid (remaining projects) ─────────────────── */
-.project-grid {
-  margin-top: var(--space-3);
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-3);
-}
-
-/* ── Card ──────────────────────────────────────── */
-.project-card {
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  background: var(--surface);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition:
-    border-color var(--transition),
-    transform var(--transition),
-    box-shadow var(--transition);
-}
-
-.project-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
-}
-
-/* ── Image ─────────────────────────────────────── */
-.project-image-wrap {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  background: var(--surface-2);
-}
-
-.project-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.project-card:hover .project-image {
-  transform: scale(1.04);
-}
-
-/* ── Body ──────────────────────────────────────── */
-.project-body {
-  padding: var(--space-3) var(--space-4);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-  flex: 1;
-}
-
-/* ── Tags ──────────────────────────────────────── */
+/* ── Tags ───────────────────────────────────────── */
 .project-tags {
   display: flex;
   flex-wrap: wrap;
@@ -128,27 +86,28 @@
   background: var(--surface-2);
 }
 
-/* ── Name & Description ────────────────────────── */
+/* ── Name & Description ─────────────────────────── */
 .project-name {
-  font-size: 1.1rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: var(--text-primary);
   margin: 0;
 }
 
 .project-description {
   color: var(--text-secondary);
-  font-size: 0.92rem;
-  line-height: 1.65;
-  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.7;
 }
 
-/* ── CTA links ─────────────────────────────────── */
+/* ── CTA links ──────────────────────────────────── */
 .project-cta {
-  margin-top: var(--space-2);
   display: flex;
   gap: var(--space-2);
   flex-wrap: wrap;
+  margin-top: var(--space-1);
 }
 
 .project-link {
@@ -160,7 +119,7 @@
   color: var(--text-secondary);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-pill);
-  padding: 6px 14px;
+  padding: 7px 16px;
   transition:
     border-color var(--transition-fast),
     color var(--transition-fast);
@@ -183,19 +142,24 @@
   color: #fff;
 }
 
-/* ── Responsive ────────────────────────────────── */
-@media (max-width: 920px) {
-  .project-featured {
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 860px) {
+  .project-row,
+  .project-row--reverse {
     grid-template-columns: 1fr;
   }
 
-  .project-featured-image {
-    min-height: 240px;
+  .project-row--reverse .project-row-image,
+  .project-row--reverse .project-row-content {
+    order: unset;
   }
-}
 
-@media (max-width: 640px) {
-  .project-grid {
-    grid-template-columns: 1fr;
+  .project-row-image {
+    order: -1;
+    min-height: 220px;
+  }
+
+  .project-row-content {
+    padding: var(--space-4);
   }
 }
