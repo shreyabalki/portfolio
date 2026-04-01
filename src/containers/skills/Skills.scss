@@ -1,26 +1,31 @@
-@import "../../_globalColor";
-
-.skills-heading {
-  font-size: clamp(2rem, 4vw, 3rem);
-  text-transform: uppercase;
-  margin: 0;
-}
-
-.skills-text-subtitle {
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  color: $subTitle;
-  margin: 10px 0 20px;
-}
-
-.skills-bullets {
+.skills-grid {
+  margin-top: 14px;
   display: grid;
-  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
 }
 
-.skills-text {
-  margin: 0;
-  border-left: 2px solid $accentColor;
-  padding-left: 12px;
+.skill-card {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 14px;
+}
+
+.skill-card h3 {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.skill-card p {
+  color: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
 }

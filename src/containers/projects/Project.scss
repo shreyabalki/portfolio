@@ -1,63 +1,76 @@
-@import "../../_globalColor";
-
-.project-title {
-  font-size: clamp(2rem, 5vw, 3.4rem);
-  margin: 0;
-  text-transform: uppercase;
-}
-
 .project-subtitle {
-  color: $subTitle;
-  margin: 10px 0 24px;
+  color: var(--text-secondary);
+  margin: 8px 0 20px;
   max-width: 56ch;
 }
 
 .repo-cards-div-main {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 14px;
 }
 
 .repo-card-div {
-  border: 1px solid $lightBorder1;
+  grid-column: span 4;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
   padding: 12px;
-  background: $lightBackground1;
+  background: var(--surface);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.repo-card-div:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
 }
 
 .project-image {
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  border: 1px solid $lightBorder1;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
 }
 
 .project-name {
-  margin: 14px 0 8px;
+  margin: 12px 0 6px;
+  font-size: 1.16rem;
 }
 
 .project-description {
-  color: $subTitle;
+  color: var(--text-secondary);
+  min-height: 74px;
 }
 
 .project-tags {
+  margin-top: 12px;
   display: flex;
-  gap: 8px;
   flex-wrap: wrap;
+  gap: 8px;
 }
 
 .project-tags span {
-  border: 1px solid $lightBorder1;
-  padding: 3px 8px;
-  font-size: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  padding: 3px 9px;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
 }
 
 .project-links {
-  margin-top: 8px;
+  margin-top: 12px;
 }
 
-.dark-card {
-  background: $darkCardBackground;
-  border-color: $darkBorder1;
+@media (max-width: 1024px) {
+  .repo-card-div {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 700px) {
+  .repo-card-div {
+    grid-column: span 12;
+  }
 }

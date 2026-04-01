@@ -3,6 +3,7 @@ import Headroom from "react-headroom";
 import "./Header.scss";
 import StyleContext from "../../contexts/StyleContext";
 import {greeting} from "../../portfolio";
+import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 
 function Header() {
   const {isDark} = useContext(StyleContext);
@@ -10,7 +11,7 @@ function Header() {
 
   return (
     <Headroom>
-      <header className={isDark ? "dark-menu header" : "header"}>
+      <header className={`header ${isDark ? "is-dark" : "is-light"}`}>
         <a href="/" className="logo">
           {greeting.username}
         </a>
@@ -23,10 +24,10 @@ function Header() {
           onChange={() => setIsMenuOpen(!isMenuOpen)}
         />
         <label className="menu-icon" htmlFor="menu-btn">
-          <span className={isDark ? "navicon navicon-dark" : "navicon"}></span>
+          <span className="navicon"></span>
         </label>
 
-        <ul className={isDark ? "dark-menu menu" : "menu"}>
+        <ul className="menu">
           <li>
             <a href="#projects">Work</a>
           </li>
@@ -42,8 +43,16 @@ function Header() {
           <li>
             <a href="#contact">Contact</a>
           </li>
+          <li className="toggle-item" aria-label="Toggle theme">
+            <ToggleSwitch />
+          </li>
           <li>
-            <a href="/resume" target="_blank" rel="noopener noreferrer">
+            <a
+              href="/resume"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="resume-pill"
+            >
               Resume
             </a>
           </li>

@@ -1,59 +1,63 @@
-@import "../../_globalColor";
-
-.main,
 .greet-main {
-  width: min(1120px, 92%);
-  margin: 0 auto;
-  padding: 40px 0;
+  padding-top: 84px;
 }
 
 .greeting-main {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 2rem;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 18px;
   align-items: center;
 }
 
-.greeting-text {
-  margin: 0;
-  font-size: clamp(2.4rem, 6vw, 5rem);
-  line-height: 0.95;
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
-  color: $titleColor;
+.greeting-text-div {
+  grid-column: span 8;
+}
+
+.greeting-image-div {
+  grid-column: span 4;
 }
 
 .greeting-role {
-  margin: 18px 0 0;
+  color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.09em;
-  font-size: 0.9rem;
-  color: $accentColor;
-  font-weight: 600;
+  font-size: 0.8rem;
+  margin-bottom: 14px;
+}
+
+.greeting-text {
+  font-size: clamp(2.4rem, 8vw, 5.4rem);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
 }
 
 .greeting-text-p {
+  margin-top: 18px;
   max-width: 58ch;
-  margin-top: 16px;
-  color: $subTitle;
+  color: var(--text-secondary);
 }
 
 .button-greeting-div {
+  margin-top: 24px;
   display: flex;
   gap: 10px;
-  margin-top: 18px;
   flex-wrap: wrap;
 }
 
 .profile-picture {
-  width: min(360px, 100%);
-  border: 1px solid $lightBorder1;
-  filter: grayscale(100%);
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-soft);
 }
 
-@media (max-width: 900px) {
-  .greeting-main {
-    grid-template-columns: 1fr;
+@media (max-width: 920px) {
+  .greeting-text-div,
+  .greeting-image-div {
+    grid-column: span 12;
+  }
+
+  .greet-main {
+    padding-top: 40px;
   }
 }

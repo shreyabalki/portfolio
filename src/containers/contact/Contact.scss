@@ -1,23 +1,20 @@
-@import "../../_globalColor";
-
 .contact-margin-top {
-  margin-top: 32px;
-  padding-bottom: 56px;
+  border-top: 1px solid var(--border-color);
 }
 
 .contact-form-wrapper {
-  width: min(640px, 100%);
+  width: min(760px, 100%);
 }
 
 .contact-title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  text-transform: uppercase;
-  margin: 0;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  letter-spacing: -0.02em;
 }
 
 .contact-subtitle {
-  color: $subTitle;
-  margin: 12px 0 20px;
+  color: var(--text-secondary);
+  margin: 10px 0 18px;
+  max-width: 60ch;
 }
 
 .contact-form {
@@ -27,27 +24,31 @@
 
 .contact-form input,
 .contact-form textarea {
-  border: 1px solid $lightBorder1;
-  padding: 12px;
-  font: inherit;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: var(--surface);
+  color: var(--text-primary);
 }
 
 .contact-form button {
-  border: 1px solid $accentColor;
-  background: $accentColor;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: var(--accent);
   color: #fff;
-  padding: 12px 14px;
+  padding: 12px 18px;
+  width: fit-content;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
+  font-size: 0.74rem;
   cursor: pointer;
 }
 
 .contact-form button:hover {
-  background: #fff;
-  color: $accentColor;
+  background: var(--accent-hover);
 }
 
 .contact-thankyou {
-  margin-top: 10px;
-  color: $accentColor;
+  margin-top: 8px;
+  color: var(--accent);
 }

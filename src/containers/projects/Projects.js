@@ -10,8 +10,8 @@ export default function Projects() {
 
   return (
     <section className="main" id="projects">
-      <h2 className="project-title">{bigProjects.title}</h2>
-      <p className="project-subtitle">{bigProjects.subtitle}</p>
+      <h2 className="section-title">{bigProjects.title}</h2>
+      <p className="section-kicker project-subtitle">{bigProjects.subtitle}</p>
       <div className="repo-cards-div-main">
         {bigProjects.projects?.map((project, index) => (
           <article

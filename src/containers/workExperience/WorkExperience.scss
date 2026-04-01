@@ -1,19 +1,14 @@
-@import "../../_globalColor";
-
 .experience-container {
-  width: min(1120px, 92%);
-  margin: 0 auto;
-  padding: 36px 0;
+  padding-top: 10px;
 }
 
 .experience-heading {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
   text-transform: uppercase;
-  margin: 0 0 20px;
-  text-align: left;
+  margin-bottom: 16px;
 }
 
 .experience-cards-div {
   display: grid;
-  gap: 14px;
+  gap: 12px;
 }
