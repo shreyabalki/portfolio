@@ -45,19 +45,16 @@ function Header() {
           </li>
           <li className="toggle-item" aria-label="Toggle theme">
             <ToggleSwitch />
-<<<<<<< HEAD
-=======
           </li>
           <li>
             <a
-              href="/resume"
+              href={greeting.resumeLink}
               target="_blank"
               rel="noopener noreferrer"
               className="resume-pill"
             >
               Resume
             </a>
->>>>>>> origin/main
           </li>
         </ul>
       </header>

@@ -1,9 +1,11 @@
 .header {
   width: min(var(--container), calc(100% - (var(--gutter) * 2)));
   margin: 12px auto 0;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--border-color);
-  background: transparent;
+  padding: 12px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-pill);
+  background: color-mix(in oklab, var(--bg-elevated) 86%, transparent);
+  backdrop-filter: blur(8px);
 }
 
 .header .logo {
@@ -12,9 +14,10 @@
   color: var(--text-primary);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 700;
   margin-top: 9px;
+  max-width: 210px;
 }
 
 .header .menu {
@@ -32,7 +35,7 @@
   padding: 10px 10px;
   text-decoration: none;
   color: var(--text-secondary);
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -41,14 +44,11 @@
   color: var(--text-primary);
 }
 
-<<<<<<< HEAD
-=======
 .resume-pill {
   border: 1px solid var(--border-color);
   border-radius: var(--radius-pill);
 }
 
->>>>>>> origin/main
 .menu-icon {
   float: right;
   cursor: pointer;
@@ -100,5 +100,13 @@
     display: flex;
     align-items: center;
     gap: 4px;
+  }
+}
+
+@media (max-width: 640px) {
+  .header .logo {
+    max-width: 140px;
+    margin-top: 7px;
+    line-height: 1.35;
   }
 }
