@@ -1,43 +1,41 @@
+/* ─── Skills Section ───────────────────────────────── */
 .skills-section {
   border-top: 1px solid var(--border-color);
 }
 
 .skills-header {
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-6);
 }
 
+/* ── Category blocks ────────────────────────────── */
 .capabilities-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-3);
+  gap: var(--space-2);
 }
 
-/* ── Category block ───────────────── */
 .capability-block {
-  border: 1px solid var(--border-color);
-  background: var(--surface);
-  border-radius: var(--radius-md);
-  padding: var(--space-4);
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: var(--space-4);
+  align-items: start;
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--border-color);
 }
 
-.capability-block:hover {
-  border-color: var(--accent);
-  box-shadow: var(--shadow-soft);
+.capability-block:last-child {
+  border-bottom: 1px solid var(--border-color);
 }
 
 .capability-category {
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--accent);
-  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  font-size: 0.65rem;
   font-weight: 700;
-  margin-bottom: var(--space-3);
+  padding-top: 6px;
 }
 
-/* ── Skill pills ──────────────────── */
+/* ── Skill pills ────────────────────────────────── */
 .capability-list {
   margin: 0;
   padding: 0;
@@ -50,30 +48,33 @@
 .capability-item {
   border: 1px solid var(--border-color);
   border-radius: var(--radius-pill);
-  padding: 5px 11px;
-  font-size: 0.82rem;
+  padding: 6px 14px;
+  font-size: 0.83rem;
+  font-weight: 500;
   color: var(--text-secondary);
-  background: var(--surface-2);
+  background: var(--surface);
   white-space: nowrap;
   transition:
-    border-color 0.15s ease,
-    color 0.15s ease;
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    background var(--transition-fast);
+  cursor: default;
 }
 
 .capability-item:hover {
   border-color: var(--accent);
   color: var(--text-primary);
+  background: var(--surface-2);
 }
 
-/* ── Responsive ───────────────────── */
-@media (max-width: 960px) {
-  .capabilities-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .capabilities-grid {
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 640px) {
+  .capability-block {
     grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .capability-category {
+    padding-top: 0;
   }
 }

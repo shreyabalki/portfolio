@@ -1,0 +1,60 @@
+/* ─── Statement / Brand Section ────────────────────── */
+.statement-section {
+  width: 100%;
+  background: var(--surface-2);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding-block: var(--space-7);
+}
+
+.statement-inner {
+  width: min(var(--container), calc(100% - (var(--gutter) * 2)));
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.statement-eyebrow {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.statement-headline {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1.0;
+  color: var(--text-primary);
+}
+
+.statement-x {
+  color: var(--accent);
+  font-weight: 300;
+  margin: 0 6px;
+}
+
+.statement-sub {
+  display: block;
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: -0.04em;
+}
+
+.statement-body {
+  max-width: 52ch;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 640px) {
+  .statement-headline {
+    font-size: clamp(2.4rem, 10vw, 3.5rem);
+  }
+}

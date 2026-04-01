@@ -1,33 +1,34 @@
+/* ─── Experience Card ──────────────────────────────── */
 .experience-card {
   border: 1px solid var(--border-color);
-  border-left: 3px solid var(--accent);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  border-radius: var(--radius-md);
   background: var(--surface);
   overflow: hidden;
   transition:
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
+    box-shadow var(--transition),
+    border-color var(--transition);
 }
 
 .experience-card:hover {
-  box-shadow: var(--shadow-soft);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-hover);
 }
 
-/* ── Header row ─────────────────── */
+/* ── Header row ─────────────────────────────────── */
 .experience-card-header {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 48px 1fr auto;
   gap: var(--space-3);
   align-items: center;
-  padding: var(--space-3) var(--space-4);
+  padding: var(--space-4);
   border-bottom: 1px solid var(--border-color);
 }
 
 .experience-logo-wrap {
-  width: 44px;
-  height: 44px;
-  border-radius: 8px;
-  background: #fff;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: #ffffff;
   display: grid;
   place-items: center;
   border: 1px solid var(--border-color);
@@ -46,60 +47,73 @@
 
 .experience-company {
   color: var(--text-muted);
-  font-size: 0.73rem;
-  letter-spacing: 0.08em;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .experience-role {
-  font-size: 1.05rem;
-  letter-spacing: -0.01em;
-  margin-top: 2px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-top: 3px;
+  line-height: 1.3;
 }
 
 .experience-date {
   color: var(--text-muted);
-  font-size: 0.82rem;
+  font-size: 0.78rem;
+  font-weight: 500;
   white-space: nowrap;
   text-align: right;
 }
 
-/* ── Body ───────────────────────── */
+/* ── Body ───────────────────────────────────────── */
 .experience-body {
-  padding: var(--space-3) var(--space-4);
+  padding: var(--space-4);
 }
 
 .experience-desc {
   color: var(--text-secondary);
-  line-height: 1.65;
+  line-height: 1.7;
+  font-size: 0.95rem;
 }
 
 .experience-bullets {
-  margin: var(--space-2) 0 0;
-  padding-left: var(--space-4);
-  color: var(--text-secondary);
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  list-style: none;
   display: grid;
-  gap: 6px;
+  gap: 10px;
 }
 
 .experience-bullets li {
-  line-height: 1.55;
+  color: var(--text-secondary);
+  font-size: 0.93rem;
+  line-height: 1.6;
+  padding-left: var(--space-3);
+  position: relative;
 }
 
-/* ── Responsive ─────────────────── */
+.experience-bullets li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ── Responsive ─────────────────────────────────── */
 @media (max-width: 700px) {
   .experience-card-header {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 48px 1fr;
     grid-template-rows: auto auto;
   }
 
   .experience-date {
     grid-column: 1 / -1;
     text-align: left;
-    padding-top: 0;
+    font-size: 0.75rem;
   }
 }

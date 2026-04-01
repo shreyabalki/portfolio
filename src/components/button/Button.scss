@@ -1,22 +1,29 @@
+/* ─── Button ───────────────────────────────────────── */
 .main-button {
   display: inline-block;
-  padding: 11px 18px;
+  padding: 12px 22px;
   border: 1px solid var(--button-primary);
   color: var(--bg);
   background: var(--button-primary);
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  font-weight: 700;
   border-radius: var(--radius-pill);
-  transition: 0.2s ease;
+  transition:
+    opacity var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
 }
 
 .main-button:hover {
+  opacity: 0.82;
   transform: translateY(-1px);
   box-shadow: var(--shadow-soft);
 }
 
+/* ── Secondary / ghost variant ──────────────────── */
 .secondary .main-button {
   background: var(--button-secondary);
   color: var(--text-primary);
@@ -26,5 +33,6 @@
 .secondary .main-button:hover {
   border-color: var(--accent);
   color: var(--accent);
+  opacity: 1;
   box-shadow: none;
 }
