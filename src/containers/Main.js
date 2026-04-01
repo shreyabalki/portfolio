@@ -4,12 +4,10 @@ import Header from "../components/header/Header";
 import Greeting from "./greeting/Greeting";
 import Contact from "./contact/Contact";
 import Skills from "./skills/Skills";
-import StackProgress from "./skillProgress/skillProgress";
-import WorkExperience from "./workExperience/WorkExperience";
 import Projects from "./projects/Projects";
-import Achievement from "./achievement/Achievement";
+import About from "./about/About";
+import WorkExperience from "./workExperience/WorkExperience";
 import Footer from "../components/footer/Footer";
-import Education from "./education/Education";
 import ScrollToTopButton from "./topbutton/Top";
 import SplashScreen from "./splashScreen/SplashScreen";
 
@@ -42,7 +40,7 @@ const Main = () => {
   };
 
   return (
-    <div className={isDark ? "dark-mode" : null}>
+    <div className={isDark ? "theme-dark" : "theme-light"}>
       <StyleProvider value={{isDark, changeTheme}}>
         {isShowingSplashAnimation ? (
           <SplashScreen />
@@ -50,12 +48,10 @@ const Main = () => {
           <>
             <Header />
             <Greeting />
-            <Skills />
-            <StackProgress />
-            <Education />
-            <WorkExperience />
             <Projects />
-            <Achievement />
+            <About />
+            <WorkExperience />
+            <Skills />
             <Contact />
             <Footer />
             <ScrollToTopButton />

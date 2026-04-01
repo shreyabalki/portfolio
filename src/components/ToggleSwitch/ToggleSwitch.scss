@@ -1,11 +1,8 @@
-@use "sass:color";
-@import "../../_globalColor";
-
 .switch {
   position: relative;
   display: inline-block;
-  width: 50px;
-  height: 26px;
+  width: 46px;
+  height: 24px;
 }
 
 .switch input {
@@ -14,75 +11,32 @@
   height: 0;
 }
 
-/* Slider base */
 .slider {
   position: absolute;
+  inset: 0;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: $toggleSwitchSliderBG;
-  transition: background-color 0.4s;
-  border-radius: 34px;
-  display: flex;
-  align-items: center;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background: var(--surface);
+  transition: 0.2s ease;
 }
 
-/* Knob */
 .slider::before {
   content: "";
   position: absolute;
-  height: 24px;
-  width: 24px;
-  left: 2px;
-  bottom: 1px;
-  background-color: $textColorDark;
-  transition: transform 0.4s;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  display: grid;
-  place-items: center;
-  z-index: 1;
-}
-
-/* Emoji inside knob */
-.emoji {
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 2px;
-  font-size: 14px;
-}
-
-/* Checked styles */
-input:checked + .slider {
-  background-color: $toggleCheck;
+  left: 2px;
+  top: 2px;
+  background: var(--text-primary);
+  transition: transform 0.2s ease;
 }
 
 input:checked + .slider::before {
-  transform: translateX(24px);
+  transform: translateX(21px);
 }
 
-/* Optional glow focus */
-input:focus + .slider {
-  box-shadow: 0 0 1px $toggleCheck;
-}
-
-/* Responsive emoji shift if needed */
-@media (max-width: 786px) and (min-width: 425px) {
-  input:checked + .slider::before {
-    transform: translateX(23px);
-  }
-}
-
-@media (min-width: 1552px) {
-  .slider::before {
-    transform: scale(1.05);
-  }
-  @media (max-width: 425px) {
-    .switch {
-      transform: scale(0.9);
-    }
-  }
+.emoji {
+  display: none;
 }

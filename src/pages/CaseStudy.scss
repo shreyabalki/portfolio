@@ -1,0 +1,26 @@
+.case-study-main {
+  width: min(920px, 92%);
+  margin: 56px auto;
+}
+
+.case-back {
+  color: #ff2d2d;
+  text-decoration: none;
+}
+
+.case-study-main h1 {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  margin: 16px 0 10px;
+}
+
+.case-tags {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.case-image {
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  margin: 20px 0;
+}

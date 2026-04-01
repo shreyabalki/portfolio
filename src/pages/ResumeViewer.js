@@ -1,3 +1,5 @@
+import React from "react";
+
 // ResumeViewer.js
 const ResumeViewer = () => (
   <div style={{height: "100vh", width: "100vw", overflow: "hidden", margin: 0}}>

@@ -1,111 +1,88 @@
-@import "../../_globalColor";
-
-/* ---------------- Section Titles ---------------- */
-.project-title {
-  font-size: 52px;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 10px;
-  line-height: 1.2;
-}
-
 .project-subtitle {
-  font-size: 20px;
-  margin-bottom: 30px;
-  text-align: center;
-  color: $subTitle; // use theme variable
+  color: var(--text-secondary);
+  margin: 10px 0 24px;
+  max-width: 62ch;
+  text-transform: none;
+  font-size: 1rem;
+  letter-spacing: 0;
 }
 
-/* ---------------- Grid Layout ---------------- */
 .repo-cards-div-main {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  margin-top: 20px;
-  padding: 0 1rem;
-  box-sizing: border-box;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 14px;
 }
 
-/* ---------------- Project Card ---------------- */
 .repo-card-div {
-  background-color: #fff;
-  color: #111;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: justify;
+  grid-column: span 4;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  background: var(--surface);
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .repo-card-div:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-soft);
 }
 
-/* ---------------- Project Content ---------------- */
+.repo-card-div.featured {
+  grid-column: span 8;
+}
+
 .project-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-  object-fit: contain;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
 }
 
 .project-name {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  text-align: center;
-  color: $textColor;
+  margin: 12px 0 8px;
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
 }
 
 .project-description {
-  font-size: 16px;
-  color: #444;
-  line-height: 1.6;
-  margin-bottom: 1rem;
+  color: var(--text-secondary);
+  min-height: 56px;
 }
 
-/* ---------------- Dark Mode Support ---------------- */
-.dark-card {
-  background-color: #1e1e1e;
-  color: $textColorDark;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
-}
-
-.dark-card .project-name {
-  color: $titleColorDark;
-}
-
-.dark-card .project-description {
-  color: #ccc;
-}
-
-/* ---------------- Project Links ---------------- */
-.project-links {
+.project-tags {
+  margin-top: 12px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: auto;
+  gap: 8px;
 }
 
-/* ---------------- Responsive ---------------- */
-@media (max-width: 1380px) {
-  .project-title {
-    font-size: 40px;
+.project-tags span {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-pill);
+  padding: 4px 10px;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  background: var(--surface-2);
+}
+
+.project-links {
+  margin-top: 12px;
+}
+
+@media (max-width: 1024px) {
+  .repo-card-div,
+  .repo-card-div.featured {
+    grid-column: span 6;
   }
 }
 
-@media (max-width: 768px) {
-  .project-title {
-    font-size: 30px;
-  }
-
-  .repo-cards-div-main {
-    grid-template-columns: 1fr;
+@media (max-width: 700px) {
+  .repo-card-div,
+  .repo-card-div.featured {
+    grid-column: span 12;
   }
 }
