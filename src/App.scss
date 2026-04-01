@@ -1,59 +1,84 @@
+/* ─────────────────────────────────────────────────────────────
+   Design System — CSS Custom Properties
+   All theming, spacing, and layout tokens live here.
+   ───────────────────────────────────────────────────────────── */
+
 :root {
+  /* Layout */
   --container: 1160px;
   --gutter: clamp(18px, 3vw, 28px);
+
+  /* Spacing scale (8-pt base) */
   --space-1: 8px;
   --space-2: 12px;
   --space-3: 16px;
   --space-4: 24px;
-  --space-5: 36px;
-  --space-6: 56px;
-  --space-7: 84px;
+  --space-5: 40px;
+  --space-6: 64px;
+  --space-7: 96px;
+
+  /* Border radii */
   --radius-sm: 10px;
   --radius-md: 16px;
   --radius-pill: 999px;
-  --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.08);
-  --shadow-hover: 0 16px 34px rgba(0, 0, 0, 0.14);
+
+  /* Shadows */
+  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.07);
+  --shadow-hover: 0 16px 36px rgba(0, 0, 0, 0.13);
+
+  /* Transition default */
+  --transition: 0.2s ease;
 }
 
+/* ─── Dark theme ──────────────────────────────────────────── */
 .theme-dark {
   --bg: #0f1115;
   --bg-elevated: #151922;
   --surface: #191e29;
-  --surface-2: #202634;
-  --text-primary: #f5f7fb;
-  --text-secondary: #d3d8e3;
-  --text-muted: #a6adbb;
-  --border-color: #30394b;
-  --accent: #ff3f3f;
-  --accent-hover: #ff6363;
-  --button-primary: #f5f7fb;
+  --surface-2: #1e2433;
+  --text-primary: #f0f3fa;
+  --text-secondary: #c8cfe0;
+  --text-muted: #8892a4;
+  --border-color: #2a3347;
+  --accent: #ff4040;
+  --accent-hover: #ff6666;
+  --button-primary: #f0f3fa;
   --button-secondary: transparent;
 }
 
+/* ─── Light theme ─────────────────────────────────────────── */
 .theme-light {
-  --bg: #f6f7f9;
+  --bg: #f5f6f8;
   --bg-elevated: #ffffff;
   --surface: #ffffff;
-  --surface-2: #f0f3f8;
-  --text-primary: #171b23;
-  --text-secondary: #3f4653;
-  --text-muted: #6b7381;
-  --border-color: #d7dee8;
+  --surface-2: #eef1f6;
+  --text-primary: #151920;
+  --text-secondary: #3c4252;
+  --text-muted: #6a7282;
+  --border-color: #d4dae6;
   --accent: #d92a2a;
-  --accent-hover: #b92020;
-  --button-primary: #171b23;
+  --accent-hover: #b52020;
+  --button-primary: #151920;
   --button-secondary: transparent;
+}
+
+/* ─── Base ────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
   background: var(--bg);
   color: var(--text-primary);
+  transition: background var(--transition), color var(--transition);
 }
 
+/* ─── Layout helpers ──────────────────────────────────────── */
 .main,
 .greet-main,
-.experience-container,
-.case-study-main {
+.experience-container {
   width: min(var(--container), calc(100% - (var(--gutter) * 2)));
   margin-inline: auto;
 }
@@ -62,18 +87,21 @@ section {
   padding-block: var(--space-6);
 }
 
+/* ─── Typography helpers ──────────────────────────────────── */
 .section-title {
-  font-size: clamp(1.85rem, 4vw, 3rem);
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  letter-spacing: -0.035em;
+  line-height: 1.0;
   margin-bottom: var(--space-2);
-  letter-spacing: -0.03em;
-  line-height: 1.02;
 }
 
 .section-kicker {
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  margin-bottom: var(--space-1);
 }
 
 .body-copy {
@@ -81,14 +109,22 @@ section {
   line-height: 1.7;
 }
 
+/* ─── Interactive elements ────────────────────────────────── */
 a,
 button,
 input,
-textarea {
+textarea,
+select {
   font: inherit;
 }
 
 *:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Smooth scroll globally */
+html {
+  scroll-behavior: smooth;
 }

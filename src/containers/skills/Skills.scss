@@ -1,27 +1,42 @@
-.capabilities-grid {
-  margin-top: 14px;
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 12px;
+.skills-section {
+  border-top: 1px solid var(--border-color);
 }
 
+.skills-header {
+  margin-bottom: var(--space-5);
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+/* ── Category block ───────────────── */
 .capability-block {
-  grid-column: span 4;
   border: 1px solid var(--border-color);
   background: var(--surface);
   border-radius: var(--radius-md);
-  padding: 14px;
+  padding: var(--space-4);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.capability-block h3 {
+.capability-block:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-soft);
+}
+
+.capability-category {
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-muted);
-  font-size: 0.74rem;
-  margin-bottom: 8px;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin-bottom: var(--space-3);
 }
 
-.capability-block ul {
+/* ── Skill pills ──────────────────── */
+.capability-list {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -30,27 +45,31 @@
   gap: 8px;
 }
 
-.capability-block li {
+.capability-item {
   border: 1px solid var(--border-color);
   border-radius: var(--radius-pill);
-  padding: 5px 9px;
+  padding: 5px 11px;
   font-size: 0.82rem;
   color: var(--text-secondary);
   background: var(--surface-2);
+  white-space: nowrap;
+  transition: border-color 0.15s ease, color 0.15s ease;
 }
 
-.capability-block:hover {
+.capability-item:hover {
   border-color: var(--accent);
+  color: var(--text-primary);
 }
 
+/* ── Responsive ───────────────────── */
 @media (max-width: 960px) {
-  .capability-block {
-    grid-column: span 6;
+  .capabilities-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 700px) {
-  .capability-block {
-    grid-column: span 12;
+@media (max-width: 600px) {
+  .capabilities-grid {
+    grid-template-columns: 1fr;
   }
 }

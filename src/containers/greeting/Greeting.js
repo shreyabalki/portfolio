@@ -21,20 +21,23 @@ export default function Greeting() {
             <p className="greeting-text-p">{greeting.subTitle}</p>
             <div className="button-greeting-div">
               <Button text="View Work" href="#projects" />
-<<<<<<< HEAD
-=======
-              <Button
-                text="Resume"
-                href={greeting.resumeLink}
-                newTab={true}
-                className="secondary"
-              />
->>>>>>> origin/main
+              {greeting.resumeLink && (
+                <Button
+                  text="Resume"
+                  href={greeting.resumeLink}
+                  newTab={true}
+                  className="secondary"
+                />
+              )}
             </div>
           </div>
 
           <div className="greeting-image-div">
-            <img src={ShreyaImage} alt="Shreya" className="profile-picture" />
+            <img
+              src={ShreyaImage}
+              alt={`${greeting.username} profile`}
+              className="profile-picture"
+            />
           </div>
         </div>
       </section>

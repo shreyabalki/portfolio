@@ -1,16 +1,17 @@
 .experience-container {
-  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 0;
 }
 
 .experience-heading {
-  margin-bottom: 6px;
+  margin-bottom: var(--space-1);
 }
 
 .experience-kicker {
-  margin-bottom: 18px;
+  margin-bottom: var(--space-4);
 }
 
 .experience-cards-div {
   display: grid;
-  gap: 14px;
+  gap: var(--space-3);
 }

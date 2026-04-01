@@ -9,36 +9,60 @@ export default function Projects() {
 
   return (
     <section className="main" id="projects">
+      <p className="section-kicker">{bigProjects.subtitle}</p>
       <h2 className="section-title">{bigProjects.title}</h2>
-      <p className="section-kicker project-subtitle">{bigProjects.subtitle}</p>
-      <div className="repo-cards-div-main">
+
+      <div className="project-grid">
         {bigProjects.projects?.map((project, index) => (
           <article
             key={index}
-            className={`repo-card-div ${index === 0 ? "featured" : ""} ${
-              isDark ? "dark-card" : ""
-            }`}
+            className={`project-card ${isDark ? "dark-card" : ""}`}
           >
-            <img
-              src={project.image}
-              alt={project.projectName}
-              className="project-image"
-            />
-            <h3 className="project-name">{project.projectName}</h3>
-            <p className="project-description">{project.projectDesc}</p>
-            <div className="project-tags">
-              {project.tags?.map(tag => (
-                <span key={tag}>{tag}</span>
-              ))}
+            <div className="project-image-wrap">
+              <img
+                src={project.image}
+                alt={project.projectName}
+                className="project-image"
+                loading="lazy"
+              />
             </div>
-<<<<<<< HEAD
-=======
-            <div className="project-links">
-              {project.footerLink?.map((link, i) => (
-                <Button key={i} text={link.name} href={link.url} />
-              ))}
+
+            <div className="project-body">
+              <div className="project-tags">
+                {project.tags?.map(tag => (
+                  <span key={tag} className="project-tag">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <h3 className="project-name">{project.projectName}</h3>
+              <p className="project-description">{project.projectDesc}</p>
+
+              {(project.github || project.demo) && (
+                <div className="project-cta">
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-link"
+                    >
+                      GitHub
+                    </a>
+                  )}
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-link project-link--primary"
+                    >
+                      Live Demo
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
->>>>>>> origin/main
           </article>
         ))}
       </div>

@@ -4,26 +4,30 @@ import "./ExperienceCard.scss";
 export default function ExperienceCard({cardInfo}) {
   return (
     <article className="experience-card">
-      <div className="experience-div-company">
-        <img
-          className="experience-roundedimg"
-          src={cardInfo.companylogo}
-          alt={cardInfo.company}
-        />
-        <div>
-          <p className="experience-text-company">{cardInfo.company}</p>
-          <h3 className="experience-text-role">{cardInfo.role}</h3>
+      <header className="experience-card-header">
+        <div className="experience-logo-wrap">
+          <img
+            className="experience-logo"
+            src={cardInfo.companylogo}
+            alt={`${cardInfo.company} logo`}
+          />
         </div>
-        <p className="experience-text-date">{cardInfo.date}</p>
-      </div>
+        <div className="experience-meta">
+          <p className="experience-company">{cardInfo.company}</p>
+          <h3 className="experience-role">{cardInfo.role}</h3>
+        </div>
+        <p className="experience-date">{cardInfo.date}</p>
+      </header>
 
-      <div className="experience-text-details">
-        <p className="experience-text-desc">{cardInfo.desc}</p>
-        <ul>
-          {cardInfo.descBullets?.map((item, i) => (
-            <li key={i}>{item}</li>
-          ))}
-        </ul>
+      <div className="experience-body">
+        <p className="experience-desc">{cardInfo.desc}</p>
+        {cardInfo.descBullets?.length > 0 && (
+          <ul className="experience-bullets">
+            {cardInfo.descBullets.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+        )}
       </div>
     </article>
   );
