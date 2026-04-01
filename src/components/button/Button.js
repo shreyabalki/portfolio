@@ -12,16 +12,14 @@ export default function Button({
   const combinedClass = `main-button ${className}`.trim();
 
   return (
-    <div className={className}>
-      <a
-        className={combinedClass}
-        href={href}
-        onClick={onClick}
-        {...(newTab ? {target: "_blank", rel: "noopener noreferrer"} : {})}
-        {...(download ? {download: true} : {})}
-      >
-        {text}
-      </a>
-    </div>
+    <a
+      className={combinedClass}
+      href={href}
+      onClick={onClick}
+      {...(newTab ? {target: "_blank", rel: "noopener noreferrer"} : {})}
+      {...(download ? {download: true} : {})}
+    >
+      {text}
+    </a>
   );
 }

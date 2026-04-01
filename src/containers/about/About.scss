@@ -1,0 +1,61 @@
+.about-section {
+  border-top: 1px solid var(--border-color);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.about-intro {
+  grid-column: span 5;
+}
+
+.about-title {
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  letter-spacing: -0.025em;
+  margin-top: 8px;
+}
+
+.about-summary {
+  margin-top: 14px;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  max-width: 48ch;
+}
+
+.about-points {
+  grid-column: span 7;
+  display: grid;
+  gap: 10px;
+}
+
+.about-point-card {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  background: var(--surface);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.about-point-index {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+}
+
+.about-point-card p {
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .about-intro,
+  .about-points {
+    grid-column: span 12;
+  }
+}

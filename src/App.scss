@@ -1,301 +1,98 @@
-@import "./globalColor"; /* Adjust path as needed */
-
-.App {
-  text-align: center;
-  width: 100%;
-  overflow-x: hidden;
-  background-color: $appBG;
-  color: $textColor;
+:root {
+  --container: 1160px;
+  --gutter: clamp(18px, 3vw, 28px);
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 36px;
+  --space-6: 56px;
+  --space-7: 84px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-pill: 999px;
+  --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 16px 34px rgba(0, 0, 0, 0.14);
 }
 
-.App-logo {
-  height: 40vmin;
+.theme-dark {
+  --bg: #0f1115;
+  --bg-elevated: #151922;
+  --surface: #191e29;
+  --surface-2: #202634;
+  --text-primary: #f5f7fb;
+  --text-secondary: #e0e5ef;
+  --text-muted: #a6adbb;
+  --border-color: #30394b;
+  --accent: #ff3f3f;
+  --accent-hover: #ff6363;
+  --button-primary: #f5f7fb;
+  --button-secondary: transparent;
 }
 
-.App-header {
-  background-color: $appHeaderBG;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(0.625rem + 2vmin);
-  color: $textColorDark;
+.theme-light {
+  --bg: #f6f7f9;
+  --bg-elevated: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f0f3f8;
+  --text-primary: #171b23;
+  --text-secondary: #3f4653;
+  --text-muted: #6b7381;
+  --border-color: #d7dee8;
+  --accent: #d92a2a;
+  --accent-hover: #b92020;
+  --button-primary: #171b23;
+  --button-secondary: transparent;
 }
 
-.App-link {
-  color: $appLink;
+body {
+  background: var(--bg);
+  color: var(--text-primary);
 }
 
-.subTitle {
-  color: $subTitle;
+.main,
+.greet-main,
+.experience-container,
+.case-study-main {
+  width: min(var(--container), calc(100% - (var(--gutter) * 2)));
+  margin-inline: auto;
 }
 
-.balance-text {
-  text-align: justify;
-  text-justify: inter-word;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
-  word-break: break-word;
+section {
+  padding-block: var(--space-6);
 }
 
-/* ====================== Dark Mode ========================= */
-.dark-mode .App {
-  background-color: #121212;
-  color: $textColorDark;
+.section-title {
+  font-size: clamp(1.85rem, 4vw, 3rem);
+  margin-bottom: var(--space-2);
+  letter-spacing: -0.03em;
+  line-height: 1.02;
 }
 
-.dark-mode .App-header {
-  background-color: #1f1f1f;
-  color: $textColorDark;
+.section-kicker {
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
 }
 
-/* ====================== Mobile-first Responsive Styles ========================= */
-@media only screen and (max-width: 768px) {
-  /* General body adjustments */
-  html,
-  body {
-    font-size: 90%;
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
-  }
-
-  .App {
-    padding: 0 1rem;
-  }
-
-  /* Header adjustments */
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-  }
-
-  /* Mobile Menu Icon adjustments */
-  .menu-icon {
-    display: block;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 1001;
-  }
-
-  .menu-btn {
-    display: none;
-  }
-
-  /* Mobile Menu Styling */
-  .menu {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    position: fixed;
-    top: 70px;
-    left: 0;
-    z-index: 1000;
-  }
-
-  .dark-mode .menu {
-    background-color: #1f1f1f;
-  }
-
-  .menu li {
-    margin: 0.5rem 0;
-  }
-
-  /* Mobile Menu Display when Checked */
-  .menu-btn:checked ~ .menu {
-    display: flex;
-  }
-
-  /* Contact and Form adjustments */
-  .contact-div-main,
-  .skills-container,
-  .education-container {
-    flex-direction: column !important;
-    gap: 1.5rem;
-  }
-
-  .form-field,
-  .contact-form,
-  .project-card,
-  .achievement-card {
-    padding: 0.5rem !important;
-    margin-bottom: 1rem !important;
-  }
-
-  /* Form elements */
-  input,
-  textarea,
-  select,
-  button {
-    font-size: 0.9rem; /* Slightly smaller font size on mobile */
-    padding: 0.6rem; /* Adjust padding for smaller screens */
-  }
-
-  /* Media elements scaling */
-  img,
-  iframe,
-  video {
-    max-width: 100% !important; /* Ensure media elements are responsive */
-    height: auto; /* Maintain aspect ratio */
-  }
-
-  /* Adjusting Section Titles */
-  .section-title {
-    font-size: 1.75rem !important; /* Adjust section titles on mobile */
-  }
-
-  /* Adjusting Headings */
-  .heading {
-    font-size: 1.5rem !important; /* Adjust heading font size for mobile */
-  }
-
-  /* Experience Texts Adjustments */
-  .experience-text-company,
-  .experience-text-role,
-  .experience-text-date {
-    font-size: 18px; /* Adjust font size for text elements */
-  }
-
-  .experience-text-desc,
-  .experience-text-details {
-    font-size: 16px; /* Make description text smaller on mobile */
-    padding: 1rem; /* Adjust padding for better spacing */
-  }
-
-  /* Adjust logo size on mobile */
-  .experience-roundedimg {
-    width: 6rem; /* Resize logo for mobile */
-    height: 6rem; /* Resize logo for mobile */
-  }
-
-  .experience-heading {
-    font-size: 1.75rem; /* Smaller section titles on mobile */
-    margin-bottom: 1.5rem; /* Reduce margin for mobile */
-  }
-
-  .section {
-    margin-bottom: 1.5rem; /* Reduce bottom margin for sections on mobile */
-  }
+.body-copy {
+  color: var(--text-secondary);
+  line-height: 1.7;
 }
 
-/* ====================== Tablet-Specific Responsiveness ====================== */
-@media (max-width: 1024px) {
-  .experience-roundedimg {
-    width: 6.5rem; /* Adjust logo size for larger tablets */
-    height: 6.5rem;
-    top: 6.5rem; /* Adjust position for tablets */
-  }
-
-  .experience-text-role {
-    font-size: 22px; /* Adjust text size for tablets */
-  }
-
-  .experience-text-company {
-    font-size: 22px;
-  }
-
-  .experience-text-date {
-    font-size: 18px;
-  }
-
-  .experience-text-desc {
-    font-size: 16px;
-  }
-
-  .experience-text-details {
-    font-size: 16px;
-    padding: 1.25rem;
-  }
+a,
+button,
+input,
+textarea {
+  font: inherit;
 }
 
-/* ====================== Large Mobile Screens ====================== */
-@media (max-width: 1380px) {
-  .experience-text-role {
-    font-size: 22px;
-    padding-top: 1rem;
-  }
-
-  .experience-text-company {
-    font-size: 22px;
-  }
-
-  .experience-text-date {
-    font-size: 18px;
-  }
-
-  .experience-roundedimg {
-    width: 6.5rem;
-    height: 6.5rem;
-  }
-
-  .experience-text-details {
-    padding: 1.25rem;
-  }
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
-/* ====================== Very Small Mobile Screens (like iPhone SE) ====================== */
-@media (max-width: 480px) {
-  .experience-roundedimg {
-    width: 5.5rem; /* Reduce logo size further */
-    height: 5.5rem;
-    top: 6rem; /* Adjust position further for small screens */
-  }
-
-  .experience-text-role {
-    font-size: 18px;
-  }
-
-  .experience-text-company {
-    font-size: 18px;
-  }
-
-  .experience-text-date {
-    font-size: 14px;
-  }
-
-  .experience-text-desc {
-    font-size: 14px;
-  }
-
-  .experience-roundedimg {
-    width: 5rem;
-    height: 5rem;
-  }
-}
-
-/* ====================== Extra responsiveness for very small screens (e.g. iPhone 5/SE) ====================== */
-@media (max-width: 360px) {
-  .experience-roundedimg {
-    width: 5rem; /* Reduce logo size further for very small screens */
-    height: 5rem;
-    top: 5.5rem; /* Adjust position for very small screens */
-  }
-
-  .experience-text-role {
-    font-size: 16px;
-  }
-
-  .experience-text-company {
-    font-size: 16px;
-  }
-
-  .experience-text-date {
-    font-size: 12px;
-  }
-
-  .experience-text-desc {
-    font-size: 12px;
-  }
-
-  .experience-roundedimg {
-    width: 4.5rem;
-    height: 4.5rem;
-  }
+html {
+  scroll-behavior: smooth;
 }
