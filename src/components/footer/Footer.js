@@ -1,46 +1,58 @@
 import React from "react";
 import "./Footer.scss";
 import {FaLinkedin, FaEnvelope, FaGithub} from "react-icons/fa";
+import {greeting, socialMediaLinks, contactInfo} from "../../portfolio";
 
 export default function Footer() {
   return (
     <footer className="portfolio-footer">
       <div className="footer-inner">
-        <div>
-          <p className="footer-name">Shreya Chagandi Balakrishnan</p>
-          <p className="footer-role">UI/UX Designer + AI Engineer</p>
+        <div className="footer-brand">
+          <p className="footer-name">{greeting.username}</p>
+          <p className="footer-role">{greeting.role}</p>
         </div>
 
-        <nav className="footer-mini-nav" aria-label="Footer">
+        <nav className="footer-mini-nav" aria-label="Footer navigation">
           <a href="#projects">Work</a>
           <a href="#about">About</a>
+          <a href="#experience">Experience</a>
           <a href="#contact">Contact</a>
         </nav>
 
         <div className="footer-links" aria-label="Social links">
-          <a href="mailto:shreyacb.eu@gmail.com" aria-label="Email">
-            <FaEnvelope />
-          </a>
-          <a
-            href="https://github.com/shreyabalki"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="GitHub"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/shreya-bala/"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn"
-          >
-            <FaLinkedin />
-          </a>
+          {contactInfo.email_address && (
+            <a
+              href={`mailto:${contactInfo.email_address}`}
+              aria-label="Send email"
+            >
+              <FaEnvelope />
+            </a>
+          )}
+          {socialMediaLinks.github && (
+            <a
+              href={socialMediaLinks.github}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub profile"
+            >
+              <FaGithub />
+            </a>
+          )}
+          {socialMediaLinks.linkedin && (
+            <a
+              href={socialMediaLinks.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn profile"
+            >
+              <FaLinkedin />
+            </a>
+          )}
         </div>
       </div>
+
       <p className="footer-copy">
-        © {new Date().getFullYear()} All rights reserved.
+        © {new Date().getFullYear()} {greeting.username}. All rights reserved.
       </p>
     </footer>
   );

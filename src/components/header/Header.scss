@@ -20,6 +20,7 @@
   max-width: 210px;
 }
 
+/* Mobile: collapsed nav */
 .header .menu {
   list-style: none;
   margin: 0;
@@ -38,17 +39,27 @@
   font-size: 0.74rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  transition: color 0.15s ease;
 }
 
 .header li a:hover {
   color: var(--text-primary);
 }
 
+/* Resume pill CTA */
 .resume-pill {
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--radius-pill) !important;
+  padding: 6px 14px !important;
+  white-space: nowrap;
 }
 
+.resume-pill:hover {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+}
+
+/* Hamburger icon */
 .menu-icon {
   float: right;
   cursor: pointer;
@@ -56,22 +67,23 @@
 }
 
 .navicon,
-.navicon:before,
-.navicon:after {
+.navicon::before,
+.navicon::after {
   width: 18px;
   height: 2px;
   display: block;
   background: var(--text-primary);
   content: "";
   position: relative;
+  transition: background 0.2s ease;
 }
 
-.navicon:before {
+.navicon::before {
   position: absolute;
   top: 6px;
 }
 
-.navicon:after {
+.navicon::after {
   position: absolute;
   top: -6px;
 }
@@ -81,13 +93,14 @@
 }
 
 .menu-btn:checked ~ .menu {
-  max-height: 430px;
+  max-height: 480px;
 }
 
 .toggle-item {
   padding: 10px 10px;
 }
 
+/* Desktop: horizontal nav */
 @media (min-width: 980px) {
   .menu-icon {
     display: none;

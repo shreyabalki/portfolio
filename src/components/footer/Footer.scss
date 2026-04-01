@@ -1,45 +1,55 @@
 .portfolio-footer {
   width: min(var(--container), calc(100% - (var(--gutter) * 2)));
-  margin: 10px auto 34px;
+  margin: 0 auto var(--space-5);
   border-top: 1px solid var(--border-color);
-  padding-top: 20px;
+  padding-top: var(--space-4);
 }
 
 .footer-inner {
   display: grid;
   grid-template-columns: 1fr auto auto;
-  gap: 16px;
+  gap: var(--space-5);
   align-items: center;
+}
+
+/* ── Brand ──────────────────────── */
+.footer-brand {
+  min-width: 0;
 }
 
 .footer-name {
   font-weight: 700;
   letter-spacing: -0.01em;
+  font-size: 0.95rem;
 }
 
 .footer-role {
   color: var(--text-muted);
-  font-size: 0.9rem;
-  margin-top: 3px;
+  font-size: 0.84rem;
+  margin-top: 2px;
 }
 
+/* ── Nav ────────────────────────── */
 .footer-mini-nav {
   display: flex;
-  gap: 12px;
+  gap: var(--space-3);
+  flex-wrap: wrap;
 }
 
 .footer-mini-nav a {
   color: var(--text-secondary);
   text-decoration: none;
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  transition: color 0.15s ease;
 }
 
 .footer-mini-nav a:hover {
   color: var(--text-primary);
 }
 
+/* ── Social icons ───────────────── */
 .footer-links {
   display: flex;
   gap: 8px;
@@ -53,6 +63,8 @@
   color: var(--text-secondary);
   display: grid;
   place-items: center;
+  font-size: 0.9rem;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 .footer-links a:hover {
@@ -60,15 +72,18 @@
   border-color: var(--accent);
 }
 
+/* ── Copyright ──────────────────── */
 .footer-copy {
-  margin-top: 12px;
+  margin-top: var(--space-3);
   color: var(--text-muted);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
 }
 
+/* ── Responsive ─────────────────── */
 @media (max-width: 860px) {
   .footer-inner {
     grid-template-columns: 1fr;
+    gap: var(--space-4);
     align-items: flex-start;
   }
 }

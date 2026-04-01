@@ -1,12 +1,13 @@
 .greet-main {
-  padding-top: 84px;
+  padding-top: var(--space-7);
 }
 
 .greeting-main {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 22px;
+  gap: var(--space-5);
   align-items: center;
+  min-height: calc(100vh - 120px);
 }
 
 .greeting-text-div {
@@ -15,6 +16,8 @@
 
 .greeting-image-div {
   grid-column: span 5;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .greeting-eyebrow {
@@ -22,14 +25,15 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 0.79rem;
-  margin-bottom: 14px;
+  font-weight: 600;
+  margin-bottom: var(--space-3);
 }
 
 .greeting-text {
-  font-size: clamp(2.7rem, 7.5vw, 5.4rem);
-  line-height: 0.92;
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  line-height: 0.95;
   letter-spacing: -0.045em;
-  max-width: 12ch;
+  max-width: 14ch;
 }
 
 .greeting-text span {
@@ -38,32 +42,52 @@
 }
 
 .greeting-text-p {
-  margin-top: 18px;
-  max-width: 54ch;
+  margin-top: var(--space-4);
+  max-width: 52ch;
   color: var(--text-secondary);
   font-size: 1.05rem;
+  line-height: 1.65;
 }
 
 .button-greeting-div {
-  margin-top: 26px;
+  margin-top: var(--space-5);
   display: flex;
-  gap: 10px;
+  gap: var(--space-2);
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .profile-picture {
   width: 100%;
+  max-width: 420px;
   border-radius: var(--radius-md);
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-soft);
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  object-position: top center;
 }
 
 @media (max-width: 920px) {
-  .greeting-text-div,
+  .greeting-main {
+    min-height: unset;
+    gap: var(--space-4);
+  }
+
+  .greeting-text-div {
+    grid-column: span 12;
+    order: 2;
+  }
+
   .greeting-image-div {
     grid-column: span 12;
+    order: 1;
+    justify-content: flex-start;
+  }
+
+  .profile-picture {
+    max-width: 260px;
+    aspect-ratio: 3 / 4;
   }
 
   .greeting-text {
@@ -71,6 +95,6 @@
   }
 
   .greet-main {
-    padding-top: 44px;
+    padding-top: var(--space-5);
   }
 }
