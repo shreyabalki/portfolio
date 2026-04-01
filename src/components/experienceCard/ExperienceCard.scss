@@ -1,230 +1,57 @@
-@import "../../_globalColor";
-
-/* ======================
-   Card Base Styles
-========================= */
 .experience-card {
-  position: relative;
-  background-color: $lightBackground2;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: box-shadow 0.3s ease;
-  border: none;
-}
-
-.dark-mode .experience-card {
-  background-color: #1e1e1e;
-  border: none;
-}
-
-.experience-card:hover {
-  box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
-}
-
-/* ======================
-   Section Heading
-========================= */
-.experience-heading {
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-align: center;
-  color: $textColor;
-  margin-bottom: 2rem;
-}
-
-.dark-mode .experience-heading {
-  color: $textColorDark;
-}
-
-/* ======================
-   Banner Background
-========================= */
-.experience-banner {
-  height: 11rem;
-  background: $experienceCardBannerLG;
-  background-size: cover;
-  background-position: center;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
-}
-
-.experience-blurred_div {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 11rem;
-  width: 100%;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  background: $experienceCardBlurredDivLG;
-  filter: blur(5px);
-  z-index: 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--surface);
 }
 
 .experience-div-company {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 9rem;
-  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: transparent;
-  z-index: 2;
+  gap: 12px;
+  padding: 14px;
+  border-bottom: 1px solid var(--border-color);
 }
 
-/* ======================
-   Company Name
-========================= */
-.experience-text-company {
-  padding: 1.5rem;
-  margin: 0;
-  font-size: 25px;
-  font-weight: 700;
-  color: $lightBackground1;
-  text-align: center;
-  white-space: normal;
-  overflow: visible;
-  word-wrap: break-word;
-  line-height: 1.4;
-  z-index: 3;
-}
-
-/* ======================
-   Company Logo
-========================= */
 .experience-roundedimg {
-  position: absolute;
-  top: 7rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 7.5rem;
-  height: 7.5rem;
-  padding: 0.5rem;
-  border-radius: 50%;
-  background-color: #fff;
-  box-shadow: 0 0.5rem 1rem $lightBoxShadowDarker;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
-  z-index: 5;
+  border-radius: 10px;
+  background: #fff;
 }
 
-/* ======================
-   Role, Date, Desc
-========================= */
-.experience-text-role {
-  text-align: center;
-  color: $textColor;
-  font-weight: 700;
-  font-size: 25px;
+.experience-text-company {
   margin: 0;
-  padding-top: 1.5rem;
-  line-height: 1.4;
-}
-
-.experience-text-date {
-  text-align: center;
-  color: $textColor;
-  font-size: 20px;
-  font-weight: 600;
-  margin: 0;
-  padding-top: 1rem;
-}
-
-.experience-text-desc {
-  text-align: center;
-  color: $textColor;
-  font-size: 17px;
-  padding-top: 1rem;
-  line-height: 1.6;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
 
 .experience-text-details {
-  padding: 1.5rem 2rem;
-  margin-top: 2rem;
-  color: $textColor;
-  font-size: 16.5px;
-  line-height: 1.7;
+  padding: 16px;
+}
+
+.experience-text-role {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.experience-text-date {
+  margin: 4px 0 8px;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.experience-text-desc {
+  color: var(--text-secondary);
 }
 
 .experience-text-details ul {
-  padding-left: 1.5rem;
-  margin-top: 0.75rem;
+  margin: 10px 0 0;
+  color: var(--text-secondary);
 }
 
-.experience-text-details li {
-  margin-bottom: 0.75rem;
-}
-
-/* ======================
-   Dark Mode Fix (Text)
-========================= */
-.dark-mode-text {
-  color: $textColorDark !important;
-}
-
-/* ======================
-   Responsive
-========================= */
-@media (max-width: 1380px) {
-  .experience-text-role {
-    font-size: 22px;
-    padding-top: 1rem;
-  }
-
-  .experience-text-company {
-    font-size: 22px;
-  }
-
-  .experience-text-date {
-    font-size: 18px;
-  }
-
-  .experience-roundedimg {
-    width: 6.5rem;
-    height: 6.5rem;
-  }
-
-  .experience-text-details {
-    padding: 1.25rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .experience-heading {
-    font-size: 1.75rem;
-  }
-
-  .experience-text-role {
-    font-size: 20px;
-  }
-
-  .experience-text-company {
-    font-size: 20px;
-  }
-
-  .experience-text-date {
-    font-size: 16px;
-  }
-
-  .experience-text-desc {
-    font-size: 15.5px;
-    padding: 0.75rem 1rem 0;
-  }
-
-  .experience-roundedimg {
-    width: 5rem;
-    height: 5rem;
-    top: 6.5rem;
-  }
-
-  .experience-text-details {
-    font-size: 15.5px;
-    padding: 1rem;
-  }
+.experience-card-dark .experience-roundedimg {
+  background: #f5f5f5;
 }

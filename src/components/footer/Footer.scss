@@ -1,45 +1,55 @@
-@import "../../_globalColor";
+.portfolio-footer {
+  width: min(1120px, 92%);
+  margin: 12px auto 28px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 22px;
+}
 
-.footer-div {
-  margin-top: 2rem;
-  padding-bottom: 1rem;
-  background-color: transparent;
+.footer-inner {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
   align-items: center;
 }
 
-.footer-text {
-  text-align: center;
-  color: $subTitle;
-  font-size: 0.95rem;
-
-  .footer-icons {
-    margin-top: 0.5rem;
-
-    a {
-      margin: 0 8px;
-      display: inline-block;
-      color: $subTitle;
-      transition: transform 0.2s ease, color 0.3s ease;
-
-      &:hover {
-        transform: scale(1.2);
-        color: lighten($subTitle, 20%);
-      }
-    }
-  }
+.footer-name {
+  font-weight: 700;
 }
 
-// Dark mode override
-.dark-mode .footer-text {
-  color: $textColorDark;
+.footer-role {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
 
-  .footer-icons a {
-    color: $textColorDark;
+.footer-links {
+  display: flex;
+  gap: 10px;
+}
 
-    &:hover {
-      color: lighten($textColorDark, 20%);
-    }
+.footer-links a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  display: grid;
+  place-items: center;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.footer-copy {
+  margin-top: 12px;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 700px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

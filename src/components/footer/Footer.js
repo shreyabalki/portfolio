@@ -1,30 +1,40 @@
 import React from "react";
 import "./Footer.scss";
-import {Fade} from "react-reveal";
-import {FaLinkedin, FaEnvelope} from "react-icons/fa";
+import {FaLinkedin, FaEnvelope, FaGithub} from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <Fade bottom duration={1000} distance="5px">
-      <div className="footer-div">
-        <div className="footer-text">
-          <p>© {new Date().getFullYear()} Shreya Chagandi Balakrishnan</p>
-          <p>UI Designer | UX Analytics | AI x BI | Predictive Dashboards</p>
-          <p className="footer-icons">
-            <a href="mailto:shreyacb.eu@gmail.com" aria-label="Email">
-              <FaEnvelope size={20} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/shreya-bala/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedin size={20} />
-            </a>
-          </p>
+    <footer className="portfolio-footer">
+      <div className="footer-inner">
+        <div>
+          <p className="footer-name">Shreya Chagandi Balakrishnan</p>
+          <p className="footer-role">UI/UX Designer + AI Engineer</p>
+        </div>
+        <div className="footer-links" aria-label="Social links">
+          <a href="mailto:shreyacb.eu@gmail.com" aria-label="Email">
+            <FaEnvelope />
+          </a>
+          <a
+            href="https://github.com/shreyabalki"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/shreya-bala/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+          >
+            <FaLinkedin />
+          </a>
         </div>
       </div>
-    </Fade>
+      <p className="footer-copy">
+        © {new Date().getFullYear()} All rights reserved.
+      </p>
+    </footer>
   );
 }
