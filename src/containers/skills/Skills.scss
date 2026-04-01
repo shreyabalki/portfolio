@@ -4,21 +4,21 @@
 }
 
 .skills-header {
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-5);
 }
 
-/* ── Category blocks ────────────────────────────── */
+/* ── Category rows ───────────────────────────────── */
 .capabilities-grid {
   display: grid;
-  gap: var(--space-2);
+  gap: 0;
 }
 
 .capability-block {
   display: grid;
-  grid-template-columns: 140px 1fr;
+  grid-template-columns: 160px 1fr;
   gap: var(--space-4);
   align-items: start;
-  padding: var(--space-4) 0;
+  padding: var(--space-3) 0;
   border-top: 1px solid var(--border-color);
 }
 
@@ -30,12 +30,12 @@
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--text-muted);
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 700;
-  padding-top: 6px;
+  padding-top: 7px;
 }
 
-/* ── Skill pills ────────────────────────────────── */
+/* ── Skill tags ──────────────────────────────────── */
 .capability-list {
   margin: 0;
   padding: 0;
@@ -48,8 +48,8 @@
 .capability-item {
   border: 1px solid var(--border-color);
   border-radius: var(--radius-pill);
-  padding: 6px 14px;
-  font-size: 0.83rem;
+  padding: 5px 12px;
+  font-size: 0.82rem;
   font-weight: 500;
   color: var(--text-secondary);
   background: var(--surface);
@@ -63,12 +63,12 @@
 
 .capability-item:hover {
   border-color: var(--accent);
-  color: var(--text-primary);
-  background: var(--surface-2);
+  color: var(--accent);
+  background: var(--accent-subtle);
 }
 
 /* ── Responsive ─────────────────────────────────── */
-@media (max-width: 640px) {
+@media (max-width: 600px) {
   .capability-block {
     grid-template-columns: 1fr;
     gap: var(--space-2);

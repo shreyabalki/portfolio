@@ -1,6 +1,6 @@
 /* ─────────────────────────────────────────────────────────────
-   portfolio.js  –  Single source of truth for all content.
-   Edit this file to update the portfolio without touching components.
+   portfolio.js — Single source of truth for all content.
+   Edit this file to update any section without touching components.
    ───────────────────────────────────────────────────────────── */
 
 import splashAnimation from "./assets/lottie/splashAnimation";
@@ -20,11 +20,10 @@ const illustration = {
 const greeting = {
   username: "Shreya Chagandi Balakrishnan",
   title: "Shreya Chagandi Balakrishnan",
-  role: "UI/UX Designer · AI Engineer",
+  role: "Machine Learning Engineer",
   subTitle:
-    "I design intuitive product experiences and engineer AI workflows that deliver measurable outcomes across real-world systems.",
-  resumeLink:
-    "https://drive.google.com/uc?export=download&id=1exKOMeRlv3lHM9T6qzSJysBKcjePmyki",
+    "Building robust data systems and ML pipelines for real-world signals",
+  resumeLink: "",
   displayGreeting: true
 };
 
@@ -32,11 +31,11 @@ const greeting = {
 const aboutSection = {
   title: "About",
   summary:
-    "I work at the intersection of product design and machine intelligence — translating ambiguous problems into clear user journeys and production-ready AI systems.",
+    "Machine Learning engineer specialising in signal processing and data-driven systems — from EEG time-series modelling to production-ready ML pipelines that handle noisy real-world data.",
   focusPoints: [
-    "Designing research-informed user journeys and high-fidelity interfaces that ship.",
-    "Building AI features with practical deployment in mind, not just prototypes.",
-    "Creating real-world impact through automation, accessibility, and performance."
+    "EEG data processing and multi-channel time-series modelling.",
+    "End-to-end ML pipelines with robust evaluation — Balanced Accuracy, Macro-F1.",
+    "Handling noisy real-world signals through structured preprocessing and feature engineering."
   ],
   display: true
 };
@@ -50,53 +49,50 @@ const socialMediaLinks = {
 };
 
 // ─── Skills ───────────────────────────────────────────────────
-// Each entry is { category, items[] } — consumed by Skills.js via .map()
+// Each entry is { category, items[] } — rendered as tag rows in Skills.js
 const skillsSection = {
-  title: "Capabilities",
-  subTitle: "Design · Development · AI/ML",
+  title: "Skills",
+  subTitle: "Technical stack",
   skills: [
     {
-      category: "Design",
-      items: [
-        "Figma",
-        "UX Research",
-        "Wireframing",
-        "Interaction Design",
-        "Design Systems"
-      ]
+      category: "Programming",
+      items: ["Python", "SQL"]
     },
     {
-      category: "Development",
-      items: ["React.js", "JavaScript", "FastAPI", "Python", "SQL"]
+      category: "Machine Learning",
+      items: ["PyTorch", "TensorFlow", "Scikit-learn", "CNNs", "Transformers"]
     },
     {
-      category: "AI / ML",
-      items: [
-        "PyTorch",
-        "Transformers",
-        "LangChain",
-        "LangGraph",
-        "NLP Workflows"
-      ]
+      category: "Data & Signal Processing",
+      items: ["Time-Series Analysis", "EEG Processing", "Feature Engineering"]
+    },
+    {
+      category: "Systems & Tools",
+      items: ["Git", "Docker", "Linux", "Azure"]
     }
-  ],
-  // Icon grid below the category blocks (optional — set display: false to hide)
-  softwareSkills: [
-    {skillName: "Figma", fontAwesomeClassname: "fas fa-pencil-ruler"},
-    {skillName: "React", fontAwesomeClassname: "fab fa-react"},
-    {skillName: "JavaScript", fontAwesomeClassname: "fab fa-js"},
-    {skillName: "Python", fontAwesomeClassname: "fab fa-python"},
-    {skillName: "FastAPI", fontAwesomeClassname: "fas fa-server"},
-    {skillName: "PyTorch", fontAwesomeClassname: "fas fa-brain"},
-    {skillName: "SQL", fontAwesomeClassname: "fas fa-database"}
   ],
   display: true
 };
 
 // ─── Education ────────────────────────────────────────────────
 const educationInfo = {
-  display: false,
-  schools: []
+  display: true,
+  schools: [
+    {
+      schoolName: "BTU Cottbus-Senftenberg",
+      logo: require("./assets/images/BTU.png"),
+      subHeader: "M.Sc. Artificial Intelligence",
+      duration: "2025 – Present",
+      location: "Germany"
+    },
+    {
+      schoolName: "Sathyabama Institute of Science and Technology",
+      logo: require("./assets/images/SIST.png"),
+      subHeader: "B.E. Computer Engineering",
+      duration: "2020 – 2024",
+      location: "India"
+    }
+  ]
 };
 
 const techStack = {
@@ -106,61 +102,62 @@ const techStack = {
 };
 
 // ─── Work Experience ──────────────────────────────────────────
-// Add more objects to the experience[] array to add new roles.
+// Each bullet must follow: "Label: detail." format (Built / Impact / Stack)
 const workExperiences = {
   display: true,
   experience: [
     {
-      role: "Embedded Systems Intern — Automation Prototyping",
-      company: "Big Bang Boom Solutions",
-      companylogo: require("./assets/images/bbbslogo.png"),
-      date: "April 2024 – June 2024",
-      desc: "Built automation-ready embedded prototypes for drone applications, reducing manual testing effort.",
+      role: "Research Assistant — Machine Learning & Biomedical Data",
+      company: "University of Vienna",
+      location: "Austria",
+      date: "Dec 2025 – Present",
       descBullets: [
-        "Developed sensor-integrated microcontroller boards for field validation.",
-        "Improved reliability through test-driven hardware and firmware iterations.",
-        "Delivered production-aligned proof-of-concepts under tight timelines."
+        "Built: End-to-end ML pipelines for multi-session EEG time-series data (32-channel signals), including preprocessing and validation.",
+        "Impact: Improved model generalisation and reliability by preventing data leakage using robust evaluation — Balanced Accuracy, Macro-F1.",
+        "Stack: Python, PyTorch, Transformers, Pandas, NumPy."
+      ]
+    },
+    {
+      role: "Embedded Systems Intern",
+      company: "Big Bang Boom Solutions Pvt Ltd",
+      location: "Chennai, India",
+      date: "Apr 2024 – Jun 2024",
+      descBullets: [
+        "Built: Automation systems integrating hardware and software workflows.",
+        "Impact: Reduced manual effort by 15% and improved system reliability through structured validation and debugging.",
+        "Stack: Embedded systems, Python, hardware-software integration."
       ]
     }
   ]
 };
 
-// ─── Projects ─────────────────────────────────────────────────
-// Each project can have optional `github` and `demo` URLs.
-// Remove or leave blank to hide those CTAs.
-const bigProjects = {
-  title: "Selected Work",
-  subtitle: "AI, UX, and product engineering projects",
+// ─── GitHub Showcase ──────────────────────────────────────────
+// Primary work showcase — replace projects with GitHub links
+const githubSection = {
+  title: "GitHub & Selected Work",
+  subtitle: "Primary work showcase",
+  githubProfile: "https://github.com/shreyabalki",
   projects: [
     {
-      image: require("./assets/images/blockchain.png"),
-      projectName: "Secure Document Verification",
-      projectDesc:
-        "Designed and built a blockchain-backed verification flow with SVM-based face matching for identity confidence.",
-      tags: ["AI", "Security", "Web"],
-      github: "",
-      demo: ""
-    },
-    {
-      image: require("./assets/images/ott.png"),
-      projectName: "AI-Powered OTT UX Prototype",
-      projectDesc:
-        "Created a high-fidelity streaming experience focused on content discovery, watch continuity, and intuitive navigation.",
-      tags: ["UX", "Product", "Design"],
-      github: "",
-      demo: ""
-    },
-    {
-      image: require("./assets/images/steganography.png"),
-      projectName: "Image Steganography Tool",
-      projectDesc:
-        "Built a secure message-embedding tool for images with reliable encoding/decoding and a clean user interface.",
-      tags: ["AI", "Tooling", "Security"],
-      github: "",
-      demo: ""
+      name: "EEG Card Game",
+      url: "https://github.com/shreyabalki/EEG-Card-game",
+      built:
+        "EEG-based interaction system using signal processing and ML concepts.",
+      impact:
+        "Demonstrates application of time-series analysis and real-time signal interpretation.",
+      stack: "Python, signal processing, ML concepts."
     }
   ],
   display: true
+};
+
+// ─── Projects — DISABLED ──────────────────────────────────────
+// Work is showcased via GitHub section above.
+const bigProjects = {
+  title: "",
+  subtitle: "",
+  projects: [],
+  display: false
 };
 
 // ─── Achievements ─────────────────────────────────────────────
@@ -175,14 +172,14 @@ const achievementSection = {
 const resumeSection = {
   title: "Resume",
   subtitle: "",
-  display: true
+  display: false
 };
 
 // ─── Contact ──────────────────────────────────────────────────
 const contactInfo = {
-  title: "Let's work together",
+  title: "Get in touch",
   subtitle:
-    "I'm open to UI/UX and AI engineering roles where design clarity and technical depth both matter.",
+    "Open to ML engineering and data systems roles. Happy to discuss research, collaboration, or opportunities.",
   number: "(+49) 176 22913521",
   email_address: "shreyacb.eu@gmail.com"
 };
@@ -205,6 +202,7 @@ export {
   techStack,
   workExperiences,
   bigProjects,
+  githubSection,
   achievementSection,
   contactInfo,
   isHireable,

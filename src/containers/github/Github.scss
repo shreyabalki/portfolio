@@ -1,0 +1,142 @@
+/* ─── GitHub Showcase Section ───────────────────────── */
+.github-section {
+  border-top: 1px solid var(--border-color);
+}
+
+/* ── Header ─────────────────────────────────────── */
+.github-header {
+  margin-bottom: var(--space-5);
+}
+
+.github-profile-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  margin-top: var(--space-2);
+  transition: color var(--transition-fast);
+}
+
+.github-profile-link:hover {
+  color: var(--accent-hover);
+}
+
+/* ── Project cards ───────────────────────────────── */
+.github-projects {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.github-project-card {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  padding: var(--space-4);
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.github-project-card:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ── Card header ─────────────────────────────────── */
+.github-project-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.github-project-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.github-project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: color var(--transition-fast);
+}
+
+.github-project-link:hover {
+  color: var(--accent-hover);
+}
+
+.github-project-link svg {
+  font-size: 0.7rem;
+}
+
+/* ── Bullets ─────────────────────────────────────── */
+.github-bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.github-bullets li {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.github-bullet-label {
+  flex-shrink: 0;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  padding: 2px 8px;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-pill);
+  line-height: 1.5;
+}
+
+/* ── Bottom CTA ──────────────────────────────────── */
+.github-cta {
+  margin-top: var(--space-4);
+}
+
+.github-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-pill);
+  padding: 9px 18px;
+  transition:
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.github-all-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
