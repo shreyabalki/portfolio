@@ -1,3 +1,4 @@
+/* ─── Contact Section ──────────────────────────────── */
 .contact-section {
   border-top: 1px solid var(--border-color);
 }
@@ -9,60 +10,65 @@
   align-items: start;
 }
 
-/* ── Left copy ─────────────────────── */
+/* ── Left copy ──────────────────────────────────── */
 .contact-copy {
   grid-column: span 5;
 }
 
 .contact-title {
-  font-size: clamp(2rem, 4vw, 2.8rem);
-  letter-spacing: -0.03em;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
   line-height: 1.05;
-  margin-top: var(--space-1);
+  margin-top: var(--space-2);
 }
 
 .contact-subtitle {
   color: var(--text-secondary);
   margin-top: var(--space-3);
-  max-width: 46ch;
-  line-height: 1.65;
+  max-width: 44ch;
+  line-height: 1.7;
+  font-size: 0.95rem;
 }
 
 .contact-direct {
   margin-top: var(--space-5);
   display: grid;
-  gap: var(--space-3);
+  gap: var(--space-2);
 }
 
 .contact-direct-link {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
   color: var(--text-secondary);
   text-decoration: none;
   padding: var(--space-3) var(--space-4);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   background: var(--surface);
+  font-size: 0.9rem;
   transition:
-    border-color 0.2s ease,
-    color 0.2s ease;
+    border-color var(--transition),
+    color var(--transition),
+    background var(--transition);
 }
 
 .contact-direct-link:hover {
   border-color: var(--accent);
   color: var(--text-primary);
+  background: var(--surface-2);
 }
 
 .contact-direct-label {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   color: var(--text-muted);
 }
 
-/* ── Right form ────────────────────── */
+/* ── Right form ─────────────────────────────────── */
 .contact-form {
   grid-column: span 7;
   border: 1px solid var(--border-color);
@@ -80,21 +86,21 @@
 
 .form-group label {
   color: var(--text-muted);
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.68rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.12em;
 }
 
 .form-group input,
 .form-group textarea {
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
-  padding: 11px 14px;
-  background: var(--surface-2);
+  padding: 12px 14px;
+  background: var(--bg);
   color: var(--text-primary);
   font-size: 0.95rem;
-  transition: border-color 0.15s ease;
+  transition: border-color var(--transition-fast);
 }
 
 .form-group input:focus,
@@ -105,40 +111,39 @@
 
 .form-group textarea {
   resize: vertical;
-  min-height: 110px;
+  min-height: 120px;
 }
 
-/* ── Submit button ────────────────── */
+/* ── Submit button ──────────────────────────────── */
 .contact-submit {
   margin-top: var(--space-1);
-  border: 1px solid var(--accent);
+  border: 1px solid var(--button-primary);
   border-radius: var(--radius-pill);
-  background: var(--accent);
-  color: #fff;
-  padding: 12px 22px;
+  background: var(--button-primary);
+  color: var(--bg);
+  padding: 12px 24px;
   width: fit-content;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.74rem;
-  font-weight: 600;
+  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  font-weight: 700;
   cursor: pointer;
   transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    opacity 0.2s ease;
+    opacity var(--transition),
+    transform var(--transition);
 }
 
 .contact-submit:hover:not(:disabled) {
-  background: var(--accent-hover);
-  border-color: var(--accent-hover);
+  opacity: 0.8;
+  transform: translateY(-1px);
 }
 
 .contact-submit:disabled {
-  opacity: 0.65;
+  opacity: 0.5;
   cursor: default;
 }
 
-/* ── Feedback ─────────────────────── */
+/* ── Feedback ───────────────────────────────────── */
 .contact-feedback {
   font-size: 0.88rem;
 }
@@ -147,7 +152,7 @@
   color: var(--accent);
 }
 
-/* ── Responsive ───────────────────── */
+/* ── Responsive ─────────────────────────────────── */
 @media (max-width: 880px) {
   .contact-copy,
   .contact-form {

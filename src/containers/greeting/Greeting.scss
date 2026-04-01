@@ -1,52 +1,62 @@
+/* ─── Hero Section ─────────────────────────────────── */
 .greet-main {
   padding-top: var(--space-7);
 }
 
 .greeting-main {
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: var(--space-5);
+  grid-template-columns: 1fr 420px;
+  gap: var(--space-6);
   align-items: center;
-  min-height: calc(100vh - 120px);
+  min-height: calc(100vh - 100px);
 }
 
+/* ── Text column ────────────────────────────────── */
 .greeting-text-div {
-  grid-column: span 7;
-}
-
-.greeting-image-div {
-  grid-column: span 5;
-  display: flex;
-  justify-content: flex-end;
+  max-width: 640px;
 }
 
 .greeting-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   color: var(--accent);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.79rem;
-  font-weight: 600;
+  letter-spacing: 0.14em;
+  font-size: 0.68rem;
+  font-weight: 700;
   margin-bottom: var(--space-3);
 }
 
+.greeting-eyebrow::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
 .greeting-text {
-  font-size: clamp(2.6rem, 7vw, 5rem);
-  line-height: 0.95;
-  letter-spacing: -0.045em;
-  max-width: 14ch;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: 700;
+  line-height: 0.96;
+  letter-spacing: -0.052em;
+  max-width: 12ch;
 }
 
 .greeting-text span {
   display: block;
   color: var(--text-secondary);
+  font-weight: 600;
 }
 
 .greeting-text-p {
   margin-top: var(--space-4);
-  max-width: 52ch;
+  max-width: 50ch;
   color: var(--text-secondary);
   font-size: 1.05rem;
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 .button-greeting-div {
@@ -57,40 +67,74 @@
   align-items: center;
 }
 
-.profile-picture {
+/* ── Image column ───────────────────────────────── */
+.greeting-image-div {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.profile-picture-wrap {
+  position: relative;
   width: 100%;
   max-width: 420px;
+}
+
+.profile-picture {
+  width: 100%;
   border-radius: var(--radius-md);
   border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-soft);
   aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: top center;
+  display: block;
+  filter: grayscale(18%);
+  transition: filter 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@media (max-width: 920px) {
-  .greeting-main {
-    min-height: unset;
-    gap: var(--space-4);
-  }
+.profile-picture-wrap:hover .profile-picture {
+  filter: grayscale(0%);
+  box-shadow: var(--shadow-strong);
+}
 
-  .greeting-text-div {
-    grid-column: span 12;
-    order: 2;
+/* Subtle accent dot */
+.profile-picture-wrap::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  right: -12px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 960px) {
+  .greeting-main {
+    grid-template-columns: 1fr;
+    min-height: unset;
+    gap: var(--space-5);
   }
 
   .greeting-image-div {
-    grid-column: span 12;
-    order: 1;
+    order: -1;
     justify-content: flex-start;
   }
 
-  .profile-picture {
-    max-width: 260px;
-    aspect-ratio: 3 / 4;
+  .profile-picture-wrap {
+    max-width: 280px;
+  }
+
+  .greeting-text-div {
+    max-width: 100%;
   }
 
   .greeting-text {
+    font-size: clamp(2.8rem, 10vw, 4.5rem);
     max-width: 100%;
   }
 
