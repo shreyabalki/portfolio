@@ -18,7 +18,7 @@ export default function Top() {
         <motion.button
           onClick={scrollToTop}
           aria-label="Back to top"
-          className="fixed bottom-6 right-6 z-30 w-10 h-10 flex items-center justify-center rounded-full bg-gray-900 text-white shadow-card hover:bg-gray-700 active:scale-95 transition-colors duration-200"
+          className="fixed bottom-6 right-6 z-30 w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-400 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm hover:border-gray-400 dark:hover:border-gray-400 hover:text-gray-700 dark:hover:text-gray-200 active:scale-95 transition-all duration-200"
           initial={{opacity: 0, scale: 0.8}}
           animate={{opacity: 1, scale: 1}}
           exit={{opacity: 0, scale: 0.8}}

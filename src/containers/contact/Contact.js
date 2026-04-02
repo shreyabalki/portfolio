@@ -4,13 +4,14 @@ import {contactInfo} from "../../portfolio";
 import {useScrollReveal} from "../../hooks/useScrollReveal";
 
 const inputClass =
-  "w-full px-4 py-3 text-sm text-gray-900 bg-white border border-border rounded-xl placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent/60 transition-all duration-200";
+  "w-full rounded-xl border border-border dark:border-gray-700 bg-white dark:bg-gray-800 px-4 py-3 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-300 dark:placeholder-gray-600 transition-all duration-200 focus:border-accent/60 dark:focus:border-accent/50 focus:outline-none focus:ring-2 focus:ring-accent/30 dark:focus:ring-accent/20";
 
 const labelClass =
-  "block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2";
+  "mb-2 block text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400";
 
 export default function Contact() {
-  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
+  const [status, setStatus] = useState("idle");
+  const {ref, inView} = useScrollReveal();
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -35,17 +36,15 @@ export default function Contact() {
       .catch(() => setStatus("error"));
   };
 
-  const {ref, inView} = useScrollReveal();
-
   return (
     <section
       id="contact"
-      className="py-24 lg:py-32 bg-surface border-t border-border"
+      className="py-24 border-t border-border dark:border-gray-800 bg-surface dark:bg-gray-900 lg:py-32"
     >
       <div className="container-main">
         <div
           ref={ref}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start"
+          className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-20"
         >
           {/* Left — Copy */}
           <div>
@@ -70,7 +69,7 @@ export default function Contact() {
               {contactInfo.title}
             </motion.h2>
             <motion.p
-              className="text-base text-gray-500 leading-relaxed mb-8 max-w-sm"
+              className="mb-8 max-w-sm text-base leading-relaxed text-gray-500 dark:text-gray-400"
               initial={{opacity: 0, y: 10}}
               animate={inView ? {opacity: 1, y: 0} : {}}
               transition={{
@@ -82,7 +81,6 @@ export default function Contact() {
               {contactInfo.subtitle}
             </motion.p>
 
-            {/* Direct links */}
             <motion.div
               className="flex flex-col gap-3"
               initial={{opacity: 0}}
@@ -93,7 +91,7 @@ export default function Contact() {
                 href={`mailto:${contactInfo.email}`}
                 className="group flex items-center gap-3 text-sm hover:text-accent transition-colors duration-200"
               >
-                <span className="w-8 h-8 flex items-center justify-center rounded-full bg-white border border-border text-gray-400 group-hover:border-accent/40 group-hover:text-accent transition-all duration-200">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full border border-border dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-400 dark:text-gray-500 group-hover:border-accent/40 group-hover:text-accent transition-all duration-200">
                   <svg
                     width="14"
                     height="14"
@@ -118,7 +116,9 @@ export default function Contact() {
                     />
                   </svg>
                 </span>
-                <span className="text-gray-600">{contactInfo.email}</span>
+                <span className="text-gray-600 dark:text-gray-300">
+                  {contactInfo.email}
+                </span>
               </a>
 
               <a
@@ -127,7 +127,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="group flex items-center gap-3 text-sm hover:text-accent transition-colors duration-200"
               >
-                <span className="w-8 h-8 flex items-center justify-center rounded-full bg-white border border-border text-gray-400 group-hover:border-accent/40 group-hover:text-accent transition-all duration-200">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full border border-border dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-400 dark:text-gray-500 group-hover:border-accent/40 group-hover:text-accent transition-all duration-200">
                   <svg
                     width="13"
                     height="13"
@@ -139,7 +139,9 @@ export default function Contact() {
                     <circle cx="4" cy="4" r="2" />
                   </svg>
                 </span>
-                <span className="text-gray-600">shreya-bala</span>
+                <span className="text-gray-600 dark:text-gray-300">
+                  shreya-bala
+                </span>
               </a>
             </motion.div>
           </div>
@@ -151,7 +153,11 @@ export default function Contact() {
             className="flex flex-col gap-5"
             initial={{opacity: 0, y: 16}}
             animate={inView ? {opacity: 1, y: 0} : {}}
-            transition={{duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: 0.18}}
+            transition={{
+              duration: 0.65,
+              ease: [0.22, 1, 0.36, 1],
+              delay: 0.18
+            }}
           >
             <div>
               <label htmlFor="cf-name" className={labelClass}>
@@ -201,8 +207,10 @@ export default function Contact() {
               type="submit"
               disabled={status === "sending" || status === "sent"}
               className={`btn-primary justify-center ${
-                status === "sent" ? "bg-emerald-600 hover:bg-emerald-600" : ""
-              } disabled:opacity-70 disabled:cursor-not-allowed`}
+                status === "sent"
+                  ? "bg-emerald-600 hover:bg-emerald-600 dark:bg-emerald-600 dark:hover:bg-emerald-600"
+                  : ""
+              } disabled:cursor-not-allowed disabled:opacity-70`}
             >
               {status === "sending"
                 ? "Sending…"

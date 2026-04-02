@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import {motion, AnimatePresence} from "framer-motion";
 
 const NAV_LINKS = [
@@ -10,18 +10,52 @@ const NAV_LINKS = [
   {label: "Contact", href: "#contact"}
 ];
 
-export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
+function SunIcon() {
+  return (
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.75" />
+      <path
+        d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function MoonIcon() {
+  return (
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export default function Header({isDark, toggleTheme}) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const closeMenu = () => setMenuOpen(false);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll, {passive: true});
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  // Close mobile menu on resize to desktop
-  useEffect(() => {
+  // Close on desktop resize
+  React.useEffect(() => {
     const onResize = () => {
       if (window.innerWidth >= 768) setMenuOpen(false);
     };
@@ -29,83 +63,89 @@ export default function Header() {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  const closeMenu = () => setMenuOpen(false);
-
   return (
     <>
-      <motion.header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          scrolled
-            ? "bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-soft"
-            : "bg-white/0"
-        }`}
-        initial={{y: -20, opacity: 0}}
-        animate={{y: 0, opacity: 1}}
-        transition={{duration: 0.5, ease: [0.22, 1, 0.36, 1]}}
-      >
-        <div className="container-main">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo / Name */}
-            <a
-              href="/"
-              className="text-sm font-semibold text-gray-900 tracking-tight hover:text-accent transition-colors duration-200"
-            >
-              Shreya<span className="text-accent">.</span>
-            </a>
+      {/* Floating pill */}
+      <div className="fixed top-3 left-0 right-0 z-40 flex justify-center px-4">
+        <motion.div
+          className="w-full max-w-[780px] flex items-center gap-2 bg-white/88 dark:bg-gray-900/88 backdrop-blur-md border border-gray-200/80 dark:border-gray-700/60 rounded-full shadow-soft px-3 py-2"
+          initial={{y: -20, opacity: 0}}
+          animate={{y: 0, opacity: 1}}
+          transition={{duration: 0.5, ease: [0.22, 1, 0.36, 1]}}
+        >
+          {/* S monogram logo */}
+          <a
+            href="/"
+            aria-label="Home"
+            className="flex-shrink-0 w-7 h-7 rounded-full bg-gray-900 dark:bg-white flex items-center justify-center transition-opacity duration-200 hover:opacity-80"
+          >
+            <span className="text-white dark:text-gray-900 text-xs font-bold leading-none">
+              S
+            </span>
+          </a>
 
-            {/* Desktop nav */}
-            <nav
-              className="hidden md:flex items-center gap-8"
-              aria-label="Primary"
-            >
-              {NAV_LINKS.map(link => (
-                <a key={link.href} href={link.href} className="nav-link">
-                  {link.label}
-                </a>
-              ))}
-            </nav>
+          {/* Desktop nav — centered, fills remaining space */}
+          <nav
+            className="hidden md:flex flex-1 justify-center items-center gap-0.5"
+            aria-label="Primary"
+          >
+            {NAV_LINKS.map(link => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white rounded-full hover:bg-gray-100/70 dark:hover:bg-gray-800/70 transition-all duration-200 whitespace-nowrap"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
 
-            {/* Desktop CTA */}
-            <a
-              href="mailto:shreyacb.eu@gmail.com"
-              className="hidden md:inline-flex items-center gap-1.5 text-sm font-semibold text-accent border border-accent/30 px-4 py-2 rounded-full hover:bg-accent-light transition-all duration-200"
+          {/* Right side controls */}
+          <div className="flex items-center gap-1 ml-auto md:ml-0 flex-shrink-0">
+            {/* Theme toggle */}
+            <button
+              onClick={toggleTheme}
+              aria-label={
+                isDark ? "Switch to light mode" : "Switch to dark mode"
+              }
+              className="w-8 h-8 flex items-center justify-center rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100/70 dark:hover:bg-gray-800/70 hover:text-gray-900 dark:hover:text-gray-100 transition-all duration-200"
             >
-              Get in touch
-            </a>
+              {isDark ? <SunIcon /> : <MoonIcon />}
+            </button>
 
             {/* Mobile hamburger */}
             <button
-              className="md:hidden flex flex-col justify-center items-center w-9 h-9 gap-1.5 rounded-lg hover:bg-gray-50 transition-colors"
+              className="md:hidden w-8 h-8 flex flex-col justify-center items-center gap-1.5 rounded-full hover:bg-gray-100/70 dark:hover:bg-gray-800/70 transition-colors"
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-expanded={menuOpen}
               onClick={() => setMenuOpen(prev => !prev)}
             >
               <span
-                className={`block w-5 h-px bg-gray-800 transition-all duration-200 ${
-                  menuOpen ? "translate-y-[3.5px] rotate-45" : ""
+                className={`block w-4 h-px bg-gray-700 dark:bg-gray-300 transition-all duration-200 origin-center ${
+                  menuOpen ? "translate-y-[3px] rotate-45" : ""
                 }`}
               />
               <span
-                className={`block w-5 h-px bg-gray-800 transition-all duration-200 ${
+                className={`block w-4 h-px bg-gray-700 dark:bg-gray-300 transition-all duration-200 ${
                   menuOpen ? "opacity-0" : ""
                 }`}
               />
               <span
-                className={`block w-5 h-px bg-gray-800 transition-all duration-200 ${
-                  menuOpen ? "-translate-y-[3.5px] -rotate-45" : ""
+                className={`block w-4 h-px bg-gray-700 dark:bg-gray-300 transition-all duration-200 origin-center ${
+                  menuOpen ? "-translate-y-[3px] -rotate-45" : ""
                 }`}
               />
             </button>
           </div>
-        </div>
-      </motion.header>
+        </motion.div>
+      </div>
 
       {/* Mobile menu overlay */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
             key="mobile-menu"
-            className="fixed inset-0 z-30 bg-white pt-16"
+            className="fixed inset-0 z-30 bg-white dark:bg-gray-950 pt-16"
             initial={{opacity: 0, y: -8}}
             animate={{opacity: 1, y: 0}}
             exit={{opacity: 0, y: -8}}
@@ -117,7 +157,7 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={closeMenu}
-                  className="text-2xl font-semibold text-gray-900 py-3 border-b border-gray-50 hover:text-accent transition-colors duration-200"
+                  className="text-2xl font-semibold text-gray-900 dark:text-gray-100 py-3 border-b border-gray-50 dark:border-gray-800 hover:text-accent transition-colors duration-200"
                   initial={{opacity: 0, x: -12}}
                   animate={{opacity: 1, x: 0}}
                   transition={{
@@ -129,16 +169,6 @@ export default function Header() {
                   {link.label}
                 </motion.a>
               ))}
-              <motion.a
-                href="mailto:shreyacb.eu@gmail.com"
-                className="mt-6 btn-primary self-start"
-                initial={{opacity: 0}}
-                animate={{opacity: 1}}
-                transition={{delay: 0.32, duration: 0.3}}
-                onClick={closeMenu}
-              >
-                Get in touch
-              </motion.a>
             </nav>
           </motion.div>
         )}

@@ -20,7 +20,7 @@ const cardVariant = {
 const LABEL_COLORS = {
   Built: "text-accent",
   Impact: "text-emerald-500",
-  Stack: "text-gray-400"
+  Stack: "text-gray-400 dark:text-gray-500"
 };
 
 function GitHubIcon({size = 18}) {
@@ -61,21 +61,22 @@ function ProjectCard({project}) {
   return (
     <motion.article
       variants={cardVariant}
-      className="group bg-white border border-border rounded-xl p-6 sm:p-7 shadow-soft hover:shadow-hover hover:border-accent/30 transition-all duration-300 flex flex-col"
+      className="group flex flex-col bg-white dark:bg-gray-800 border border-border dark:border-gray-700 rounded-xl p-6 shadow-soft hover:shadow-hover hover:border-accent/30 dark:hover:border-accent/40 transition-all duration-300 sm:p-7"
     >
-      {/* Header */}
       <div className="flex items-start justify-between gap-3 mb-5">
         <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-lg bg-gray-900 flex items-center justify-center text-white flex-shrink-0">
+          <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-gray-900 dark:bg-gray-700 text-white">
             <GitHubIcon size={16} />
           </div>
-          <h3 className="text-base font-bold text-gray-900">{project.name}</h3>
+          <h3 className="text-base font-bold text-gray-900 dark:text-gray-100">
+            {project.name}
+          </h3>
         </div>
         <a
           href={project.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-shrink-0 flex items-center gap-1 text-xs font-medium text-gray-400 hover:text-accent transition-colors duration-200"
+          className="flex flex-shrink-0 items-center gap-1 text-xs font-medium text-gray-400 dark:text-gray-500 hover:text-accent transition-colors duration-200"
           aria-label={`View ${project.name} on GitHub`}
         >
           <ExternalLinkIcon />
@@ -84,23 +85,22 @@ function ProjectCard({project}) {
       </div>
 
       {project.description && (
-        <p className="text-sm text-gray-500 mb-4 leading-relaxed">
+        <p className="mb-4 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
           {project.description}
         </p>
       )}
 
-      {/* Bullets */}
-      <ul className="flex flex-col gap-2.5 mt-auto">
+      <ul className="mt-auto flex flex-col gap-2.5">
         {project.bullets.map(({label, text}) => (
           <li key={label} className="flex gap-2 text-sm leading-relaxed">
             <span
-              className={`flex-shrink-0 font-semibold text-xs uppercase tracking-wider mt-0.5 ${
+              className={`mt-0.5 flex-shrink-0 text-xs font-semibold uppercase tracking-wider ${
                 LABEL_COLORS[label] || "text-gray-400"
               }`}
             >
               {label}:
             </span>
-            <span className="text-gray-600">{text}</span>
+            <span className="text-gray-600 dark:text-gray-300">{text}</span>
           </li>
         ))}
       </ul>
@@ -116,13 +116,12 @@ export default function Github() {
   return (
     <section
       id="github"
-      className="py-24 lg:py-32 bg-surface border-t border-border"
+      className="py-24 border-t border-border dark:border-gray-800 bg-surface dark:bg-gray-900 lg:py-32"
     >
       <div className="container-main">
-        {/* Header */}
         <div
           ref={ref}
-          className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12"
+          className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
         >
           <div>
             <motion.p
@@ -146,7 +145,7 @@ export default function Github() {
               {githubSection.title}
             </motion.h2>
             <motion.p
-              className="text-sm text-gray-400 mt-2 max-w-xl"
+              className="mt-2 max-w-xl text-sm text-gray-400 dark:text-gray-500"
               initial={{opacity: 0}}
               animate={inView ? {opacity: 1} : {}}
               transition={{duration: 0.5, delay: 0.16}}
@@ -155,12 +154,11 @@ export default function Github() {
             </motion.p>
           </div>
 
-          {/* Profile link */}
           <motion.a
             href={githubSection.githubProfile}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 border border-border bg-white px-4 py-2.5 rounded-full hover:border-gray-400 hover:shadow-soft transition-all duration-200 flex-shrink-0"
+            className="inline-flex flex-shrink-0 items-center gap-2 rounded-full border border-border dark:border-gray-700 bg-white dark:bg-gray-800 px-4 py-2.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-soft transition-all duration-200"
             initial={{opacity: 0}}
             animate={inView ? {opacity: 1} : {}}
             transition={{duration: 0.5, delay: 0.2}}
@@ -170,9 +168,8 @@ export default function Github() {
           </motion.a>
         </div>
 
-        {/* Project cards */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-5"
+          className="grid grid-cols-1 gap-5 md:grid-cols-2"
           variants={stagger}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
@@ -182,7 +179,6 @@ export default function Github() {
           ))}
         </motion.div>
 
-        {/* CTA */}
         <motion.div
           className="mt-10 flex justify-center"
           initial={{opacity: 0}}

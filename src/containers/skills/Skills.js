@@ -34,10 +34,9 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="py-24 lg:py-32 bg-surface border-t border-border"
+      className="py-24 border-t border-border dark:border-gray-800 bg-surface dark:bg-gray-900 lg:py-32"
     >
       <div className="container-main">
-        {/* Header */}
         <div ref={ref} className="mb-12">
           <motion.p
             className="section-kicker mb-3"
@@ -57,7 +56,6 @@ export default function Skills() {
           </motion.h2>
         </div>
 
-        {/* Skill groups */}
         <motion.div
           className="flex flex-col gap-8"
           variants={stagger}
@@ -68,14 +66,11 @@ export default function Skills() {
             <motion.div
               key={category}
               variants={rowVariant}
-              className="grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-3 sm:gap-6 items-start"
+              className="grid grid-cols-1 items-start gap-3 sm:grid-cols-[180px_1fr] sm:gap-6"
             >
-              {/* Category label */}
-              <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest pt-1.5">
+              <span className="pt-1.5 text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500">
                 {category}
               </span>
-
-              {/* Tags */}
               <motion.div
                 className="flex flex-wrap gap-2"
                 variants={stagger}

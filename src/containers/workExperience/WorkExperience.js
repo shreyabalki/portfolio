@@ -20,47 +20,47 @@ const cardVariant = {
 const LABEL_COLORS = {
   Built: "text-accent",
   Impact: "text-emerald-500",
-  Stack: "text-gray-400"
+  Stack: "text-gray-400 dark:text-gray-500"
 };
 
 function ExperienceCard({exp}) {
   return (
     <motion.article
       variants={cardVariant}
-      className="group relative bg-white border border-border rounded-xl p-6 sm:p-7 shadow-soft hover:shadow-hover hover:border-accent/30 transition-all duration-300"
+      className="group bg-white dark:bg-gray-800 border border-border dark:border-gray-700 rounded-xl p-6 shadow-soft hover:shadow-hover hover:border-accent/30 dark:hover:border-accent/40 transition-all duration-300 sm:p-7"
     >
-      {/* Top row */}
-      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-5">
+      <div className="flex flex-col gap-2 mb-5 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <h3 className="text-base font-bold text-gray-900 leading-tight">
+          <h3 className="text-base font-bold leading-tight text-gray-900 dark:text-gray-100">
             {exp.role}
           </h3>
           {exp.department && (
-            <p className="text-sm text-gray-400 mt-0.5">{exp.department}</p>
+            <p className="mt-0.5 text-sm text-gray-400 dark:text-gray-500">
+              {exp.department}
+            </p>
           )}
-          <p className="text-sm font-medium text-gray-600 mt-1">
+          <p className="mt-1 text-sm font-medium text-gray-600 dark:text-gray-400">
             {exp.company}
-            <span className="text-gray-300 mx-2">·</span>
+            <span className="mx-2 text-gray-300 dark:text-gray-600">·</span>
             {exp.location}
           </p>
         </div>
-        <span className="flex-shrink-0 text-xs font-medium text-gray-400 bg-surface border border-border px-3 py-1.5 rounded-full sm:mt-0.5">
+        <span className="flex-shrink-0 rounded-full border border-border dark:border-gray-700 bg-surface dark:bg-gray-700/50 px-3 py-1.5 text-xs font-medium text-gray-400 dark:text-gray-400 sm:mt-0.5">
           {exp.date}
         </span>
       </div>
 
-      {/* Bullets */}
       <ul className="flex flex-col gap-2.5">
         {exp.bullets.map(({label, text}) => (
           <li key={label} className="flex gap-2 text-sm leading-relaxed">
             <span
-              className={`flex-shrink-0 font-semibold text-xs uppercase tracking-wider mt-0.5 ${
+              className={`mt-0.5 flex-shrink-0 text-xs font-semibold uppercase tracking-wider ${
                 LABEL_COLORS[label] || "text-gray-400"
               }`}
             >
               {label}:
             </span>
-            <span className="text-gray-600">{text}</span>
+            <span className="text-gray-600 dark:text-gray-300">{text}</span>
           </li>
         ))}
       </ul>
@@ -74,7 +74,10 @@ export default function WorkExperience() {
   if (!workExperiences.display) return null;
 
   return (
-    <section id="experience" className="py-24 lg:py-32 border-t border-border">
+    <section
+      id="experience"
+      className="py-24 border-t border-border dark:border-gray-800 lg:py-32"
+    >
       <div className="container-main">
         <div ref={ref} className="mb-12">
           <motion.p

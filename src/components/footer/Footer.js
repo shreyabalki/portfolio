@@ -69,14 +69,17 @@ function MailIcon() {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border bg-white">
+    <footer className="border-t border-border dark:border-gray-800 bg-white dark:bg-gray-950">
       <div className="container-main">
-        {/* Main footer row */}
-        <div className="py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+        <div className="flex flex-col items-start justify-between gap-8 py-10 md:flex-row md:items-center">
           {/* Brand */}
           <div>
-            <p className="text-sm font-bold text-gray-900">{greeting.name}</p>
-            <p className="text-xs text-gray-400 mt-0.5">{greeting.eyebrow}</p>
+            <p className="text-sm font-bold text-gray-900 dark:text-gray-100">
+              {greeting.name}
+            </p>
+            <p className="mt-0.5 text-xs text-gray-400 dark:text-gray-500">
+              {greeting.eyebrow}
+            </p>
           </div>
 
           {/* Nav */}
@@ -88,7 +91,7 @@ export default function Footer() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-xs text-gray-400 hover:text-gray-700 transition-colors duration-200"
+                className="text-xs text-gray-400 dark:text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-200"
               >
                 {link.label}
               </a>
@@ -100,7 +103,7 @@ export default function Footer() {
             <a
               href={`mailto:${contactInfo.email}`}
               aria-label="Send email"
-              className="w-8 h-8 flex items-center justify-center rounded-full text-gray-400 border border-border hover:text-accent hover:border-accent/40 transition-all duration-200"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-border dark:border-gray-700 text-gray-400 dark:text-gray-500 hover:border-accent/40 hover:text-accent transition-all duration-200"
             >
               <MailIcon />
             </a>
@@ -110,7 +113,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub profile"
-                className="w-8 h-8 flex items-center justify-center rounded-full text-gray-400 border border-border hover:text-accent hover:border-accent/40 transition-all duration-200"
+                className="flex h-8 w-8 items-center justify-center rounded-full border border-border dark:border-gray-700 text-gray-400 dark:text-gray-500 hover:border-accent/40 hover:text-accent transition-all duration-200"
               >
                 <GitHubIcon />
               </a>
@@ -121,7 +124,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn profile"
-                className="w-8 h-8 flex items-center justify-center rounded-full text-gray-400 border border-border hover:text-accent hover:border-accent/40 transition-all duration-200"
+                className="flex h-8 w-8 items-center justify-center rounded-full border border-border dark:border-gray-700 text-gray-400 dark:text-gray-500 hover:border-accent/40 hover:text-accent transition-all duration-200"
               >
                 <LinkedInIcon />
               </a>
@@ -129,9 +132,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-border py-5 text-center">
-          <p className="text-xs text-gray-300">
+        <div className="border-t border-border dark:border-gray-800 py-5 text-center">
+          <p className="text-xs text-gray-300 dark:text-gray-700">
             &copy; {new Date().getFullYear()} {greeting.name}. All rights
             reserved.
           </p>
