@@ -3,57 +3,60 @@
    Edit this file to update any section without touching components.
    ───────────────────────────────────────────────────────────── */
 
-import splashAnimation from "./assets/lottie/splashAnimation";
-
 // ─── Splash Screen ────────────────────────────────────────────
-const splashScreen = {
+export const splashScreen = {
   enabled: true,
-  animation: splashAnimation,
-  duration: 1600
-};
-
-const illustration = {
-  animated: false
+  duration: 2200
 };
 
 // ─── Hero / Greeting ──────────────────────────────────────────
-const greeting = {
-  username: "Shreya Chagandi Balakrishnan",
-  title: "Shreya Chagandi Balakrishnan",
-  role: "Machine Learning Engineer",
+export const greeting = {
+  name: "Shreya Chagandi Balakrishnan",
+  eyebrow: "Machine Learning Engineer",
+  headline: "Shreya Chagandi\nBalakrishnan",
   subTitle:
-    "Building robust data systems and ML pipelines for real-world signals",
-  resumeLink: "",
+    "I build reliable ML systems for real-world data — from EEG time-series pipelines to rigorous model evaluation that holds up in production.",
   displayGreeting: true
 };
 
 // ─── About ────────────────────────────────────────────────────
-const aboutSection = {
+export const aboutSection = {
   title: "About",
   summary:
-    "Machine Learning engineer specialising in signal processing and data-driven systems — from EEG time-series modelling to production-ready ML pipelines that handle noisy real-world data.",
-  focusPoints: [
-    "EEG data processing and multi-channel time-series modelling.",
-    "End-to-end ML pipelines with robust evaluation — Balanced Accuracy, Macro-F1.",
-    "Handling noisy real-world signals through structured preprocessing and feature engineering."
+    "Machine Learning Engineer with a focus on building data systems that are robust by design. My work spans EEG signal processing, multi-channel time-series modeling, and end-to-end pipeline engineering for biomedical and real-world data. I care about evaluation rigor, generalization under noise, and systems that perform consistently outside the lab.",
+  focusCards: [
+    {
+      title: "Signal Processing",
+      description:
+        "EEG and time-series analysis across multi-channel, multi-session data. Structured preprocessing for noisy, non-stationary signals."
+    },
+    {
+      title: "Modeling",
+      description:
+        "Deep learning with PyTorch and Transformers. CNNs for sequence data. Principled architecture choices tuned for generalization."
+    },
+    {
+      title: "Reliability",
+      description:
+        "Evaluation frameworks built to prevent data leakage. Balanced Accuracy and Macro-F1 as primary metrics for imbalanced real-world datasets."
+    }
   ],
   display: true
 };
 
 // ─── Social Links ─────────────────────────────────────────────
-const socialMediaLinks = {
+export const socialMediaLinks = {
   github: "https://github.com/shreyabalki",
   linkedin: "https://www.linkedin.com/in/shreya-bala/",
-  gmail: "shreyacb.eu@gmail.com",
+  email: "shreyacb.eu@gmail.com",
   display: true
 };
 
 // ─── Skills ───────────────────────────────────────────────────
-// Each entry is { category, items[] } — rendered as tag rows in Skills.js
-const skillsSection = {
+export const skillsSection = {
   title: "Skills",
   subTitle: "Technical stack",
-  skills: [
+  groups: [
     {
       category: "Programming",
       items: ["Python", "SQL"]
@@ -64,148 +67,137 @@ const skillsSection = {
     },
     {
       category: "Data & Signal Processing",
-      items: ["Time-Series Analysis", "EEG Processing", "Feature Engineering"]
+      items: [
+        "Time-Series Analysis",
+        "EEG Processing",
+        "Feature Engineering",
+        "Pandas",
+        "NumPy"
+      ]
     },
     {
-      category: "Systems & Tools",
+      category: "Tools",
       items: ["Git", "Docker", "Linux", "Azure"]
     }
   ],
   display: true
 };
 
-// ─── Education ────────────────────────────────────────────────
-const educationInfo = {
-  display: true,
-  schools: [
-    {
-      schoolName: "BTU Cottbus-Senftenberg",
-      logo: require("./assets/images/BTU.png"),
-      subHeader: "M.Sc. Artificial Intelligence",
-      duration: "2025 – Present",
-      location: "Germany"
-    },
-    {
-      schoolName: "Sathyabama Institute of Science and Technology",
-      logo: require("./assets/images/SIST.png"),
-      subHeader: "B.E. Computer Engineering",
-      duration: "2020 – 2024",
-      location: "India"
-    }
-  ]
-};
-
-const techStack = {
-  viewSkillBars: false,
-  experience: [],
-  displayCodersrank: false
-};
-
 // ─── Work Experience ──────────────────────────────────────────
-// Each bullet must follow: "Label: detail." format (Built / Impact / Stack)
-const workExperiences = {
+export const workExperiences = {
   display: true,
   experience: [
     {
-      role: "Research Assistant — Machine Learning & Biomedical Data",
+      role: "Research Assistant",
+      department: "Machine Learning and Biomedical Data",
       company: "University of Vienna",
       location: "Austria",
-      date: "Dec 2025 – Present",
-      descBullets: [
-        "Built: End-to-end ML pipelines for multi-session EEG time-series data (32-channel signals), including preprocessing and validation.",
-        "Impact: Improved model generalisation and reliability by preventing data leakage using robust evaluation — Balanced Accuracy, Macro-F1.",
-        "Stack: Python, PyTorch, Transformers, Pandas, NumPy."
+      date: "Dec 2025 to Present",
+      bullets: [
+        {
+          label: "Built",
+          text:
+            "End-to-end ML pipelines for multi-session EEG time-series data with 32-channel signals, covering preprocessing, feature extraction, and model training."
+        },
+        {
+          label: "Impact",
+          text:
+            "Improved model generalization and reduced evaluation risk by enforcing strict data leakage prevention across sessions, validated with Balanced Accuracy and Macro-F1."
+        },
+        {
+          label: "Stack",
+          text: "Python, PyTorch, Transformers, Pandas, NumPy"
+        }
       ]
     },
     {
       role: "Embedded Systems Intern",
-      company: "Big Bang Boom Solutions Pvt Ltd",
+      department: "",
+      company: "Big Bang Boom Solutions",
       location: "Chennai, India",
-      date: "Apr 2024 – Jun 2024",
-      descBullets: [
-        "Built: Automation systems integrating hardware and software workflows.",
-        "Impact: Reduced manual effort by 15% and improved system reliability through structured validation and debugging.",
-        "Stack: Embedded systems, Python, hardware-software integration."
+      date: "Apr 2024 to Jun 2024",
+      bullets: [
+        {
+          label: "Built",
+          text:
+            "Automation systems integrating hardware and software workflows for industrial process control."
+        },
+        {
+          label: "Impact",
+          text:
+            "Reduced manual intervention by 15% through structured validation logic and systematic debugging of hardware-software interfaces."
+        },
+        {
+          label: "Stack",
+          text: "Python, Embedded Systems, Hardware-Software Integration"
+        }
       ]
     }
   ]
 };
 
 // ─── GitHub Showcase ──────────────────────────────────────────
-// Primary work showcase — replace projects with GitHub links
-const githubSection = {
+// Add new repositories to the `projects` array below.
+export const githubSection = {
   title: "GitHub & Selected Work",
-  subtitle: "Primary work showcase",
+  subtitle:
+    "A selection of projects reflecting my focus on ML systems and signal processing. Full history on GitHub.",
   githubProfile: "https://github.com/shreyabalki",
+  githubUsername: "shreyabalki",
   projects: [
     {
       name: "EEG Card Game",
       url: "https://github.com/shreyabalki/EEG-Card-game",
-      built:
-        "EEG-based interaction system using signal processing and ML concepts.",
-      impact:
-        "Demonstrates application of time-series analysis and real-time signal interpretation.",
-      stack: "Python, signal processing, ML concepts."
+      description:
+        "An EEG-based interaction system applying signal processing and machine learning to real-time brain-computer interface concepts.",
+      bullets: [
+        {
+          label: "Built",
+          text:
+            "Signal acquisition and classification pipeline integrating EEG data with game state using time-series feature extraction."
+        },
+        {
+          label: "Impact",
+          text:
+            "Demonstrates practical application of real-time signal interpretation, bridging biomedical data and interactive systems."
+        },
+        {
+          label: "Stack",
+          text: "Python, Signal Processing, Machine Learning"
+        }
+      ]
     }
   ],
   display: true
 };
 
-// ─── Projects — DISABLED ──────────────────────────────────────
-// Work is showcased via GitHub section above.
-const bigProjects = {
-  title: "",
-  subtitle: "",
-  projects: [],
-  display: false
-};
-
-// ─── Achievements ─────────────────────────────────────────────
-const achievementSection = {
-  title: "",
-  subtitle: "",
-  achievementsCards: [],
-  display: false
-};
-
-// ─── Resume Section ───────────────────────────────────────────
-const resumeSection = {
-  title: "Resume",
-  subtitle: "",
-  display: false
+// ─── Education ────────────────────────────────────────────────
+export const educationInfo = {
+  display: true,
+  schools: [
+    {
+      schoolName: "BTU Cottbus-Senftenberg",
+      logo: require("./assets/images/BTU.png"),
+      degree: "M.Sc. Artificial Intelligence",
+      duration: "2025 to Present",
+      location: "Germany"
+    },
+    {
+      schoolName: "Sathyabama Institute of Science and Technology",
+      logo: require("./assets/images/SIST.png"),
+      degree: "B.E. Computer Engineering",
+      duration: "2020 to 2024",
+      location: "India"
+    }
+  ]
 };
 
 // ─── Contact ──────────────────────────────────────────────────
-const contactInfo = {
-  title: "Get in touch",
+export const contactInfo = {
+  title: "Let's connect",
   subtitle:
-    "Open to ML engineering and data systems roles. Happy to discuss research, collaboration, or opportunities.",
-  number: "(+49) 176 22913521",
-  email_address: "shreyacb.eu@gmail.com"
-};
-
-const openSource = {
-  showGithubProfile: false,
-  display: false
-};
-
-const isHireable = true;
-
-export {
-  illustration,
-  greeting,
-  aboutSection,
-  socialMediaLinks,
-  splashScreen,
-  skillsSection,
-  educationInfo,
-  techStack,
-  workExperiences,
-  bigProjects,
-  githubSection,
-  achievementSection,
-  contactInfo,
-  isHireable,
-  openSource,
-  resumeSection
+    "Open to ML engineering roles, research collaborations, and data systems work. Reach out directly or send a message below.",
+  email: "shreyacb.eu@gmail.com",
+  linkedin: "https://www.linkedin.com/in/shreya-bala/",
+  formspreeId: "f/mldnajbd"
 };

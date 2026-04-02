@@ -1,42 +1,115 @@
 import React from "react";
-import {Fade} from "react-reveal";
-import "./Greeting.scss";
+import {motion} from "framer-motion";
 import {greeting} from "../../portfolio";
 import ShreyaImage from "../../assets/images/shreya.jpg";
+
+const fadeUp = (delay = 0) => ({
+  initial: {opacity: 0, y: 20},
+  animate: {opacity: 1, y: 0},
+  transition: {duration: 0.7, ease: [0.22, 1, 0.36, 1], delay}
+});
 
 export default function Greeting() {
   if (!greeting.displayGreeting) return null;
 
+  // Split headline on newline to allow controlled line breaks
+  const headlineLines = greeting.headline.split("\n");
+
   return (
-    <Fade bottom duration={700} distance="24px">
-      <section className="greet-main" id="greeting">
-        <div className="greeting-main">
-          <div className="greeting-text-div">
-            <p className="greeting-eyebrow">{greeting.role}</p>
-            <h1 className="greeting-text">{greeting.username}</h1>
-            <p className="greeting-subtitle">{greeting.subTitle}</p>
-            <div className="button-greeting-div">
+    <section
+      id="greeting"
+      className="relative min-h-screen flex items-center pt-16 overflow-hidden"
+    >
+      {/* Subtle radial gradient backdrop */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 60% 50% at 70% 40%, rgba(79,134,247,0.05) 0%, transparent 70%)"
+        }}
+      />
+
+      <div className="container-main w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center py-20 lg:py-28">
+          {/* Left — Text */}
+          <div className="flex flex-col gap-6 order-2 md:order-1">
+            {/* Eyebrow */}
+            <motion.p className="section-kicker" {...fadeUp(0.05)}>
+              {greeting.eyebrow}
+            </motion.p>
+
+            {/* Headline */}
+            <motion.h1
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight leading-[1.1]"
+              {...fadeUp(0.12)}
+            >
+              {headlineLines.map((line, i) => (
+                <span key={i} className="block">
+                  {line}
+                </span>
+              ))}
+            </motion.h1>
+
+            {/* Subtitle */}
+            <motion.p
+              className="text-lg text-gray-500 leading-relaxed max-w-lg"
+              {...fadeUp(0.2)}
+            >
+              {greeting.subTitle}
+            </motion.p>
+
+            {/* Single CTA */}
+            <motion.div {...fadeUp(0.28)}>
               <a href="#github" className="btn-primary">
                 View Work
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M2.333 7h9.334M8 3.5 11.667 7 8 10.5"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
               </a>
-              <a href="#contact" className="btn-secondary">
-                Get in touch
-              </a>
-            </div>
+            </motion.div>
           </div>
 
-          <div className="greeting-image-div">
-            <div className="profile-picture-wrap">
+          {/* Right — Portrait */}
+          <motion.div
+            className="flex justify-center md:justify-end order-1 md:order-2"
+            initial={{opacity: 0, scale: 0.96}}
+            animate={{opacity: 1, scale: 1}}
+            transition={{duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.1}}
+          >
+            <div className="relative">
+              {/* Decorative ring */}
+              <div
+                className="absolute inset-0 rounded-2xl"
+                style={{
+                  background:
+                    "linear-gradient(135deg, rgba(79,134,247,0.12) 0%, rgba(79,134,247,0.04) 100%)",
+                  transform: "translate(8px, 8px)"
+                }}
+              />
               <img
                 src={ShreyaImage}
-                alt={`${greeting.username} profile`}
-                className="profile-picture"
+                alt={`${greeting.name} — Machine Learning Engineer`}
+                className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover rounded-2xl shadow-card"
                 loading="eager"
+                style={{filter: "brightness(1.01) contrast(1.01)"}}
               />
             </div>
-          </div>
+          </motion.div>
         </div>
-      </section>
-    </Fade>
+      </div>
+    </section>
   );
 }
