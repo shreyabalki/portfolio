@@ -10,12 +10,20 @@ const stagger = {
 
 const tagVariant = {
   hidden: {opacity: 0, scale: 0.92},
-  visible: {opacity: 1, scale: 1, transition: {duration: 0.4, ease: [0.22, 1, 0.36, 1]}}
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {duration: 0.4, ease: [0.22, 1, 0.36, 1]}
+  }
 };
 
 const rowVariant = {
   hidden: {opacity: 0, y: 14},
-  visible: {opacity: 1, y: 0, transition: {duration: 0.55, ease: [0.22, 1, 0.36, 1]}}
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {duration: 0.55, ease: [0.22, 1, 0.36, 1]}
+  }
 };
 
 export default function Skills() {
@@ -24,7 +32,10 @@ export default function Skills() {
   if (!skillsSection.display) return null;
 
   return (
-    <section id="skills" className="py-24 lg:py-32 bg-surface border-t border-border">
+    <section
+      id="skills"
+      className="py-24 lg:py-32 bg-surface border-t border-border"
+    >
       <div className="container-main">
         {/* Header */}
         <div ref={ref} className="mb-12">

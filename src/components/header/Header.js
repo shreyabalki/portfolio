@@ -54,7 +54,10 @@ export default function Header() {
             </a>
 
             {/* Desktop nav */}
-            <nav className="hidden md:flex items-center gap-8" aria-label="Primary">
+            <nav
+              className="hidden md:flex items-center gap-8"
+              aria-label="Primary"
+            >
               {NAV_LINKS.map(link => (
                 <a key={link.href} href={link.href} className="nav-link">
                   {link.label}
@@ -117,7 +120,11 @@ export default function Header() {
                   className="text-2xl font-semibold text-gray-900 py-3 border-b border-gray-50 hover:text-accent transition-colors duration-200"
                   initial={{opacity: 0, x: -12}}
                   animate={{opacity: 1, x: 0}}
-                  transition={{delay: i * 0.05, duration: 0.3, ease: [0.22, 1, 0.36, 1]}}
+                  transition={{
+                    delay: i * 0.05,
+                    duration: 0.3,
+                    ease: [0.22, 1, 0.36, 1]
+                  }}
                 >
                   {link.label}
                 </motion.a>

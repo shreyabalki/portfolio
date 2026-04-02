@@ -17,17 +17,20 @@ export default function Main() {
 
   useEffect(() => {
     if (!splashScreen.enabled) return;
-    const t = setTimeout(
-      () => setShowSplash(false),
-      splashScreen.duration
-    );
+    const t = setTimeout(() => setShowSplash(false), splashScreen.duration);
     return () => clearTimeout(t);
   }, []);
 
   return (
     <>
       {showSplash && <SplashScreen />}
-      <div className={showSplash ? "opacity-0 pointer-events-none" : "opacity-100 transition-opacity duration-500"}>
+      <div
+        className={
+          showSplash
+            ? "opacity-0 pointer-events-none"
+            : "opacity-100 transition-opacity duration-500"
+        }
+      >
         <Header />
         <main>
           <Greeting />

@@ -80,9 +80,7 @@ body.theme-dark {
 body {
   background-color: var(--bg);
   color: var(--text-primary);
-  transition:
-    background-color var(--transition),
-    color var(--transition);
+  transition: background-color var(--transition), color var(--transition);
 }
 
 /* ─── Layout helpers ──────────────────────────────── */

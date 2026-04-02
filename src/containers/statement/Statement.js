@@ -15,8 +15,8 @@ export default function Statement() {
           </h2>
           <p className="statement-body">
             Building at the intersection of product thinking and machine
-            learning — where clarity of design meets the precision of
-            engineered systems.
+            learning — where clarity of design meets the precision of engineered
+            systems.
           </p>
         </div>
       </section>

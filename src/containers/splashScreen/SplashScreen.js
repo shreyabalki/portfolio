@@ -30,14 +30,14 @@ export default function SplashScreen() {
           key="splash"
           className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white"
           initial={{opacity: 1}}
-          exit={{opacity: 0, transition: {duration: 0.5, ease: [0.22, 1, 0.36, 1]}}}
+          exit={{
+            opacity: 0,
+            transition: {duration: 0.5, ease: [0.22, 1, 0.36, 1]}
+          }}
         >
           <div className="flex flex-col items-center gap-9">
             {/* Track */}
-            <div
-              className="relative"
-              style={{width: TRACK_WIDTH, height: 52}}
-            >
+            <div className="relative" style={{width: TRACK_WIDTH, height: 52}}>
               {/* Baseline */}
               <div
                 className="absolute bottom-0 left-0 bg-gray-100 rounded-full"
@@ -52,7 +52,11 @@ export default function SplashScreen() {
                   style={{left: lx - 1, width: 2, height: 20}}
                   initial={{scaleY: 0, originY: "bottom"}}
                   animate={{scaleY: 1}}
-                  transition={{delay: 0.12, duration: 0.28, ease: [0.22, 1, 0.36, 1]}}
+                  transition={{
+                    delay: 0.12,
+                    duration: 0.28,
+                    ease: [0.22, 1, 0.36, 1]
+                  }}
                 />
               ))}
 

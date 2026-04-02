@@ -10,25 +10,69 @@ const staggerContainer = {
 
 const cardVariant = {
   hidden: {opacity: 0, y: 18},
-  visible: {opacity: 1, y: 0, transition: {duration: 0.6, ease: [0.22, 1, 0.36, 1]}}
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {duration: 0.6, ease: [0.22, 1, 0.36, 1]}
+  }
 };
 
 const CARD_ICONS = {
   "Signal Processing": (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M1 10h2.5l2-6 3 12 3-10 2 4H19" stroke="#4F86F7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M1 10h2.5l2-6 3 12 3-10 2 4H19"
+        stroke="#4F86F7"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   ),
   Modeling: (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="10" cy="10" r="3" stroke="#4F86F7" strokeWidth="1.5"/>
-      <path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.22 4.22l1.42 1.42M14.36 14.36l1.42 1.42M4.22 15.78l1.42-1.42M14.36 5.64l1.42-1.42" stroke="#4F86F7" strokeWidth="1.5" strokeLinecap="round"/>
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="10" cy="10" r="3" stroke="#4F86F7" strokeWidth="1.5" />
+      <path
+        d="M10 2v2M10 16v2M2 10h2M16 10h2M4.22 4.22l1.42 1.42M14.36 14.36l1.42 1.42M4.22 15.78l1.42-1.42M14.36 5.64l1.42-1.42"
+        stroke="#4F86F7"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
     </svg>
   ),
   Reliability: (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M10 2L3 5.5v5.5c0 3.87 3 7.5 7 8.5 4-1 7-4.63 7-8.5V5.5L10 2z" stroke="#4F86F7" strokeWidth="1.5" strokeLinejoin="round"/>
-      <path d="M7 10l2 2 4-4" stroke="#4F86F7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M10 2L3 5.5v5.5c0 3.87 3 7.5 7 8.5 4-1 7-4.63 7-8.5V5.5L10 2z"
+        stroke="#4F86F7"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M7 10l2 2 4-4"
+        stroke="#4F86F7"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   )
 };
@@ -57,7 +101,11 @@ export default function About() {
               className="section-heading mb-6"
               initial={{opacity: 0, y: 16}}
               animate={inView ? {opacity: 1, y: 0} : {}}
-              transition={{duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.08}}
+              transition={{
+                duration: 0.6,
+                ease: [0.22, 1, 0.36, 1],
+                delay: 0.08
+              }}
             >
               Engineering ML systems that hold up in the real world.
             </motion.h2>
@@ -65,7 +113,11 @@ export default function About() {
               className="text-base text-gray-500 leading-[1.75]"
               initial={{opacity: 0, y: 12}}
               animate={inView ? {opacity: 1, y: 0} : {}}
-              transition={{duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.16}}
+              transition={{
+                duration: 0.6,
+                ease: [0.22, 1, 0.36, 1],
+                delay: 0.16
+              }}
             >
               {aboutSection.summary}
             </motion.p>

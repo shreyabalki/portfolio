@@ -11,9 +11,7 @@
   font-size: 0.72rem;
   font-weight: 700;
   border-radius: var(--radius-pill);
-  transition:
-    opacity var(--transition),
-    transform var(--transition),
+  transition: opacity var(--transition), transform var(--transition),
     box-shadow var(--transition);
 }
 
