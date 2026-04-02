@@ -84,10 +84,13 @@ export default function About() {
   if (!aboutSection.display) return null;
 
   return (
-    <section id="about" className="py-24 lg:py-32 border-t border-border">
+    <section
+      id="about"
+      className="py-24 border-t border-border dark:border-gray-800 lg:py-32"
+    >
       <div className="container-main">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
-          {/* Left — Identity */}
+        <div className="grid grid-cols-1 gap-14 items-start lg:grid-cols-2 lg:gap-20">
+          {/* Left */}
           <div ref={sectionRef}>
             <motion.p
               className="section-kicker mb-3"
@@ -110,7 +113,7 @@ export default function About() {
               Engineering ML systems that hold up in the real world.
             </motion.h2>
             <motion.p
-              className="text-base text-gray-500 leading-[1.75]"
+              className="text-base leading-[1.75] text-gray-500 dark:text-gray-400"
               initial={{opacity: 0, y: 12}}
               animate={inView ? {opacity: 1, y: 0} : {}}
               transition={{
@@ -135,16 +138,16 @@ export default function About() {
               <motion.div
                 key={card.title}
                 variants={cardVariant}
-                className="group flex gap-4 items-start p-5 rounded-xl bg-white border border-border shadow-soft hover:shadow-hover hover:border-accent/30 transition-all duration-300"
+                className="group flex gap-4 items-start p-5 rounded-xl bg-white dark:bg-gray-800 border border-border dark:border-gray-700 shadow-soft hover:shadow-hover hover:border-accent/30 dark:hover:border-accent/40 transition-all duration-300"
               >
-                <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-accent-light flex items-center justify-center mt-0.5">
+                <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-accent-light dark:bg-accent/10 flex items-center justify-center mt-0.5">
                   {CARD_ICONS[card.title] || null}
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-gray-900 mb-1">
+                  <h3 className="text-sm font-semibold mb-1 text-gray-900 dark:text-gray-100">
                     {card.title}
                   </h3>
-                  <p className="text-sm text-gray-500 leading-relaxed">
+                  <p className="text-sm leading-relaxed text-gray-500 dark:text-gray-400">
                     {card.description}
                   </p>
                 </div>

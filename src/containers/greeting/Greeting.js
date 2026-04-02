@@ -12,7 +12,6 @@ const fadeUp = (delay = 0) => ({
 export default function Greeting() {
   if (!greeting.displayGreeting) return null;
 
-  // Split headline on newline to allow controlled line breaks
   const headlineLines = greeting.headline.split("\n");
 
   return (
@@ -33,14 +32,12 @@ export default function Greeting() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center py-20 lg:py-28">
           {/* Left — Text */}
           <div className="flex flex-col gap-6 order-2 md:order-1">
-            {/* Eyebrow */}
             <motion.p className="section-kicker" {...fadeUp(0.05)}>
               {greeting.eyebrow}
             </motion.p>
 
-            {/* Headline */}
             <motion.h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight leading-[1.1]"
+              className="text-4xl font-bold tracking-tight leading-[1.1] text-gray-900 dark:text-gray-100 sm:text-5xl lg:text-6xl"
               {...fadeUp(0.12)}
             >
               {headlineLines.map((line, i) => (
@@ -50,15 +47,13 @@ export default function Greeting() {
               ))}
             </motion.h1>
 
-            {/* Subtitle */}
             <motion.p
-              className="text-lg text-gray-500 leading-relaxed max-w-lg"
+              className="text-lg leading-relaxed max-w-lg text-gray-500 dark:text-gray-400"
               {...fadeUp(0.2)}
             >
               {greeting.subTitle}
             </motion.p>
 
-            {/* Single CTA */}
             <motion.div {...fadeUp(0.28)}>
               <a href="#github" className="btn-primary">
                 View Work
@@ -90,7 +85,6 @@ export default function Greeting() {
             transition={{duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.1}}
           >
             <div className="relative">
-              {/* Decorative ring */}
               <div
                 className="absolute inset-0 rounded-2xl"
                 style={{
@@ -102,7 +96,7 @@ export default function Greeting() {
               <img
                 src={ShreyaImage}
                 alt={`${greeting.name} — Machine Learning Engineer`}
-                className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover rounded-2xl shadow-card"
+                className="relative w-64 h-64 object-cover rounded-2xl shadow-card sm:w-80 sm:h-80 lg:w-96 lg:h-96"
                 loading="eager"
                 style={{filter: "brightness(1.01) contrast(1.01)"}}
               />

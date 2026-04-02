@@ -23,9 +23,11 @@ export default function Education() {
   if (!educationInfo.display) return null;
 
   return (
-    <section id="education" className="py-24 lg:py-32 border-t border-border">
+    <section
+      id="education"
+      className="py-24 border-t border-border dark:border-gray-800 lg:py-32"
+    >
       <div className="container-main">
-        {/* Header */}
         <div ref={ref} className="mb-12">
           <motion.p
             className="section-kicker mb-3"
@@ -45,9 +47,8 @@ export default function Education() {
           </motion.h2>
         </div>
 
-        {/* Cards */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 gap-5"
+          className="grid grid-cols-1 gap-5 sm:grid-cols-2"
           variants={stagger}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
@@ -56,31 +57,30 @@ export default function Education() {
             <motion.article
               key={i}
               variants={cardVariant}
-              className="group flex gap-5 items-start bg-white border border-border rounded-xl p-6 shadow-soft hover:shadow-hover hover:border-accent/30 transition-all duration-300"
+              className="group flex items-start gap-5 rounded-xl border border-border dark:border-gray-700 bg-white dark:bg-gray-800 p-6 shadow-soft hover:shadow-hover hover:border-accent/30 dark:hover:border-accent/40 transition-all duration-300"
             >
-              {/* Logo */}
               {school.logo && (
-                <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-surface border border-border flex items-center justify-center overflow-hidden p-2">
+                <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border dark:border-gray-700 bg-surface dark:bg-gray-700/50 p-2">
                   <img
                     src={school.logo}
                     alt={`${school.schoolName} logo`}
-                    className="w-full h-full object-contain"
+                    className="h-full w-full object-contain"
                   />
                 </div>
               )}
-
-              {/* Info */}
-              <div className="flex flex-col gap-1 min-w-0">
-                <h3 className="text-sm font-bold text-gray-900 leading-snug">
+              <div className="flex min-w-0 flex-col gap-1">
+                <h3 className="text-sm font-bold leading-snug text-gray-900 dark:text-gray-100">
                   {school.degree || school.subHeader}
                 </h3>
-                <p className="text-sm font-medium text-gray-600 truncate">
+                <p className="truncate text-sm font-medium text-gray-600 dark:text-gray-300">
                   {school.schoolName}
                 </p>
-                <p className="text-xs text-gray-400 mt-0.5">
+                <p className="mt-0.5 text-xs text-gray-400 dark:text-gray-500">
                   {school.location}
                   {school.location && school.duration && (
-                    <span className="mx-1.5 text-gray-200">|</span>
+                    <span className="mx-1.5 text-gray-300 dark:text-gray-600">
+                      ·
+                    </span>
                   )}
                   {school.duration}
                 </p>

@@ -11,9 +11,11 @@ import Footer from "../components/footer/Footer";
 import ScrollToTopButton from "./topbutton/Top";
 import SplashScreen from "./splashScreen/SplashScreen";
 import {splashScreen} from "../portfolio";
+import {useTheme} from "../hooks/useTheme";
 
 export default function Main() {
   const [showSplash, setShowSplash] = useState(splashScreen.enabled);
+  const {isDark, toggleTheme} = useTheme();
 
   useEffect(() => {
     if (!splashScreen.enabled) return;
@@ -31,7 +33,7 @@ export default function Main() {
             : "opacity-100 transition-opacity duration-500"
         }
       >
-        <Header />
+        <Header isDark={isDark} toggleTheme={toggleTheme} />
         <main>
           <Greeting />
           <About />
