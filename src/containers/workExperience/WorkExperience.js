@@ -10,7 +10,11 @@ const stagger = {
 
 const cardVariant = {
   hidden: {opacity: 0, y: 20},
-  visible: {opacity: 1, y: 0, transition: {duration: 0.65, ease: [0.22, 1, 0.36, 1]}}
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {duration: 0.65, ease: [0.22, 1, 0.36, 1]}
+  }
 };
 
 const LABEL_COLORS = {
@@ -49,7 +53,11 @@ function ExperienceCard({exp}) {
       <ul className="flex flex-col gap-2.5">
         {exp.bullets.map(({label, text}) => (
           <li key={label} className="flex gap-2 text-sm leading-relaxed">
-            <span className={`flex-shrink-0 font-semibold text-xs uppercase tracking-wider mt-0.5 ${LABEL_COLORS[label] || "text-gray-400"}`}>
+            <span
+              className={`flex-shrink-0 font-semibold text-xs uppercase tracking-wider mt-0.5 ${
+                LABEL_COLORS[label] || "text-gray-400"
+              }`}
+            >
               {label}:
             </span>
             <span className="text-gray-600">{text}</span>

@@ -16,7 +16,9 @@ export default function Projects() {
           {bigProjects.projects?.map((project, index) => (
             <article
               key={index}
-              className={`project-row ${index % 2 !== 0 ? "project-row--reverse" : ""}`}
+              className={`project-row ${
+                index % 2 !== 0 ? "project-row--reverse" : ""
+              }`}
             >
               <div className="project-row-image">
                 <img

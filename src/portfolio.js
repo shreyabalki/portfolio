@@ -96,13 +96,11 @@ export const workExperiences = {
       bullets: [
         {
           label: "Built",
-          text:
-            "End-to-end ML pipelines for multi-session EEG time-series data with 32-channel signals, covering preprocessing, feature extraction, and model training."
+          text: "End-to-end ML pipelines for multi-session EEG time-series data with 32-channel signals, covering preprocessing, feature extraction, and model training."
         },
         {
           label: "Impact",
-          text:
-            "Improved model generalization and reduced evaluation risk by enforcing strict data leakage prevention across sessions, validated with Balanced Accuracy and Macro-F1."
+          text: "Improved model generalization and reduced evaluation risk by enforcing strict data leakage prevention across sessions, validated with Balanced Accuracy and Macro-F1."
         },
         {
           label: "Stack",
@@ -119,13 +117,11 @@ export const workExperiences = {
       bullets: [
         {
           label: "Built",
-          text:
-            "Automation systems integrating hardware and software workflows for industrial process control."
+          text: "Automation systems integrating hardware and software workflows for industrial process control."
         },
         {
           label: "Impact",
-          text:
-            "Reduced manual intervention by 15% through structured validation logic and systematic debugging of hardware-software interfaces."
+          text: "Reduced manual intervention by 15% through structured validation logic and systematic debugging of hardware-software interfaces."
         },
         {
           label: "Stack",
@@ -153,13 +149,11 @@ export const githubSection = {
       bullets: [
         {
           label: "Built",
-          text:
-            "Signal acquisition and classification pipeline integrating EEG data with game state using time-series feature extraction."
+          text: "Signal acquisition and classification pipeline integrating EEG data with game state using time-series feature extraction."
         },
         {
           label: "Impact",
-          text:
-            "Demonstrates practical application of real-time signal interpretation, bridging biomedical data and interactive systems."
+          text: "Demonstrates practical application of real-time signal interpretation, bridging biomedical data and interactive systems."
         },
         {
           label: "Stack",

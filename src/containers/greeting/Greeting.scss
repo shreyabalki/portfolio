@@ -93,9 +93,7 @@
   font-weight: 600;
   border-radius: var(--radius-pill);
   border: 1px solid var(--border-color);
-  transition:
-    border-color var(--transition-fast),
-    color var(--transition-fast);
+  transition: border-color var(--transition-fast), color var(--transition-fast);
 }
 
 .btn-secondary:hover {
@@ -124,9 +122,7 @@
   object-position: top center;
   display: block;
   filter: grayscale(10%);
-  transition:
-    filter 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.4s ease;
+  transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
 }
 
 .profile-picture-wrap:hover .profile-picture {
