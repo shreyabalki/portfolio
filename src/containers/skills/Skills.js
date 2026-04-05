@@ -5,24 +5,24 @@ import {useScrollReveal} from "../../hooks/useScrollReveal";
 
 const stagger = {
   hidden: {},
-  visible: {transition: {staggerChildren: 0.08, delayChildren: 0.1}}
+  visible: {transition: {staggerChildren: 0.1, delayChildren: 0.05}}
 };
 
-const tagVariant = {
-  hidden: {opacity: 0, scale: 0.92},
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {duration: 0.4, ease: [0.22, 1, 0.36, 1]}
-  }
-};
-
-const rowVariant = {
-  hidden: {opacity: 0, y: 14},
+const cardVariant = {
+  hidden: {opacity: 0, y: 16},
   visible: {
     opacity: 1,
     y: 0,
     transition: {duration: 0.55, ease: [0.22, 1, 0.36, 1]}
+  }
+};
+
+const tagVariant = {
+  hidden: {opacity: 0, scale: 0.9},
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {duration: 0.35, ease: [0.22, 1, 0.36, 1]}
   }
 };
 
@@ -57,7 +57,7 @@ export default function Skills() {
         </div>
 
         <motion.div
-          className="flex flex-col gap-8"
+          className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-5"
           variants={stagger}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
@@ -65,12 +65,12 @@ export default function Skills() {
           {skillsSection.groups.map(({category, items}) => (
             <motion.div
               key={category}
-              variants={rowVariant}
-              className="grid grid-cols-1 items-start gap-3 sm:grid-cols-[180px_1fr] sm:gap-6"
+              variants={cardVariant}
+              className="group flex flex-col gap-4 rounded-2xl border border-border dark:border-gray-700 bg-white dark:bg-gray-800 p-6 shadow-soft hover:shadow-hover hover:border-accent/30 dark:hover:border-accent/40 transition-all duration-300"
             >
-              <span className="pt-1.5 text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500">
+              <h3 className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500">
                 {category}
-              </span>
+              </h3>
               <motion.div
                 className="flex flex-wrap gap-2"
                 variants={stagger}

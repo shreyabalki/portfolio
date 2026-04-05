@@ -95,11 +95,16 @@ export default function Greeting() {
               />
               <img
                 src={ShreyaImage}
-                alt={`${greeting.name} — Machine Learning Engineer`}
+                alt={greeting.name}
                 className="relative w-64 h-64 object-cover rounded-2xl shadow-card sm:w-80 sm:h-80 lg:w-96 lg:h-96"
                 loading="eager"
                 style={{filter: "brightness(1.01) contrast(1.01)"}}
               />
+              {greeting.photoTagline && (
+                <p className="mt-3 text-center text-xs text-gray-400 dark:text-gray-500 tracking-wide">
+                  {greeting.photoTagline}
+                </p>
+              )}
             </div>
           </motion.div>
         </div>
