@@ -1,7 +1,8 @@
 import React from "react";
 import {motion} from "framer-motion";
 import {greeting} from "../../portfolio";
-import ShreyaImage from "../../assets/images/shreya.jpg";
+
+const PHOTO_URL = process.env.PUBLIC_URL + "/shreya.jpg";
 
 const fadeUp = (delay = 0) => ({
   initial: {opacity: 0, y: 20},
@@ -94,7 +95,7 @@ export default function Greeting() {
                 }}
               />
               <img
-                src={ShreyaImage}
+                src={PHOTO_URL}
                 alt={greeting.name}
                 className="relative w-64 h-64 object-cover rounded-full shadow-card sm:w-72 sm:h-72 lg:w-80 lg:h-80"
                 loading="eager"
