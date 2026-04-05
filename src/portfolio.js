@@ -13,6 +13,7 @@ export const greeting = {
   headline: "Shreya Chagandi\nBalakrishnan",
   subTitle:
     "ML systems built to generalize. 32% Macro F1 improvement on 32-channel EEG data using Transformers. Up to 40% identity fraud reduction through a blockchain verification pipeline.",
+  photoTagline: "ML Engineer · Vienna, Austria",
   displayGreeting: true
 };
 
@@ -68,11 +69,11 @@ export const skillsSection = {
   subTitle: "Technical stack",
   groups: [
     {
-      category: "Languages",
+      category: "Programming",
       items: ["Python", "SQL"]
     },
     {
-      category: "ML and Deep Learning",
+      category: "Machine Learning",
       items: ["PyTorch", "Transformers", "CNNs", "Scikit-learn", "TensorFlow"]
     },
     {
@@ -107,11 +108,11 @@ export const workExperiences = {
       bullets: [
         {
           label: "Built",
-          text: "Full classification pipeline for 32-channel EEG. 22 sessions, thousands of labeled samples. Covered preprocessing, segmentation, model training, and evaluation."
+          text: "End-to-end classification pipeline for 32-channel EEG data across 22 sessions. Raw signal to labeled output: preprocessing, segmentation, model training, and leakage-free evaluation."
         },
         {
           label: "Impact",
-          text: "Macro F1 raised from 0.354 to 0.468, a 32% gain. Transformers outperformed CNNs. Session-wise splits confirmed generalization to unseen participants."
+          text: "Macro F1 improved from 0.354 to 0.468, a 32% gain. Transformer architecture outperformed CNNs. Session-wise evaluation confirmed the model generalizes to participants not seen during training."
         },
         {
           label: "Tech",
@@ -128,11 +129,11 @@ export const workExperiences = {
       bullets: [
         {
           label: "Built",
-          text: "Industrial automation workflows with sensor-driven validation logic for hardware-software process control."
+          text: "Automation system for industrial process control. Integrated sensor inputs with hardware-software validation logic to reduce reliance on manual steps."
         },
         {
           label: "Impact",
-          text: "Cut manual intervention by 15% through structured control logic and systematic interface debugging."
+          text: "Reduced manual intervention by 15% through structured control logic and systematic debugging of hardware-software interfaces."
         },
         {
           label: "Tech",
