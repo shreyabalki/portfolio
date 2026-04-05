@@ -86,25 +86,20 @@ export default function Greeting() {
           >
             <div className="relative">
               <div
-                className="absolute inset-0 rounded-2xl"
+                className="absolute inset-0 rounded-full"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(79,134,247,0.12) 0%, rgba(79,134,247,0.04) 100%)",
-                  transform: "translate(8px, 8px)"
+                    "radial-gradient(circle, rgba(79,134,247,0.10) 0%, transparent 70%)",
+                  transform: "scale(1.08)"
                 }}
               />
               <img
                 src={ShreyaImage}
                 alt={greeting.name}
-                className="relative w-64 h-64 object-cover rounded-2xl shadow-card sm:w-80 sm:h-80 lg:w-96 lg:h-96"
+                className="relative w-64 h-64 object-cover rounded-full shadow-card sm:w-72 sm:h-72 lg:w-80 lg:h-80"
                 loading="eager"
                 style={{filter: "brightness(1.01) contrast(1.01)"}}
               />
-              {greeting.photoTagline && (
-                <p className="mt-3 text-center text-xs text-gray-400 dark:text-gray-500 tracking-wide">
-                  {greeting.photoTagline}
-                </p>
-              )}
             </div>
           </motion.div>
         </div>
