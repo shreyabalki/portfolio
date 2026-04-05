@@ -110,7 +110,7 @@ export default function About() {
                 delay: 0.08
               }}
             >
-              Built for real data. Proven on complex systems.
+              ML systems built to generalize, not just fit.
             </motion.h2>
             <motion.p
               className="text-base leading-[1.75] text-gray-500 dark:text-gray-400"

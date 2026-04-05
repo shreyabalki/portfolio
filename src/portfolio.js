@@ -12,7 +12,7 @@ export const greeting = {
   eyebrow: "Machine Learning Engineer",
   headline: "Shreya Chagandi\nBalakrishnan",
   subTitle:
-    "I build ML systems for complex real-world data. Transformers lifted Macro F1 by 32% on 32-channel EEG. A blockchain pipeline cut identity fraud by up to 40%.",
+    "ML systems built to generalize. 32% Macro F1 improvement on 32-channel EEG data using Transformers. Up to 40% identity fraud reduction through a blockchain verification pipeline.",
   displayGreeting: true
 };
 
@@ -20,12 +20,12 @@ export const greeting = {
 export const metricsSection = {
   display: true,
   stats: [
-    {value: "32%", label: "Macro F1 improvement on EEG classification"},
-    {value: "0.468", label: "Macro F1 achieved with Transformer model"},
-    {value: "22", label: "EEG sessions with leakage-free evaluation"},
-    {value: "32ch", label: "EEG channels processed per sample"},
-    {value: "40%", label: "Identity fraud reduction"},
-    {value: "15%", label: "Manual intervention cut in automation work"}
+    {value: "32%", label: "Macro F1 improvement"},
+    {value: "0.468", label: "Final Macro F1 score"},
+    {value: "22", label: "EEG sessions evaluated"},
+    {value: "32ch", label: "EEG channels per sample"},
+    {value: "40%", label: "Identity fraud reduced"},
+    {value: "15%", label: "Manual effort reduced"}
   ]
 };
 
@@ -33,22 +33,22 @@ export const metricsSection = {
 export const aboutSection = {
   title: "About",
   summary:
-    "I specialize in ML systems where evaluation correctness matters as much as model accuracy. My work spans EEG signal processing, deep learning for time-series, and end-to-end pipeline engineering built to generalize under real-world conditions.",
+    "I build ML systems for high-dimensional biomedical data where evaluation integrity is non-negotiable. Focused on pipelines that generalize beyond the training set.",
   focusCards: [
     {
       title: "EEG Pipelines",
       description:
-        "Designed and shipped a classification pipeline for 32-channel EEG across 22 sessions. Handled preprocessing, segmentation, and feature extraction for non-stationary biomedical signals."
+        "Built a full classification pipeline for 32-channel EEG across 22 sessions. Preprocessing, segmentation, and feature extraction designed for non-stationary biomedical signals."
     },
     {
       title: "Deep Learning",
       description:
-        "Ran a rigorous CNN vs Transformer benchmark on EEG time-series. Transformer architecture won with a 32% Macro F1 gain. Every architectural decision was driven by data."
+        "Ran an empirical CNN vs Transformer benchmark on raw EEG time-series. Transformers delivered a 32% Macro F1 gain. Architecture choices made from data, not convention."
     },
     {
       title: "Evaluation",
       description:
-        "Applied event-wise and session-wise splits to prevent data leakage. Used Macro F1 and Balanced Accuracy to handle severe class imbalance in real-world datasets."
+        "Event-wise and session-wise splits to prevent data leakage. Macro F1 and Balanced Accuracy as primary metrics for severely imbalanced real-world classes."
     }
   ],
   display: true
@@ -107,11 +107,11 @@ export const workExperiences = {
       bullets: [
         {
           label: "Built",
-          text: "End-to-end EEG classification pipeline across 32 channels, 22 sessions, and thousands of labeled samples. Covered preprocessing, segmentation, model training, and evaluation."
+          text: "Full classification pipeline for 32-channel EEG. 22 sessions, thousands of labeled samples. Covered preprocessing, segmentation, model training, and evaluation."
         },
         {
           label: "Impact",
-          text: "Raised Macro F1 from 0.354 to 0.468, a 32% gain, by replacing CNNs with Transformers. Session-wise splits eliminated data leakage and validated generalization to unseen participants."
+          text: "Macro F1 raised from 0.354 to 0.468, a 32% gain. Transformers outperformed CNNs. Session-wise splits confirmed generalization to unseen participants."
         },
         {
           label: "Tech",
@@ -128,11 +128,11 @@ export const workExperiences = {
       bullets: [
         {
           label: "Built",
-          text: "Hardware-software automation workflows for industrial process control with structured sensor validation logic."
+          text: "Industrial automation workflows with sensor-driven validation logic for hardware-software process control."
         },
         {
           label: "Impact",
-          text: "Reduced manual intervention by 15% through systematic control logic and hardware-software interface debugging."
+          text: "Cut manual intervention by 15% through structured control logic and systematic interface debugging."
         },
         {
           label: "Tech",
@@ -146,8 +146,7 @@ export const workExperiences = {
 // GitHub and Projects
 export const githubSection = {
   title: "Selected Projects",
-  subtitle:
-    "Real systems built around ML, signal processing, and measurable outcomes. Full history on GitHub.",
+  subtitle: "Real systems with measurable outcomes. Full history on GitHub.",
   githubProfile: "https://github.com/shreyabalki",
   githubUsername: "shreyabalki",
   projects: [
@@ -155,19 +154,19 @@ export const githubSection = {
       name: "EEG Time-Series Classifier",
       url: "https://github.com/shreyabalki/EEG-Card-game",
       description:
-        "32-channel EEG classification across 22 sessions. CNN vs Transformer benchmark with strict leakage-free evaluation and class imbalance handling.",
+        "32-channel EEG classification across 22 sessions. CNN vs Transformer benchmark with leakage-free evaluation and class imbalance handling.",
       bullets: [
         {
           label: "Problem",
-          text: "Classifying brain states from multi-session EEG where naive data splits cause severe leakage and inflated accuracy."
+          text: "Multi-session EEG classification where naive splits cause data leakage and inflate accuracy on unseen participants."
         },
         {
           label: "Solution",
-          text: "Built a full pipeline with event-wise and session-wise splits, weighted cross-entropy for class imbalance, and a CNN vs Transformer comparison on raw time-series."
+          text: "Session-wise and event-wise train/test splits. Weighted cross-entropy for class imbalance. Empirical CNN vs Transformer comparison on raw time-series."
         },
         {
           label: "Impact",
-          text: "Transformers outperformed CNNs with a 32% Macro F1 gain, from 0.354 to 0.468. Results held across unseen sessions."
+          text: "32% Macro F1 gain from 0.354 to 0.468 with Transformers. Results validated on sessions withheld from training."
         }
       ]
     },
@@ -175,19 +174,19 @@ export const githubSection = {
       name: "Blockchain Document Verification",
       url: "https://github.com/shreyabalki",
       description:
-        "Tamper-proof identity verification combining blockchain document integrity with face recognition authentication.",
+        "Identity verification combining blockchain document integrity with face recognition authentication and reproducible ML deployment.",
       bullets: [
         {
           label: "Problem",
-          text: "Document fraud in identity workflows where tampering goes undetected and manual review does not scale."
+          text: "Document fraud in identity workflows where tampering is undetectable and manual verification does not scale."
         },
         {
           label: "Solution",
-          text: "Built a blockchain-backed document registry with an integrated face recognition layer. Containerized the full ML pipeline with Docker for reproducible deployments."
+          text: "Blockchain-backed document registry with integrated face recognition. Full ML pipeline containerized with Docker for consistent deployments."
         },
         {
           label: "Impact",
-          text: "Reduced identity fraud by 30 to 40%. Docker eliminated environment inconsistencies across development and production."
+          text: "Identity fraud reduced by 30 to 40%. Docker eliminated environment inconsistencies between development and production."
         }
       ]
     }
