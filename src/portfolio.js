@@ -15,7 +15,7 @@ export const greeting = {
   eyebrow: "Machine Learning Engineer",
   headline: "Shreya Chagandi\nBalakrishnan",
   subTitle:
-    "I build reliable ML systems for real-world data — from EEG time-series pipelines to rigorous model evaluation that holds up in production.",
+    "I build ML systems that hold up under real-world data — EEG pipelines, time-series classifiers, and rigorous evaluation that doesn't leak. Lifted Macro F1 by 32% on 22-session EEG data using Transformers.",
   displayGreeting: true
 };
 
@@ -23,22 +23,22 @@ export const greeting = {
 export const aboutSection = {
   title: "About",
   summary:
-    "Machine Learning Engineer with a focus on building data systems that are robust by design. My work spans EEG signal processing, multi-channel time-series modeling, and end-to-end pipeline engineering for biomedical and real-world data. I care about evaluation rigor, generalization under noise, and systems that perform consistently outside the lab.",
+    "I specialize in building ML pipelines for complex, high-dimensional data — particularly biomedical time-series and signal processing at scale. I'm driven by evaluation rigor: eliminating data leakage, choosing the right metrics for imbalanced datasets, and shipping systems that generalize beyond the training distribution.",
   focusCards: [
     {
-      title: "Signal Processing",
+      title: "EEG & Signal Processing",
       description:
-        "EEG and time-series analysis across multi-channel, multi-session data. Structured preprocessing for noisy, non-stationary signals."
+        "32-channel multi-session EEG pipelines across thousands of samples. Preprocessing, segmentation, and feature extraction for non-stationary biomedical signals."
     },
     {
-      title: "Modeling",
+      title: "Deep Learning",
       description:
-        "Deep learning with PyTorch and Transformers. CNNs for sequence data. Principled architecture choices tuned for generalization."
+        "Transformer and CNN architectures for time-series classification. Architecture selection grounded in empirical comparison, not defaults."
     },
     {
-      title: "Reliability",
+      title: "Rigorous Evaluation",
       description:
-        "Evaluation frameworks built to prevent data leakage. Balanced Accuracy and Macro-F1 as primary metrics for imbalanced real-world datasets."
+        "Event-wise and session-wise data splitting to eliminate leakage. Macro F1 and Balanced Accuracy as primary metrics for class-imbalanced real-world data."
     }
   ],
   display: true
@@ -58,26 +58,27 @@ export const skillsSection = {
   subTitle: "Technical stack",
   groups: [
     {
-      category: "Programming",
+      category: "Languages",
       items: ["Python", "SQL"]
     },
     {
-      category: "Machine Learning",
-      items: ["PyTorch", "TensorFlow", "Scikit-learn", "CNNs", "Transformers"]
+      category: "ML & Deep Learning",
+      items: ["PyTorch", "Transformers", "CNNs", "Scikit-learn", "TensorFlow"]
     },
     {
       category: "Data & Signal Processing",
       items: [
-        "Time-Series Analysis",
         "EEG Processing",
+        "Time-Series Analysis",
         "Feature Engineering",
+        "Class Imbalance Handling",
         "Pandas",
         "NumPy"
       ]
     },
     {
-      category: "Tools",
-      items: ["Git", "Docker", "Linux", "Azure"]
+      category: "Infrastructure",
+      items: ["Docker", "Git", "Linux", "Azure"]
     }
   ],
   display: true
@@ -89,22 +90,22 @@ export const workExperiences = {
   experience: [
     {
       role: "Research Assistant",
-      department: "Machine Learning and Biomedical Data",
+      department: "Machine Learning · Biomedical Data",
       company: "University of Vienna",
-      location: "Austria",
+      location: "Vienna, Austria",
       date: "Dec 2025 to Present",
       bullets: [
         {
           label: "Built",
-          text: "End-to-end ML pipelines for multi-session EEG time-series data with 32-channel signals, covering preprocessing, feature extraction, and model training."
+          text: "End-to-end classification pipeline for 32-channel EEG data across 22 sessions and thousands of labeled samples — covering preprocessing, segmentation, feature extraction, and model training."
         },
         {
           label: "Impact",
-          text: "Improved model generalization and reduced evaluation risk by enforcing strict data leakage prevention across sessions, validated with Balanced Accuracy and Macro-F1."
+          text: "Raised Macro F1 from 0.354 to 0.468 (32% improvement) by switching from CNN to Transformer-based architecture. Eliminated data leakage using event-wise and session-wise train/test splitting, making results trustworthy across unseen sessions."
         },
         {
           label: "Stack",
-          text: "Python, PyTorch, Transformers, Pandas, NumPy"
+          text: "Python, PyTorch, Transformers, CNNs, Weighted Loss, Pandas, NumPy"
         }
       ]
     },
@@ -117,11 +118,11 @@ export const workExperiences = {
       bullets: [
         {
           label: "Built",
-          text: "Automation systems integrating hardware and software workflows for industrial process control."
+          text: "Hardware-software automation workflows for industrial process control, integrating sensor inputs with structured validation logic."
         },
         {
           label: "Impact",
-          text: "Reduced manual intervention by 15% through structured validation logic and systematic debugging of hardware-software interfaces."
+          text: "Reduced manual intervention by 15% through systematic debugging and structured control logic across hardware-software interfaces."
         },
         {
           label: "Stack",
@@ -133,31 +134,50 @@ export const workExperiences = {
 };
 
 // ─── GitHub Showcase ──────────────────────────────────────────
-// Add new repositories to the `projects` array below.
 export const githubSection = {
-  title: "GitHub & Selected Work",
+  title: "Selected Projects",
   subtitle:
-    "A selection of projects reflecting my focus on ML systems and signal processing. Full history on GitHub.",
+    "A selection of projects built around ML systems, signal processing, and real-world data. Full history on GitHub.",
   githubProfile: "https://github.com/shreyabalki",
   githubUsername: "shreyabalki",
   projects: [
     {
-      name: "EEG Card Game",
+      name: "EEG Motor Imagery Classifier",
       url: "https://github.com/shreyabalki/EEG-Card-game",
       description:
-        "An EEG-based interaction system applying signal processing and machine learning to real-time brain-computer interface concepts.",
+        "Transformer vs CNN benchmark for 32-channel EEG time-series classification. Leakage-free evaluation across 22 sessions with class imbalance handling.",
       bullets: [
         {
           label: "Built",
-          text: "Signal acquisition and classification pipeline integrating EEG data with game state using time-series feature extraction."
+          text: "Full pipeline: EEG preprocessing, event-wise and session-wise splitting, CNN and Transformer training, weighted cross-entropy for imbalanced classes."
         },
         {
           label: "Impact",
-          text: "Demonstrates practical application of real-time signal interpretation, bridging biomedical data and interactive systems."
+          text: "Achieved 32% Macro F1 gain (0.354 to 0.468) with Transformers. Session-wise splits confirmed generalization to unseen participants."
         },
         {
           label: "Stack",
-          text: "Python, Signal Processing, Machine Learning"
+          text: "Python, PyTorch, Transformers, CNNs, NumPy, Pandas"
+        }
+      ]
+    },
+    {
+      name: "Blockchain Document Validation with Face Recognition",
+      url: "https://github.com/shreyabalki",
+      description:
+        "Tamper-proof document verification system combining blockchain immutability with face recognition for identity authentication.",
+      bullets: [
+        {
+          label: "Built",
+          text: "Blockchain-backed document registry with integrated face recognition layer. Dockerized ML pipeline for fully reproducible experiments and deployments."
+        },
+        {
+          label: "Impact",
+          text: "Reduced identity fraud by 30 to 40% in validation workflows. Docker containerization eliminated environment drift across development and production."
+        },
+        {
+          label: "Stack",
+          text: "Python, Face Recognition, Blockchain, Docker"
         }
       ]
     }
