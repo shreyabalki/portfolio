@@ -13,7 +13,6 @@ export const greeting = {
   headline: "Shreya Chagandi\nBalakrishnan",
   subTitle:
     "ML systems built to generalize. 32% Macro F1 improvement on 32-channel EEG data using Transformers. Up to 40% identity fraud reduction through a blockchain verification pipeline.",
-  photoTagline: "ML Engineer · Vienna, Austria",
   displayGreeting: true
 };
 
