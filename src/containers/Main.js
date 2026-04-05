@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import Header from "../components/header/Header";
 import Greeting from "./greeting/Greeting";
+import Metrics from "./metrics/Metrics";
 import About from "./about/About";
 import Skills from "./skills/Skills";
 import WorkExperience from "./workExperience/WorkExperience";
@@ -36,6 +37,7 @@ export default function Main() {
         <Header isDark={isDark} toggleTheme={toggleTheme} />
         <main>
           <Greeting />
+          <Metrics />
           <About />
           <Skills />
           <WorkExperience />
