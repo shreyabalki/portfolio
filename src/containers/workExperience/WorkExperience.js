@@ -20,7 +20,7 @@ const cardVariant = {
 const LABEL_COLORS = {
   Built: "text-accent",
   Impact: "text-emerald-500",
-  Stack: "text-gray-400 dark:text-gray-500"
+  Tech: "text-gray-400 dark:text-gray-500"
 };
 
 function ExperienceCard({exp}) {
