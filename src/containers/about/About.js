@@ -18,7 +18,7 @@ const cardVariant = {
 };
 
 const CARD_ICONS = {
-  "Signal Processing": (
+  "EEG Pipelines": (
     <svg
       width="20"
       height="20"
@@ -35,7 +35,7 @@ const CARD_ICONS = {
       />
     </svg>
   ),
-  Modeling: (
+  "Deep Learning": (
     <svg
       width="20"
       height="20"
@@ -52,7 +52,7 @@ const CARD_ICONS = {
       />
     </svg>
   ),
-  Reliability: (
+  Evaluation: (
     <svg
       width="20"
       height="20"
@@ -110,7 +110,7 @@ export default function About() {
                 delay: 0.08
               }}
             >
-              Engineering ML systems that hold up in the real world.
+              Built for real data. Proven on complex systems.
             </motion.h2>
             <motion.p
               className="text-base leading-[1.75] text-gray-500 dark:text-gray-400"

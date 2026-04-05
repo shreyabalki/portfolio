@@ -12,30 +12,43 @@ export const greeting = {
   eyebrow: "Machine Learning Engineer",
   headline: "Shreya Chagandi\nBalakrishnan",
   subTitle:
-    "I build production-grade ML pipelines for high-dimensional biomedical data. Raised Macro F1 by 32% on 32-channel EEG data using Transformers. Cut identity fraud by up to 40% with a blockchain-backed verification system.",
+    "I build ML systems for complex real-world data. Transformers lifted Macro F1 by 32% on 32-channel EEG. A blockchain pipeline cut identity fraud by up to 40%.",
   displayGreeting: true
+};
+
+// Metrics Strip
+export const metricsSection = {
+  display: true,
+  stats: [
+    {value: "32%", label: "Macro F1 improvement on EEG classification"},
+    {value: "0.468", label: "Macro F1 achieved with Transformer model"},
+    {value: "22", label: "EEG sessions with leakage-free evaluation"},
+    {value: "32ch", label: "EEG channels processed per sample"},
+    {value: "40%", label: "Identity fraud reduction"},
+    {value: "15%", label: "Manual intervention cut in automation work"}
+  ]
 };
 
 // About
 export const aboutSection = {
   title: "About",
   summary:
-    "I specialize in ML systems where evaluation correctness matters as much as model performance. My work spans EEG signal processing, deep learning for time-series, and end-to-end pipeline engineering built to generalize under real-world conditions.",
+    "I specialize in ML systems where evaluation correctness matters as much as model accuracy. My work spans EEG signal processing, deep learning for time-series, and end-to-end pipeline engineering built to generalize under real-world conditions.",
   focusCards: [
     {
-      title: "Biomedical ML Pipelines",
+      title: "EEG Pipelines",
       description:
-        "Designed and shipped a full classification pipeline for 32-channel EEG data across 22 sessions. Covered preprocessing, segmentation, feature extraction, and leakage-free evaluation."
+        "Designed and shipped a classification pipeline for 32-channel EEG across 22 sessions. Handled preprocessing, segmentation, and feature extraction for non-stationary biomedical signals."
     },
     {
-      title: "Architecture That Performs",
+      title: "Deep Learning",
       description:
-        "Ran a rigorous CNN vs Transformer benchmark on EEG time-series. Transformer won with a 32% Macro F1 gain. Every decision was driven by data, not convention."
+        "Ran a rigorous CNN vs Transformer benchmark on EEG time-series. Transformer architecture won with a 32% Macro F1 gain. Every architectural decision was driven by data."
     },
     {
-      title: "Evaluation Integrity",
+      title: "Evaluation",
       description:
-        "Applied event-wise and session-wise train/test splits to prevent data leakage. Used Macro F1 and Balanced Accuracy as primary metrics to handle severe class imbalance."
+        "Applied event-wise and session-wise splits to prevent data leakage. Used Macro F1 and Balanced Accuracy to handle severe class imbalance in real-world datasets."
     }
   ],
   display: true
@@ -94,7 +107,7 @@ export const workExperiences = {
       bullets: [
         {
           label: "Built",
-          text: "End-to-end EEG classification pipeline across 32 channels, 22 sessions, and thousands of labeled samples. Handled preprocessing, segmentation, model training, and evaluation."
+          text: "End-to-end EEG classification pipeline across 32 channels, 22 sessions, and thousands of labeled samples. Covered preprocessing, segmentation, model training, and evaluation."
         },
         {
           label: "Impact",
@@ -142,11 +155,11 @@ export const githubSection = {
       name: "EEG Time-Series Classifier",
       url: "https://github.com/shreyabalki/EEG-Card-game",
       description:
-        "32-channel EEG classification across 22 sessions. Transformer vs CNN benchmark with strict leakage-free evaluation and class imbalance handling.",
+        "32-channel EEG classification across 22 sessions. CNN vs Transformer benchmark with strict leakage-free evaluation and class imbalance handling.",
       bullets: [
         {
           label: "Problem",
-          text: "Classifying brain states from multi-session EEG data where naive splits cause severe data leakage and inflated accuracy."
+          text: "Classifying brain states from multi-session EEG where naive data splits cause severe leakage and inflated accuracy."
         },
         {
           label: "Solution",
@@ -154,7 +167,7 @@ export const githubSection = {
         },
         {
           label: "Impact",
-          text: "Transformers outperformed CNNs with a 32% Macro F1 improvement, from 0.354 to 0.468. Results held across unseen sessions."
+          text: "Transformers outperformed CNNs with a 32% Macro F1 gain, from 0.354 to 0.468. Results held across unseen sessions."
         }
       ]
     },
@@ -166,7 +179,7 @@ export const githubSection = {
       bullets: [
         {
           label: "Problem",
-          text: "Document fraud in identity workflows where tampering is undetectable and manual review does not scale."
+          text: "Document fraud in identity workflows where tampering goes undetected and manual review does not scale."
         },
         {
           label: "Solution",
